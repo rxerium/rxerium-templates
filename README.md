@@ -4,6 +4,8 @@ A curated collection of **69 Nuclei templates** by [@rxerium](https://github.com
 
 ***This repo is in active development**.*
 
+The main Nuclei templates repository can be found [here](https://github.com/projectdiscovery/nuclei-templates).
+
 ## Focus
 This repository prioritizes real-world threats that are being actively exploited, helping security teams detect and respond to the most critical vulnerabilities.
 
