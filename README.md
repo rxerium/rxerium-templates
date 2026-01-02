@@ -1,4 +1,4 @@
-# rxerium-templates
+# @rxerium Nuclei Templates
 
 A curated collection of **69 Nuclei templates** by [@rxerium](https://github.com/rxerium), focusing exclusively on **zero-day and actively exploited vulnerabilities in the wild**.
 
