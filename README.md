@@ -1,6 +1,6 @@
 # @rxerium Nuclei Templates
 
-A curated collection of **69 Nuclei templates** by [@rxerium](https://github.com/rxerium), focusing exclusively on **zero-day and actively exploited vulnerabilities in the wild**.
+A curated collection of **70 Nuclei templates** by [@rxerium](https://github.com/rxerium), focusing exclusively on **zero-day and actively exploited vulnerabilities in the wild**.
 
 ***This repo is in active development**.*
 
@@ -14,7 +14,7 @@ This repository prioritises real-world threats that are being actively exploited
 - Date matching may / may not be as reliable as version detection so please proceed with caution when running these types of templates. 
 
 ## Coverage
-- **69 CVE templates** spanning 2020-2025
+- **70 CVE templates** spanning 2020-2025
 - Organised by year for easy navigation
 - Regular updates as new threats emerge
 
