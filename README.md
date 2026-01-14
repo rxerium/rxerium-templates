@@ -19,6 +19,8 @@ A curated collection of **74+ Nuclei templates** focusing exclusively on **zero-
 - **CVSS Breakdown:** Critical (≥9.0): 34 | High (7.0-8.9): 15
 - **Year Distribution:** 2020: 3 | 2021: 3 | 2022: 2 | 2023: 9 | 2024: 9 | 2025: 44 | 2026: 4
 
+
+
 ## 🚀 Quick Start
 
 ### Installation
