@@ -1,46 +1,62 @@
 # @rxerium Nuclei Templates
 
-A curated collection of **74+ Nuclei templates** by [@rxerium](https://github.com/rxerium), focusing exclusively on **zero-day and actively exploited vulnerabilities in the wild**.
+[![GitHub stars](https://img.shields.io/github/stars/rxerium/rxerium-templates?style=flat-square)](https://github.com/rxerium/rxerium-templates)
+[![License](https://img.shields.io/github/license/rxerium/rxerium-templates?style=flat-square)](LICENSE)
+[![Templates](https://img.shields.io/badge/templates-74+-blue?style=flat-square)](https://github.com/rxerium/rxerium-templates)
+[![CISA KEV](https://img.shields.io/badge/CISA%20KEV-29-red?style=flat-square)](https://www.cisa.gov/known-exploited-vulnerabilities-catalog)
 
-***This repo is in active development**.*
+A curated collection of **74+ Nuclei templates** focusing exclusively on **zero-day and actively exploited vulnerabilities in the wild**. Templates use passive detection techniques (version/date matching) and are organized by year for easy navigation.
 
-The main Nuclei templates repository can be found [here](https://github.com/projectdiscovery/nuclei-templates).
+> ⚠️ **Note:** Date matching may be less reliable than version detection. Use with caution.
 
-## Focus
-This repository prioritises real-world threats that are being actively exploited, helping security teams detect and respond to the most critical vulnerabilities.
+## 📊 Statistics
 
-## Notes
-- The scripts in this repo focus on passive detection techniques only (version / date matching).
-- Date matching may / may not be as reliable as version detection so please proceed with caution when running these types of templates. 
+<!-- Stats are auto-updated by GitHub Actions -->
 
-## Coverage
-- **73 CVE templates** spanning 2020-2026
-- **1 template in progress**
-- Organised by year for easy navigation
-- Regular updates as new threats emerge
+- **Total Templates:** 74 (73 completed, 1 WIP)
+- **Coverage:** 2020-2026 | **Avg CVSS:** 8.1 | **CISA KEV:** 29
+- **Severity:** Critical: 38 | High: 14 | Medium: 21 | Low: 1
+- **CVSS Breakdown:** Critical (≥9.0): 34 | High (7.0-8.9): 15
+- **Year Distribution:** 2020: 3 | 2021: 3 | 2022: 2 | 2023: 9 | 2024: 9 | 2025: 44 | 2026: 4
 
-### Statistics
-- **Total Templates:** 74
-- **Year Breakdown:** 2020: 3, 2021: 3, 2022: 2, 2023: 9, 2024: 9, 2025: 44, 2026: 4
-- **Severity Distribution:** critical: 38, high: 14, medium: 21, low: 1
-- **Average CVSS Score:** 8.1
-- **Critical (CVSS ≥9.0):** 34 templates
-- **High (CVSS 7.0-8.9):** 15 templates
-- **Verified Templates:** 74
-- **CISA KEV Listed:** 29
-- **Most Recent:** CVE-2026-22794
-- **Oldest:** CVE-2020-12641
+## 🚀 Quick Start
 
+### Installation
 
-## Usage
-Use with [Nuclei](https://github.com/projectdiscovery/nuclei):
 ```bash
+# Clone the repository
+git clone https://github.com/rxerium/rxerium-templates.git
+cd rxerium-templates
+
+# Or use directly with Nuclei
 nuclei -t rxerium-templates/ -u https://target.com
 ```
 
-## Honorable Mentions
+### Examples
 
-Scripts created by @rxerium have been cited / referenced in various security research articles and vulnerability reports such as the [NCSC](https://ctoatncsc.substack.com/p/cto-at-ncsc-summary-week-ending-september-021), [SonicWall](https://www.sonicwall.com/blog/deserialization-leads-to-command-injection-in-goanywhere-mft-cve-2025-10035), [NVD NIST](https://nvd.nist.gov/vuln/detail/cve-2023-40000), [Censys](https://censys.com/advisory/cve-2025-52691), [Darkwebinformer](https://x.com/DarkWebInformer/status/1957855818457440700) and many more. 
+```bash
+# Scan a single target
+nuclei -t rxerium-templates/ -u https://example.com
 
-## Disclaimer
-These templates are for authorised security testing only. Always obtain proper permission before scanning.
+# Scan with specific severity
+nuclei -t rxerium-templates/ -u https://example.com -severity critical,high
+
+# Scan specific year
+nuclei -t rxerium-templates/2025/ -u https://example.com
+
+# Bulk scan from file
+nuclei -t rxerium-templates/ -l targets.txt
+```
+
+## 📚 Resources
+
+- **Main Nuclei Templates:** [projectdiscovery/nuclei-templates](https://github.com/projectdiscovery/nuclei-templates)
+- **Nuclei Documentation:** [docs.nuclei.sh](https://docs.nuclei.sh)
+
+## 🏆 Recognition
+
+Templates have been cited in security research from [NCSC](https://ctoatncsc.substack.com/p/cto-at-ncsc-summary-week-ending-september-021), [SonicWall](https://www.sonicwall.com/blog/deserialization-leads-to-command-injection-in-goanywhere-mft-cve-2025-10035), [NVD NIST](https://nvd.nist.gov/vuln/detail/cve-2023-40000), [Censys](https://censys.com/advisory/cve-2025-52691), and others.
+
+## ⚖️ Disclaimer
+
+These templates are for **authorized security testing only**. Always obtain proper permission before scanning.

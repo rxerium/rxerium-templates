@@ -122,62 +122,63 @@ def update_readme(stats):
     with open(README_PATH, 'r', encoding='utf-8') as f:
         content = f.read()
     
-    # Update total templates count (handle both with and without +)
+    # Update total templates count in description (handle both with and without +)
     content = re.sub(
         r'(\*\*)\d+\+?(\s+Nuclei templates\*\*)',
         f'\\g<1>{stats["total_templates"]}+\\g<2>',
         content
     )
     
-    # Update CVE templates count and year range
+    # Update badge count if present
     content = re.sub(
-        r'(\*\*)\d+(\s+CVE templates\s+spanning\s+)\d+-\d+(\*\*)',
-        f'\\g<1>{stats["total_completed"]}\\g<2>{stats["year_range"]}\\g<3>',
+        r'(\[!\[Templates\]\([^)]+\)\]\([^)]+\) templates-)\d+(\+-blue)',
+        f'\\g<1>{stats["total_templates"]}\\g<2>',
         content
     )
     
-    # Find the Coverage section and update it
-    coverage_pattern = r'(## Coverage\n)(.*?)(\n## |\Z)'
-    match = re.search(coverage_pattern, content, re.DOTALL)
+    # Update CISA KEV badge if present
+    content = re.sub(
+        r'(\[!\[CISA KEV\]\([^)]+\)\]\([^)]+\) CISA%20KEV-)\d+(-red)',
+        f'\\g<1>{stats["cisa_kev_count"]}\\g<2>',
+        content
+    )
+    
+    # Find and update the Statistics section
+    stats_pattern = r'(## 📊 Statistics\n\n<!-- Stats are auto-updated by GitHub Actions -->\n\n)(.*?)(\n\n## )'
+    match = re.search(stats_pattern, content, re.DOTALL)
     
     if match:
-        # Build new coverage section
-        coverage_section = "## Coverage\n"
-        coverage_section += f"- **{stats['total_completed']} CVE templates** spanning {stats['year_range']}\n"
-        coverage_section += f"- **{stats['total_wip']} template{'s' if stats['total_wip'] != 1 else ''} in progress**\n"
-        coverage_section += "- Organised by year for easy navigation\n"
-        coverage_section += "- Regular updates as new threats emerge\n\n"
+        # Build new statistics section
+        stats_section = "## 📊 Statistics\n\n"
+        stats_section += "<!-- Stats are auto-updated by GitHub Actions -->\n\n"
         
-        # Add detailed stats
-        coverage_section += "### Statistics\n"
-        coverage_section += f"- **Total Templates:** {stats['total_templates']}\n"
-        coverage_section += f"- **Year Breakdown:** {', '.join([f'{year}: {count}' for year, count in sorted(stats['year_counts'].items())])}\n"
+        # Build compact stats
+        stats_section += f"- **Total Templates:** {stats['total_templates']} ({stats['total_completed']} completed, {stats['total_wip']} WIP)\n"
+        avg_cvss_str = f"{stats['avg_cvss']:.1f}" if stats['avg_cvss'] else 'N/A'
+        stats_section += f"- **Coverage:** {stats['year_range']} | **Avg CVSS:** {avg_cvss_str} | **CISA KEV:** {stats['cisa_kev_count']}\n"
         
+        # Severity breakdown
         if stats['severity_counts']:
-            severity_str = ', '.join([f'{sev}: {count}' for sev, count in sorted(stats['severity_counts'].items(), key=lambda x: {'critical': 0, 'high': 1, 'medium': 2, 'low': 3, 'info': 4}.get(x[0].lower(), 5))])
-            coverage_section += f"- **Severity Distribution:** {severity_str}\n"
+            severity_order = ['critical', 'high', 'medium', 'low', 'info']
+            severity_parts = []
+            for sev in severity_order:
+                if sev in stats['severity_counts']:
+                    severity_parts.append(f"{sev.capitalize()}: {stats['severity_counts'][sev]}")
+            if severity_parts:
+                stats_section += f"- **Severity:** {' | '.join(severity_parts)}\n"
         
+        # CVSS breakdown
         if stats['avg_cvss']:
-            coverage_section += f"- **Average CVSS Score:** {stats['avg_cvss']:.1f}\n"
-            coverage_section += f"- **Critical (CVSS ≥9.0):** {stats['critical_count']} templates\n"
-            coverage_section += f"- **High (CVSS 7.0-8.9):** {stats['high_count']} templates\n"
+            stats_section += f"- **CVSS Breakdown:** Critical (≥9.0): {stats['critical_count']} | High (7.0-8.9): {stats['high_count']}\n"
         
-        if stats['verified_count'] > 0:
-            coverage_section += f"- **Verified Templates:** {stats['verified_count']}\n"
+        # Year distribution
+        year_parts = [f"{year}: {count}" for year, count in sorted(stats['year_counts'].items())]
+        stats_section += f"- **Year Distribution:** {' | '.join(year_parts)}\n"
         
-        if stats['cisa_kev_count'] > 0:
-            coverage_section += f"- **CISA KEV Listed:** {stats['cisa_kev_count']}\n"
+        stats_section += "\n"
         
-        if stats['most_recent']:
-            coverage_section += f"- **Most Recent:** {stats['most_recent']}\n"
-        
-        if stats['oldest']:
-            coverage_section += f"- **Oldest:** {stats['oldest']}\n"
-        
-        coverage_section += "\n"
-        
-        # Replace the coverage section
-        content = re.sub(coverage_pattern, coverage_section + r'\3', content, flags=re.DOTALL)
+        # Replace the statistics section
+        content = re.sub(stats_pattern, stats_section + r'\3', content, flags=re.DOTALL)
     
     # Write updated content
     with open(README_PATH, 'w', encoding='utf-8') as f:
