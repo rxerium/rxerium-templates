@@ -57,7 +57,11 @@ nuclei -t rxerium-templates/ -l targets.txt
 
 ## 🏆 Recognition
 
-Templates have been cited in security research from [NCSC](https://ctoatncsc.substack.com/p/cto-at-ncsc-summary-week-ending-september-021), [SonicWall](https://www.sonicwall.com/blog/deserialization-leads-to-command-injection-in-goanywhere-mft-cve-2025-10035), [NVD NIST](https://nvd.nist.gov/vuln/detail/cve-2023-40000), [Censys](https://censys.com/advisory/cve-2025-52691), and others.
+Templates have been cited in security research from [NCSC](https://ctoatncsc.substack.com/p/cto-at-ncsc-summary-week-ending-september-021), [SonicWall](https://www.sonicwall.com/blog/deserialization-leads-to-command-injection-in-goanywhere-mft-cve-2025-10035), [NVD NIST](https://nvd.nist.gov/vuln/detail/cve-2023-40000), [Censys](https://censys.com/advisory/cve-2025-52691), [ReSecurity](https://www.resecurity.com/blog/article/cve-2026-22794-changing-the-origin-header-to-take-over-appsmith-accounts), [California CyberSecurity Integration Center](https://www.caloes.ca.gov/wp-content/uploads/Homeland-Security/Documents/Cyber-Advisories/Cal-CSIC-CyberAdvisory-Fortras-GoAnywhere-MFT-Critical-RCE.pdf) and many others.
+
+## 💖 Support
+
+Majority of these detection scripts are created in my personal time, if you find them useful, consider supporting my work through Buy Me A Coffee: [https://www.buymeacoffee.com/rxerium](https://www.buymeacoffee.com/rxerium) 
 
 ## ⚖️ Disclaimer
 
