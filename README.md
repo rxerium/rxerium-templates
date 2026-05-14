@@ -3,7 +3,6 @@
 [![GitHub stars](https://img.shields.io/github/stars/rxerium/rxerium-templates?style=flat-square)](https://github.com/rxerium/rxerium-templates)
 [![License](https://img.shields.io/github/license/rxerium/rxerium-templates?style=flat-square)](LICENSE)
 [![Templates](https://img.shields.io/badge/templates-74+-blue?style=flat-square)](https://github.com/rxerium/rxerium-templates)
-[![CISA KEV](https://img.shields.io/badge/CISA%20KEV-29-red?style=flat-square)](https://www.cisa.gov/known-exploited-vulnerabilities-catalog)
 
 A curated collection of **90+ Nuclei templates** focusing exclusively on **zero-day and actively exploited vulnerabilities in the wild**. Templates use passive detection techniques (version/date matching) and are organized by year for easy navigation.
 
