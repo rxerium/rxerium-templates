@@ -2,9 +2,9 @@
 
 [![GitHub stars](https://img.shields.io/github/stars/rxerium/rxerium-templates?style=flat-square)](https://github.com/rxerium/rxerium-templates)
 [![License](https://img.shields.io/github/license/rxerium/rxerium-templates?style=flat-square)](LICENSE)
-[![Templates](https://img.shields.io/badge/templates-74+-blue?style=flat-square)](https://github.com/rxerium/rxerium-templates)
+[![Templates](https://img.shields.io/badge/templates-92+-blue?style=flat-square)](https://github.com/rxerium/rxerium-templates)
 
-A curated collection of **90+ Nuclei templates** focusing exclusively on **zero-day and actively exploited vulnerabilities in the wild**. Templates use passive detection techniques (version/date matching) and are organized by year for easy navigation.
+A curated collection of **92+ Nuclei templates** focusing exclusively on **zero-day and actively exploited vulnerabilities in the wild**. Templates use passive detection techniques (version/date matching) and are organized by year for easy navigation.
 
 > ⚠️ **Note:** Date matching may be less reliable than version detection. Use with caution.
 
@@ -12,11 +12,11 @@ A curated collection of **90+ Nuclei templates** focusing exclusively on **zero-
 
 <!-- Stats are auto-updated by GitHub Actions -->
 
-- **Total Templates:** 90 (89 completed, 1 WIP)
+- **Total Templates:** 92 (91 completed, 1 WIP)
 - **Coverage:** 2020-2026 | **Avg CVSS:** 8.2 | **CISA KEV:** 29
-- **Severity:** Critical: 54 | High: 14 | Medium: 21 | Low: 1
-- **CVSS Breakdown:** Critical (≥9.0): 39 | High (7.0-8.9): 16
-- **Year Distribution:** 2020: 3 | 2021: 3 | 2022: 2 | 2023: 9 | 2024: 9 | 2025: 47 | 2026: 17
+- **Severity:** Critical: 56 | High: 14 | Medium: 21 | Low: 1
+- **CVSS Breakdown:** Critical (≥9.0): 41 | High (7.0-8.9): 16
+- **Year Distribution:** 2020: 3 | 2021: 3 | 2022: 2 | 2023: 9 | 2024: 9 | 2025: 47 | 2026: 19
 
 
 
@@ -57,10 +57,6 @@ nuclei -t rxerium-templates/ -l targets.txt
 ## 🏆 Recognition
 
 Templates have been cited in security research from [NCSC](https://ctoatncsc.substack.com/p/cto-at-ncsc-summary-week-ending-september-021), [SonicWall](https://www.sonicwall.com/blog/deserialization-leads-to-command-injection-in-goanywhere-mft-cve-2025-10035), [NVD NIST](https://nvd.nist.gov/vuln/detail/cve-2023-40000), [Censys](https://censys.com/advisory/cve-2025-52691), [ReSecurity](https://www.resecurity.com/blog/article/cve-2026-22794-changing-the-origin-header-to-take-over-appsmith-accounts), [California CyberSecurity Integration Center](https://www.caloes.ca.gov/wp-content/uploads/Homeland-Security/Documents/Cyber-Advisories/Cal-CSIC-CyberAdvisory-Fortras-GoAnywhere-MFT-Critical-RCE.pdf) and many others.
-
-## 🤝 Support
-
-Majority of these detection scripts are created in my personal time, if you find them useful, consider supporting my work through Buy Me A Coffee: [https://www.buymeacoffee.com/rxerium](https://www.buymeacoffee.com/rxerium) 
 
 ## ⚖️ Disclaimer
 
