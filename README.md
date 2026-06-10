@@ -15,7 +15,7 @@ A curated collection of **92+ Nuclei templates** focusing exclusively on **zero-
 - **Total Templates:** 92 (91 completed, 1 WIP)
 - **Coverage:** 2020-2026 | **Avg CVSS:** 8.2 | **CISA KEV:** 29
 - **Severity:** Critical: 56 | High: 14 | Medium: 21 | Low: 1
-- **CVSS Breakdown:** Critical (≥9.0): 41 | High (7.0-8.9): 16
+- **CVSS Breakdown:** Critical (≥9.0): 39 | High (7.0-8.9): 16
 - **Year Distribution:** 2020: 3 | 2021: 3 | 2022: 2 | 2023: 9 | 2024: 9 | 2025: 47 | 2026: 19
 
 
