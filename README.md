@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/github/license/rxerium/rxerium-templates?style=flat-square)](LICENSE)
 [![Templates](https://img.shields.io/badge/templates-92+-blue?style=flat-square)](https://github.com/rxerium/rxerium-templates)
 
-A curated collection of **113+ Nuclei templates** focusing exclusively on **zero-day and actively exploited vulnerabilities in the wild**. Templates use passive detection techniques (version/date matching) and are organized by year for easy navigation.
+A curated collection of **114+ Nuclei templates** focusing exclusively on **zero-day and actively exploited vulnerabilities in the wild**. Templates use passive detection techniques (version/date matching) and are organized by year for easy navigation.
 
 > ⚠️ **Note:** Date matching may be less reliable than version detection. Use with caution.
 
@@ -12,11 +12,11 @@ A curated collection of **113+ Nuclei templates** focusing exclusively on **zero
 
 <!-- Stats are auto-updated by GitHub Actions -->
 
-- **Total Templates:** 113 (112 completed, 1 WIP)
+- **Total Templates:** 114 (113 completed, 1 WIP)
 - **Coverage:** 2013-2026 | **Avg CVSS:** 8.2 | **CISA KEV:** 48
-- **Severity:** Critical: 70 | High: 17 | Medium: 24 | Low: 2
+- **Severity:** Critical: 71 | High: 17 | Medium: 24 | Low: 2
 - **CVSS Breakdown:** Critical (≥9.0): 46 | High (7.0-8.9): 19
-- **Year Distribution:** 2013: 1 | 2017: 1 | 2020: 3 | 2021: 3 | 2022: 3 | 2023: 13 | 2024: 13 | 2025: 54 | 2026: 22
+- **Year Distribution:** 2013: 1 | 2017: 1 | 2020: 3 | 2021: 3 | 2022: 3 | 2023: 13 | 2024: 13 | 2025: 54 | 2026: 23
 
 
 
