@@ -6,7 +6,7 @@
 [![License](https://img.shields.io/github/license/rxerium/rxerium-templates?style=flat-square)](LICENSE)
 [![Templates](https://img.shields.io/badge/templates-92+-blue?style=flat-square)](https://github.com/rxerium/rxerium-templates)
 
-A curated collection of **115+ Nuclei templates** focusing exclusively on **zero-day and actively exploited vulnerabilities in the wild**. Templates use passive detection techniques (version/date matching) and are organized by year for easy navigation.
+A curated collection of **115+ Nuclei templates** focusing on **zero-day and actively exploited vulnerabilities in the wild** with a few miscellaneous templates. Templates use passive detection techniques (version/date matching) and are organized by year for easy navigation.
 
 > ⚠️ **Note:** Date matching may be less reliable than version detection. Use with caution.
 
