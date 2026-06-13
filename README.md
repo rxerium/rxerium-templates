@@ -1,4 +1,4 @@
-# @rxerium Nuclei Templates
+
 
 ![rxerium-templates banner](assets/banner.png)
 
