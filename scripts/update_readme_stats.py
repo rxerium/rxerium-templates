@@ -5,7 +5,7 @@ Script to automatically update README.md with repository statistics.
 
 import os
 import re
-import yaml
+import sys
 from pathlib import Path
 from collections import defaultdict
 from datetime import datetime
@@ -14,54 +14,34 @@ from datetime import datetime
 REPO_ROOT = Path(__file__).parent.parent
 README_PATH = REPO_ROOT / "README.md"
 
+# Shared discovery (reduces duplication with other automation scripts)
+sys.path.insert(0, str(Path(__file__).parent))
+from template_utils import discover_templates, get_wip_templates
+
 
 def count_templates():
-    """Count all YAML template files and organize by year."""
+    """Count all YAML template files and organize by year (delegates to shared utils)."""
+    all_templates = discover_templates(REPO_ROOT)
     templates_by_year = defaultdict(list)
-    all_templates = []
-    wip_templates = []
-    
-    # Find all YAML files in year directories
-    for year_dir in sorted(REPO_ROOT.glob("20[0-9][0-9]")):
-        if year_dir.is_dir():
-            year = year_dir.name
-            for yaml_file in year_dir.glob("*.yaml"):
-                templates_by_year[year].append(yaml_file)
-                all_templates.append(yaml_file)
-                if "WIP" in yaml_file.name.upper():
-                    wip_templates.append(yaml_file)
-    
+    for yaml_file in all_templates:
+        templates_by_year[yaml_file.parent.name].append(yaml_file)
+    wip_templates = get_wip_templates(all_templates)
     return templates_by_year, all_templates, wip_templates
 
 
 def extract_template_info(yaml_file):
-    """Extract information from a YAML template file."""
-    info = {
+    """Extract information (delegates to the rich shared parser in template_utils for classification + metadata support)."""
+    from template_utils import load_template_info as _load
+    rich = _load(yaml_file)
+    return {
         'file': yaml_file,
-        'cve': yaml_file.stem,
-        'year': yaml_file.parent.name,
-        'severity': None,
-        'cvss_score': None,
-        'verified': None,
-        'cisa_kev': None,
+        'cve': rich.get('id') or yaml_file.stem,
+        'year': rich.get('year') or yaml_file.parent.name,
+        'severity': rich.get('severity'),
+        'cvss_score': rich.get('cvss_score'),
+        'verified': rich.get('verified'),
+        'cisa_kev': rich.get('cisa_kev'),
     }
-    
-    try:
-        with open(yaml_file, 'r', encoding='utf-8') as f:
-            content = yaml.safe_load(f)
-            if content and 'info' in content:
-                info_section = content['info']
-                info['severity'] = info_section.get('severity')
-                if 'metadata' in info_section:
-                    metadata = info_section['metadata']
-                    info['cvss_score'] = metadata.get('cvss-score')
-                    info['verified'] = metadata.get('verified', False)
-                    info['cisa_kev'] = metadata.get('cisa-kev', False)
-    except Exception as e:
-        # If parsing fails, continue with basic info
-        pass
-    
-    return info
 
 
 def calculate_stats():
@@ -86,8 +66,15 @@ def calculate_stats():
         if info['severity']:
             severity_counts[info['severity']] += 1
     
-    # CVSS score stats
-    cvss_scores = [info['cvss_score'] for info in template_info if info['cvss_score'] is not None]
+    # CVSS score stats (be defensive: some generated skeletons or manual edits may temporarily have str values)
+    cvss_scores = []
+    for info in template_info:
+        v = info['cvss_score']
+        if v is not None:
+            try:
+                cvss_scores.append(float(v))
+            except (TypeError, ValueError):
+                pass  # ignore non-numeric (e.g. "TODO" placeholders)
     avg_cvss = sum(cvss_scores) / len(cvss_scores) if cvss_scores else None
     critical_count = len([s for s in cvss_scores if s >= 9.0])
     high_count = len([s for s in cvss_scores if 7.0 <= s < 9.0])

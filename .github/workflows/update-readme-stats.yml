@@ -1,4 +1,4 @@
-name: Update README Stats
+name: Update Repository Index
 
 on:
   push:
@@ -35,13 +35,19 @@ jobs:
       - name: Install dependencies
         run: pip install pyyaml
 
+      - name: Validate templates
+        run: python3 scripts/validate_templates.py
+
       - name: Update README with stats
         run: python3 scripts/update_readme_stats.py
+
+      - name: Update templates.json index
+        run: python3 scripts/update_templates_json.py
 
       - name: Commit and push changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add README.md
-          git diff --staged --quiet || git commit -m "📊 Auto-update README stats [skip ci]"
+          git add README.md templates.json
+          git diff --staged --quiet || git commit -m "📊 Auto-update README stats and templates.json [skip ci]"
           git push

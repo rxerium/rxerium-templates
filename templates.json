@@ -1,0 +1,3500 @@
+{
+  "name": "rxerium-templates",
+  "schema_version": "1.0",
+  "total": 115,
+  "completed": 114,
+  "wip": 1,
+  "templates": [
+    {
+      "id": "CVE-2026-6973",
+      "name": "CVE-2026-6973 - Ivanti EPMM Remote Code Execution",
+      "path": "2026/CVE-2026-6973.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "Ivanti Endpoint Manager Mobile contains an improper input validation vulnerability that can lead to remote code execution in affected builds. This template passively extracts the exposed EPMM version from the login page and matches the affected ranges listed by NVD and CISA KEV.\n",
+      "cvss_score": 7.2,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "Ivanti",
+      "product": "Endpoint Manager Mobile",
+      "cwe_id": null,
+      "shodan_query": "product:\"Ivanti Endpoint Manager Mobile (EPMM)\"",
+      "tags": [
+        "cve",
+        "cve2026",
+        "kev",
+        "ivanti",
+        "epmm",
+        "rce"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-6973",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2026-48558",
+      "name": "SimpleHelp <= 5.5.15 - Unauthenticated OIDC Authentication Bypass",
+      "path": "2026/CVE-2026-48558.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "SimpleHelp remote support software versions 5.5.15 and earlier (and 6.0 pre-release through RC1) are vulnerable to an unauthenticated authentication bypass when OIDC authentication is configured. The server fails to verify the cryptographic signature of OIDC identity tokens, allowing an unauthenticated attacker to forge an arbitrary identity and self-register as a Technician. The attacker obtains full Technician-level access including remote control of managed endpoints and script execution. MFA is bypassed because first-time logins allow self-enrollment of a MFA method. Exploitation requires OIDC to be configured with at least one TechnicianGroup and \"Allow group authenticated logins\" enabled.\n",
+      "cvss_score": 10.0,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "simple-help",
+      "product": "simplehelp",
+      "cwe_id": "CWE-347",
+      "shodan_query": "html:\"SimpleHelp\"",
+      "tags": [
+        "cve",
+        "cve2026",
+        "simplehelp",
+        "auth-bypass",
+        "critical"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-48558",
+        "https://simple-help.com/security/simplehelp-security-update-2026-05",
+        "https://horizon3.ai/attack-research/disclosures/cve-2026-48558-simplehelp-authentication-bypass-iocs/"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2026-45185",
+      "name": "CVE-2026-45185",
+      "path": "2026/CVE-2026-45185.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Exim mail transfer agent versions 4.97 through 4.99.2 contain a remotely reachable memory corruption vulnerability in the GnuTLS backend. The vulnerability is triggered during BDAT message body handling when a client sends a TLS close_notify alert before the body transfer is complete, followed by a final byte in cleartext on the same TCP connection. This sequence causes Exim to write into a memory buffer that has already been freed during TLS session teardown, leading to heap corruption and potential remote code execution. This vulnerability only impacts builds using USE_GNUTLS=yes; OpenSSL builds are not affected. Resolved in Exim 4.99.3.\n",
+      "cvss_score": 7.5,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "Exim",
+      "product": "Exim Mail Transfer Agent",
+      "cwe_id": "CWE-416",
+      "shodan_query": "product:\"Exim smtpd\"",
+      "tags": [
+        "cve",
+        "cve2026",
+        "exim",
+        "mail",
+        "uaf",
+        "gnutls"
+      ],
+      "references": [
+        "https://www.exim.org/static/doc/security/EXIM-Security-2026-05-01.1/EXIM-Security-2026-05-01.1.txt",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-45185"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2026-39987",
+      "name": "CVE-2026-39987",
+      "path": "2026/CVE-2026-39987.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "An unauthenticated attacker can obtain a full interactive root shell on the server via a single WebSocket connection. No user interaction or authentication token is required, even when authentication is enabled on the marimo instance.\n",
+      "cvss_score": 9.3,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "marimo-team",
+      "product": "marimo",
+      "cwe_id": "CWE-306",
+      "shodan_query": "http.favicon.hash:-1864630356",
+      "tags": [
+        "cve",
+        "cve2026",
+        "marimo",
+        "python",
+        "notebook",
+        "rce",
+        "websocket",
+        "pre-auth",
+        "critical"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-39987",
+        "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc",
+        "https://osv.dev/vulnerability/CVE-2026-39987",
+        "https://github.com/marimo-team/marimo/pull/9098",
+        "https://github.com/marimo-team/marimo/commit/c24d4806398f30be6b12acd6c60d1d7c68cfd12a"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2026-39813",
+      "name": "FortiSandbox - Authentication Bypass via Path Traversal (CVE-2026-39813)",
+      "path": "2026/CVE-2026-39813.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "A Path Traversal vulnerability [CWE-24] in FortiSandbox JRPC API may allow an\nunauthenticated attacker to bypass authentication and escalate privileges via\nspecially crafted HTTP requests. Affected: FortiSandbox 5.0.0-5.0.5 and 4.4.0-4.4.8.\n",
+      "cvss_score": null,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "Fortinet",
+      "product": "FortiSandbox",
+      "cwe_id": null,
+      "shodan_query": "http.title:\"FortiSandbox\"",
+      "tags": [
+        "fortisandbox",
+        "fortinet",
+        "auth-bypass",
+        "path-traversal",
+        "version-check",
+        "cwe-24"
+      ],
+      "references": [
+        "https://fortiguard.fortinet.com/psirt/FG-IR-26-112"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2026-39808",
+      "name": "FortiSandbox - Unauthenticated OS Command Injection (CVE-2026-39808)",
+      "path": "2026/CVE-2026-39808.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "An Improper Neutralization of Special Elements used in an OS Command (OS Command Injection)\nvulnerability [CWE-78] in FortiSandbox may allow an unauthenticated attacker to execute\nunauthorized code or commands via crafted HTTP requests.\nAffected: FortiSandbox 4.4.0-4.4.8 only. NOT affected: 5.0.x, 5.2.x.\n",
+      "cvss_score": null,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "Fortinet",
+      "product": "FortiSandbox",
+      "cwe_id": null,
+      "shodan_query": "http.title:\"FortiSandbox\"",
+      "tags": [
+        "fortisandbox",
+        "fortinet",
+        "rce",
+        "command-injection",
+        "version-check",
+        "cwe-78"
+      ],
+      "references": [
+        "https://fortiguard.fortinet.com/psirt/FG-IR-26-100",
+        "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39808"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2026-35616",
+      "name": "Fortinet FortiClient EMS - API Authentication Bypass",
+      "path": "2026/CVE-2026-35616.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "An Improper Access Control vulnerability [CWE-284] in FortiClient EMS may allow an unauthenticated attacker to execute unauthorized code or commands via crafted requests. This vulnerability has been observed exploited in the wild.\n",
+      "cvss_score": 9.1,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "fortinet",
+      "product": "forticlient_endpoint_management_server",
+      "cwe_id": null,
+      "shodan_query": "http.favicon.hash:-800551065",
+      "tags": [
+        "cve",
+        "cve2026",
+        "fortinet",
+        "forticlient",
+        "ems"
+      ],
+      "references": [
+        "https://www.fortiguard.com/psirt/FG-IR-26-099",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-35616"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2026-3055",
+      "name": "CVE-2026-3055 - Citrix NetScaler ADC/Gateway Privilege Escalation",
+      "path": "2026/CVE-2026-3055.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Citrix NetScaler ADC and Gateway contain a high-severity vulnerability affecting instances configured as a SAML Identity Provider (IDP). Authenticated attackers may be able to escalate privileges under certain conditions. The vulnerability was identified internally by Cloud Software Group through routine security reviews and has no known active exploitation in the wild at time of publication. Patched in NetScaler ADC and Gateway 14.1-66.59, 13.1-62.23, and 13.1-FIPS/NDcPP 13.1.37.262 and later releases.\n",
+      "cvss_score": null,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "Citrix",
+      "product": "NetScaler ADC/Gateway",
+      "cwe_id": null,
+      "shodan_query": "http.title:\"citrix gateway\"",
+      "tags": [
+        "cve",
+        "cve2026",
+        "citrix",
+        "netscaler",
+        "privilege-escalation",
+        "saml"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-3055",
+        "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX696300"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2026-25049",
+      "name": "CVE-2026-25049 - n8n Expression Injection Leading to RCE",
+      "path": "2026/CVE-2026-25049.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "An authenticated user with permission to create or modify workflows in n8n could abuse crafted expressions in workflow parameters to trigger unintended system command execution on the host running n8n. This issue has been patched in versions 1.123.17 and 2.5.2.\n",
+      "cvss_score": 9.4,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "n8n",
+      "product": "n8n",
+      "cwe_id": "CWE-913",
+      "shodan_query": "http.favicon.hash:-831756631",
+      "tags": [
+        "cve",
+        "cve2026",
+        "n8n",
+        "expression-injection",
+        "rce",
+        "authenticated"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-25049",
+        "https://github.com/n8n-io/n8n/security/advisories/GHSA-6cqr-8cfr-67f8",
+        "https://github.com/n8n-io/n8n/commit/7860896909b3d42993a36297f053d2b0e633235d",
+        "https://github.com/n8n-io/n8n/commit/936c06cfc1ad269a89e8ef7f8ac79c104436d54b"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2026-23550",
+      "name": "Modular Connector <= 2.5.1 - Privilege Escalation\n",
+      "path": "2026/CVE-2026-23550.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "The Modular Connector plugin for WordPress is vulnerable to Incorrect Privilege Assignment (CWE-266) in versions up to, and including, 2.5.1. This vulnerability allows unauthenticated attackers to escalate their privileges and gain administrative access to the affected WordPress site. The flaw arises from insufficient permission checks within the plugin, enabling attackers to perform administrative actions without proper authorization. This could lead to full system compromise, including unauthorized access to sensitive data, modification of site content, and potential installation of malicious code. This vulnerability has been actively exploited in the wild since January 13, 2026.\n",
+      "cvss_score": null,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": null,
+      "product": null,
+      "cwe_id": null,
+      "shodan_query": null,
+      "tags": [
+        "cve",
+        "cve2026",
+        "wordpress",
+        "wp-plugin",
+        "modular-connector",
+        "privilege-escalation",
+        "critical",
+        "production"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-23550",
+        "https://www.thehackerwire.com/modular-ds-privilege-escalation-cve-2026-23550/",
+        "https://securityonline.info/exploited-in-the-wild-critical-modular-ds-flaw-cve-2026-23550-cvss-10-allows-instant-admin-takeover/"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2026-22794",
+      "name": "CVE-2026-22794",
+      "path": "2026/CVE-2026-22794.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "A vulnerability in Appsmith allows an attacker to exploit the application through improper handling of configuration parameters. The vulnerability affects Appsmith installations and could result in unauthorized access or remote code execution depending on the specific vulnerability details.\n",
+      "cvss_score": 9.6,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "Appsmith",
+      "product": "Appsmith",
+      "cwe_id": "CWE-346",
+      "shodan_query": "title:\"Appsmith\"",
+      "tags": [
+        "cve",
+        "cve2026",
+        "appsmith",
+        "rce",
+        "critical"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-22794"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2026-22557",
+      "name": "UniFi Network Application - Unauthenticated Path Traversal (CVE-2026-22557)",
+      "path": "2026/CVE-2026-22557.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Detects vulnerable versions of the Ubiquiti UniFi Network Application\nexposed to an unauthenticated path traversal vulnerability (CWE-22).\n",
+      "cvss_score": null,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "Ubiquiti",
+      "product": "UniFi Network Application",
+      "cwe_id": null,
+      "shodan_query": "http.title:\"UniFi Network\"",
+      "tags": [
+        "unifi",
+        "ubiquiti",
+        "network",
+        "path-traversal"
+      ],
+      "references": [
+        "https://community.ui.com/releases/UniFi-Network-Application",
+        "https://censys.com/advisory/cve-2026-22557/",
+        "https://www.cycognito.com/blog/emerging-threat-ubiquiti-unifi-network-application-path-traversal-cve-2026-22557/"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2026-21877",
+      "name": "CVE-2026-21877 - n8n Remote Code Execution via Arbitrary File Write",
+      "path": "2026/CVE-2026-21877.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "n8n versions >= 0.123.0 and < 1.121.3 contain a critical authenticated remote code execution vulnerability. An authenticated user can exploit an arbitrary file write vulnerability to overwrite critical files and execute untrusted code on the n8n server, potentially leading to full system compromise. The vulnerability affects both self-hosted and n8n Cloud instances, posing significant risk to environments where n8n automates workflows with access to internal systems, credentials, and sensitive data. Administrators unable to patch should disable the Git node to reduce exposure.\n",
+      "cvss_score": 10.0,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "n8n",
+      "product": "n8n Workflow Automation",
+      "cwe_id": "CWE-94",
+      "shodan_query": "http.favicon.hash:-831756631",
+      "tags": [
+        "cve",
+        "cve2026",
+        "n8n",
+        "workflow",
+        "rce",
+        "authenticated"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-21877",
+        "https://github.com/advisories/GHSA-v364-rw7m-3263"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2026-21858",
+      "name": "CVE-2026-21858",
+      "path": "2026/CVE-2026-21858.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "A vulnerability in n8n allows an attacker to access files on the underlying server through execution of certain form-based workflows. A vulnerable workflow could grant access to an unauthenticated remote attacker. This could result in exposure of sensitive information stored on the system and may enable further compromise depending on deployment configuration and workflow usage.\n",
+      "cvss_score": 10.0,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "n8n",
+      "product": "n8n Workflow Automation",
+      "cwe_id": "CWE-94",
+      "shodan_query": "http.favicon.hash:-831756631",
+      "tags": [
+        "cve",
+        "cve2026",
+        "n8n",
+        "workflow",
+        "rce",
+        "critical"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-21858",
+        "https://github.com/n8n-io/n8n/security/advisories"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2026-21643",
+      "name": "Fortinet FortiClientEMS 7.4.4 - SQL Injection (RCE)",
+      "path": "2026/CVE-2026-21643.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Fortinet FortiClientEMS 7.4.4 contains an SQL injection vulnerability caused by improper neutralisation of special elements in SQL commands. Unauthenticated attackers can execute unauthorised code or commands via crafted HTTP requests.\n",
+      "cvss_score": 9.8,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "fortinet",
+      "product": "forticlientems",
+      "cwe_id": "CWE-89",
+      "shodan_query": "http.favicon.hash:-800551065",
+      "tags": [
+        "cve",
+        "cve2026",
+        "fortinet",
+        "forticlientems",
+        "sqli",
+        "critical"
+      ],
+      "references": [
+        "https://fortiguard.fortinet.com/psirt/FG-IR-25-1142",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-21643",
+        "https://github.com/0xBlackash/CVE-2026-21643"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2026-20253",
+      "name": "Splunk Enterprise - Missing Authentication on PostgreSQL Sidecar Service (CVE-2026-20253)",
+      "path": "2026/CVE-2026-20253.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Splunk Enterprise versions 10.0.0 through 10.0.6 and 10.2.0 through 10.2.3 expose a PostgreSQL sidecar\nservice endpoint without any authentication controls. A remote unauthenticated attacker can reach this\nendpoint over the network to create or truncate arbitrary files on the host filesystem, resulting in\npotential remote code execution, denial of service, or data destruction. This template detects\nvulnerable versions via the unauthenticated login page title, which discloses the installed version.\n",
+      "cvss_score": 9.8,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "splunk",
+      "product": "splunk enterprise",
+      "cwe_id": "CWE-306",
+      "shodan_query": "http.title:\"Login - Splunk\"",
+      "tags": [
+        "cve",
+        "cve2026",
+        "splunk",
+        "unauth",
+        "rce",
+        "critical"
+      ],
+      "references": [
+        "https://advisory.splunk.com/advisories/SVD-2026-0603",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-20253",
+        "https://github.com/advisories/GHSA-xgm5-jh99-wc4v",
+        "https://www.splunk.com/en_us/software/splunk-enterprise.html"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2026-1470",
+      "name": "n8n Workflow Expression Evaluation - Remote Code Execution\n",
+      "path": "2026/CVE-2026-1470.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "n8n contains a Remote Code Execution (RCE) vulnerability in its workflow Expression evaluation system. Expressions supplied by authenticated users during workflow configuration may be evaluated in an execution context that is not sufficiently isolated from the underlying runtime. This means that an authenticated attacker could abuse this behavior to execute arbitrary code with the privileges of the n8n application. The vulnerability has a CVSS score of 9.9 (Critical) and could allow authenticated attackers to gain complete control over the n8n instance.\n",
+      "cvss_score": 9.9,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "n8n",
+      "product": "n8n",
+      "cwe_id": null,
+      "shodan_query": "http.favicon.hash:-831756631",
+      "tags": [
+        "cve",
+        "cve2026",
+        "n8n",
+        "rce",
+        "workflow",
+        "authenticated",
+        "critical"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-1470",
+        "https://www.thehackerwire.com/n8n-workflow-rce-cve-2026-1470/"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2026-1340",
+      "name": "CVE-2026-1340 - Ivanti EPMM Code Injection",
+      "path": "2026/CVE-2026-1340.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Ivanti Endpoint Manager Mobile contains a code injection vulnerability that can allow remote code execution. This template passively extracts the exposed EPMM version from the login page and matches versions listed as affected by NVD and CISA KEV.\n",
+      "cvss_score": 9.8,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "Ivanti",
+      "product": "Endpoint Manager Mobile",
+      "cwe_id": null,
+      "shodan_query": "product:\"Ivanti Endpoint Manager Mobile (EPMM)\"",
+      "tags": [
+        "cve",
+        "cve2026",
+        "kev",
+        "ivanti",
+        "epmm",
+        "rce"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-1340",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2026-1281",
+      "name": "CVE-2026-1281 - Ivanti EPMM Code Injection",
+      "path": "2026/CVE-2026-1281.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Ivanti Endpoint Manager Mobile contains a code injection vulnerability that can allow remote code execution. This template passively extracts the exposed EPMM version from the login page and matches versions listed as affected by NVD and CISA KEV.\n",
+      "cvss_score": 9.8,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "Ivanti",
+      "product": "Endpoint Manager Mobile",
+      "cwe_id": null,
+      "shodan_query": "product:\"Ivanti Endpoint Manager Mobile (EPMM)\"",
+      "tags": [
+        "cve",
+        "cve2026",
+        "kev",
+        "ivanti",
+        "epmm",
+        "rce"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-1281",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2026-10523",
+      "name": "Ivanti Sentry < 10.5.2 / 10.6.2 / 10.7.1 - Authentication Bypass",
+      "path": "2026/CVE-2026-10523.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Ivanti Sentry before versions 10.5.2, 10.6.2, and 10.7.1 contains an authentication bypass vulnerability that allows a remote unauthenticated attacker to create arbitrary administrative accounts and obtain full administrative access.\n",
+      "cvss_score": 9.9,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "ivanti",
+      "product": "sentry",
+      "cwe_id": "CWE-288",
+      "shodan_query": "http.html:\"Ivanti\" http.html:\"Sentry\" port:8443",
+      "tags": [
+        "cve",
+        "cve2026",
+        "ivanti",
+        "sentry",
+        "auth-bypass"
+      ],
+      "references": [
+        "https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Sentry-CVE-2026-10520-CVE-2026-10523",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-10523"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2026-10520",
+      "name": "Ivanti Sentry < 10.5.2 / 10.6.2 / 10.7.1 - Remote Code Execution",
+      "path": "2026/CVE-2026-10520.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Ivanti Sentry before versions 10.5.2, 10.6.2, and 10.7.1 contains an OS command injection vulnerability that allows a remote unauthenticated attacker to achieve root-level remote code execution.\n",
+      "cvss_score": 10.0,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "ivanti",
+      "product": "sentry",
+      "cwe_id": "CWE-78",
+      "shodan_query": "http.html:\"Ivanti\" http.html:\"Sentry\" port:8443",
+      "tags": [
+        "cve",
+        "cve2026",
+        "ivanti",
+        "sentry",
+        "rce"
+      ],
+      "references": [
+        "https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Sentry-CVE-2026-10520-CVE-2026-10523",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-10520"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2026-0863",
+      "name": "n8n Python Task Executor - Sandbox Bypass leading to Remote Code Execution\n",
+      "path": "2026/CVE-2026-0863.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "A sandbox bypass vulnerability exists in n8n's python-task-executor that allows attackers to use string formatting and exception handling to run arbitrary unrestricted Python code in the underlying operating system. The vulnerability can be exploited via the Code block by an authenticated user with basic permissions and can lead to a full n8n instance takeover on instances operating under \"Internal\" execution mode. If the instance is operating under the \"External\" execution mode (e.g., n8n's official Docker image), arbitrary code execution occurs inside a Sidecar container and not the main node, which significantly reduces the vulnerability impact. This vulnerability is exploitable over a network without physical access and no user interaction is necessary for exploitation.\n",
+      "cvss_score": null,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "n8n",
+      "product": "n8n",
+      "cwe_id": "CWE-94",
+      "shodan_query": "http.favicon.hash:-831756631",
+      "tags": [
+        "cve",
+        "cve2026",
+        "n8n",
+        "rce",
+        "sandbox-bypass",
+        "python",
+        "authenticated",
+        "critical"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-0863",
+        "https://cve.akaoma.com/cve-2026-0863",
+        "https://www.tenable.com/cve/CVE-2026-0863"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2026-0625-WIP",
+      "name": "CVE-2026-0625 - D-Link Router Information Disclosure",
+      "path": "2026/CVE-2026-0625-WIP.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Multiple D-Link router models expose sensitive device information including model names and firmware versions through their login pages. This information disclosure can aid attackers in identifying vulnerable devices for targeted exploitation. Affected models include DSL-2640B (versions <= 1.07), DSL-2740R (versions < 1.17), DSL-2780B (versions <= 1.01.14), and DSL-526B (versions <= 2.01).\n",
+      "cvss_score": null,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "D-Link",
+      "product": "DSL Router Series",
+      "cwe_id": null,
+      "shodan_query": "http.title:\"DSL-\"",
+      "tags": [
+        "cve",
+        "cve2026",
+        "dlink",
+        "router"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-0625"
+      ],
+      "wip": true
+    },
+    {
+      "id": "CVE-2026-0300",
+      "name": "PAN-OS - Unauthenticated Buffer Overflow in Captive Portal (CVE-2026-0300)",
+      "path": "2026/CVE-2026-0300.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "A buffer overflow vulnerability in the User-ID Authentication Portal (Captive Portal) of Palo Alto Networks PAN-OS \nallows an unauthenticated attacker to execute arbitrary code with root privileges by sending specially crafted packets.\nThis template detects vulnerable PAN-OS versions running the admin interface and extracts version information.\n",
+      "cvss_score": null,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "palo alto networks",
+      "product": "pan-os",
+      "cwe_id": null,
+      "shodan_query": null,
+      "tags": [
+        "cve",
+        "cve2026",
+        "paloalto",
+        "pan-os",
+        "captive-portal"
+      ],
+      "references": [
+        "https://security.paloaltonetworks.com/CVE-2026-0300",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-0300"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-9316",
+      "name": "CVE-2025-9316 - N-able N-central Unauthenticated SessionID Generation",
+      "path": "2025/CVE-2025-9316.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "N-able N-central before 2025.4 can generate session IDs for unauthenticated users. This template reuses the exposed N-central login page version marker and flags versions before 2025.4.\n",
+      "cvss_score": null,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "N-able",
+      "product": "N-central",
+      "cwe_id": "CWE-1284",
+      "shodan_query": [
+        "http.title:\"N-central Login\""
+      ],
+      "tags": [
+        "cve",
+        "cve2025",
+        "n-able",
+        "ncentral",
+        "sessionid",
+        "info-disclosure"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-9316",
+        "https://me.n-able.com/s/security-advisory/aArVy0000000rdpKAA/cve20259316-ncentral-unauthenticated-sessionid-generation"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-8876",
+      "name": "CVE-2025-8876 - N-able N-central Command Injection Code Execution",
+      "path": "2025/CVE-2025-8876.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "N-able N-central remote monitoring and management (RMM) platform versions prior to 2025.3.1 contain a critical command injection vulnerability that allows authenticated attackers to execute arbitrary operating system or application commands. The flaw results from improper sanitization of user input, enabling attackers to inject malicious commands that execute unexpectedly. This vulnerability has been actively exploited in the wild targeting managed service provider (MSP) environments. CISA added it to the Known Exploited Vulnerabilities catalogue on August 13, 2025. While authentication is required, successful exploitation can lead to full system compromise. Patched in version 2025.3.1 released on August 14, 2025.\n",
+      "cvss_score": 9.0,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "N-able",
+      "product": "N-central",
+      "cwe_id": "CWE-77",
+      "shodan_query": [
+        "http.title:\"N-central Login\""
+      ],
+      "tags": [
+        "cve",
+        "cve2025",
+        "kev",
+        "n-able",
+        "ncentral",
+        "command-injection",
+        "rce"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-8876",
+        "https://thecyberexpress.com/cisa-warns-of-cve-2025-8875-and-cve-2025-8876/",
+        "https://www.helpnetsecurity.com/2025/08/14/vulnerabilities-in-msp-friendly-rmm-solution-exploited-in-the-wild-cve-2025-8875-cve-2025-8876/",
+        "https://www.cisa.gov/news-events/alerts/2025/08/13/cisa-adds-two-known-exploited-vulnerabilities-catalog"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-8875",
+      "name": "CVE-2025-8875 - N-able N-central Insecure Deserialization Code Execution",
+      "path": "2025/CVE-2025-8875.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "N-able N-central remote monitoring and management (RMM) platform versions prior to 2025.3.1 contain a critical insecure deserialization vulnerability that enables authenticated attackers to execute arbitrary code. The flaw stems from improper handling of untrusted data during deserialization, allowing malicious actors to craft objects that execute commands when processed. This vulnerability has been actively exploited in the wild targeting MSP environments. CISA added it to the Known Exploited Vulnerabilities catalogue on August 13, 2025. While authentication is required, successful exploitation can lead to full system compromise. Patched in version 2025.3.1 released on August 14, 2025.\n",
+      "cvss_score": 9.0,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "N-able",
+      "product": "N-central",
+      "cwe_id": "CWE-502",
+      "shodan_query": [
+        "http.title:\"N-central Login\""
+      ],
+      "tags": [
+        "cve",
+        "cve2025",
+        "kev",
+        "n-able",
+        "ncentral",
+        "deserialization",
+        "rce"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-8875",
+        "https://thecyberexpress.com/cisa-warns-of-cve-2025-8875-and-cve-2025-8876/",
+        "https://www.helpnetsecurity.com/2025/08/14/vulnerabilities-in-msp-friendly-rmm-solution-exploited-in-the-wild-cve-2025-8875-cve-2025-8876/",
+        "https://cvefeed.io/vuln/detail/CVE-2025-8875"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-8110",
+      "name": "CVE-2025-8110 - Gogs Self-Hosted Git Service Symlink Bypass RCE",
+      "path": "2025/CVE-2025-8110.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "Gogs self-hosted Git service versions 0.13.3 and earlier contain a critical symlink bypass vulnerability that circumvents the fix for CVE-2024-55947. Authenticated users can exploit improper symbolic link handling in the PutContents API to overwrite files outside the repository by committing a symlink pointing to sensitive targets, leading to remote code execution. As of December 2025, this remains an unpatched zero-day with active exploitation ongoing. Approximately 1,400 exposed Gogs instances exist, with over 700 showing signs of compromise. The vulnerability stems from the API writing to file paths without checking if targets are symlinks pointing outside the repository. Gogs maintainers are working on a fix.\n",
+      "cvss_score": 8.7,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "Gogs",
+      "product": "Gogs Git Service",
+      "cwe_id": "CWE-22",
+      "shodan_query": "http.title:\"Sign In - Gogs\"",
+      "tags": [
+        "cve",
+        "cve2025",
+        "gogs",
+        "git",
+        "symlink",
+        "rce",
+        "zero-day"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-8110",
+        "https://www.wiz.io/blog/wiz-research-gogs-cve-2025-8110-rce-exploit",
+        "https://thehackernews.com/2025/12/unpatched-gogs-zero-day-exploited.html",
+        "https://github.com/advisories/ghsa-mq8m-42gh-wq7r"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-7775",
+      "name": "CVE-2025-7775 - Citrix NetScaler ADC/Gateway Memory Corruption RCE",
+      "path": "2025/CVE-2025-7775.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Citrix NetScaler ADC and Gateway contain a critical memory corruption vulnerability affecting instances configured as a gateway, AAA virtual server, or with CR virtual server type HDX, as well as those bound with IPv6 services or service groups. Unauthenticated remote attackers can exploit this improper memory handling flaw to achieve remote code execution. The vulnerability was exploited as a zero-day by sophisticated threat actors in targeted intrusions against public and private sector enterprises to deliver webshells providing backdoor access. CISA added it to the KEV catalogue on August 26, 2025, with an unusually urgent two-day remediation deadline (August 28). Patched in NetScaler ADC and Gateway 14.1-47.48 and later releases.\n",
+      "cvss_score": 9.2,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "Citrix",
+      "product": "NetScaler ADC/Gateway",
+      "cwe_id": "CWE-119",
+      "shodan_query": [
+        "http.favicon.hash:1418494345"
+      ],
+      "tags": [
+        "cve",
+        "cve2025",
+        "kev",
+        "citrix",
+        "netscaler",
+        "memory-corruption",
+        "rce",
+        "zero-day"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-7775",
+        "https://www.rapid7.com/blog/post/etr-cve-2025-7775-critical-netscaler-vulnerability-exploited-in-the-wild/",
+        "https://socradar.io/cve-2025-7775-citrix-zero-day-netscaler-devices/",
+        "https://thehackernews.com/2025/08/citrix-patches-three-netscaler-flaws.html"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-68668",
+      "name": "CVE-2025-68668 - n8n Python Code Node Sandbox Bypass",
+      "path": "2025/CVE-2025-68668.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "n8n versions 1.0.0 through 1.x (before 2.0.0) contain a critical sandbox bypass vulnerability in the Pyodide-based Python Code Node. The flaw allows authenticated users with permission to create or modify workflows to execute arbitrary operating system commands on the host running n8n, using the same privileges as the n8n process. This represents a protection mechanism failure (CWE-693) that can lead to complete system compromise. The vulnerability has been addressed in version 2.0.0, which uses a more secure task-runner implementation by default.\n",
+      "cvss_score": 9.9,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "n8n",
+      "product": "n8n Workflow Automation",
+      "cwe_id": "CWE-693",
+      "shodan_query": "http.favicon.hash:-831756631",
+      "tags": [
+        "cve",
+        "cve2025",
+        "n8n",
+        "workflow",
+        "rce",
+        "sandbox-bypass"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-68668",
+        "https://github.com/advisories/GHSA-62r4-hw23-cc8v",
+        "https://thehackernews.com/2026/01/new-n8n-vulnerability-99-cvss-lets.html"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-68613",
+      "name": "CVE-2025-68613 - n8n Workflow Automation Vulnerability",
+      "path": "2025/CVE-2025-68613.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "n8n is a fair-code licensed workflow automation tool. This CVE represents a vulnerability in n8n workflow automation platform that could allow attackers to exploit the application. The vulnerability affects various versions of n8n and can be detected through the n8n signin page.\n",
+      "cvss_score": null,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "n8n",
+      "product": "n8n Workflow Automation",
+      "cwe_id": null,
+      "shodan_query": "http.favicon.hash:-831756631",
+      "tags": [
+        "cve",
+        "cve2025",
+        "n8n"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-68613"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-68461",
+      "name": "CVE-2025-68461 - Roundcube Webmail SVG Animate Tag Cross-Site Scripting",
+      "path": "2025/CVE-2025-68461.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "Roundcube Webmail versions before 1.5.12 and 1.6 before 1.6.12 contain a Cross-Site Scripting (XSS) vulnerability via the animate tag in SVG documents. The vulnerability stems from improper neutralization of input during web page generation, allowing attackers to inject malicious JavaScript code that executes in the context of the victim's browser when viewing crafted SVG content within the webmail interface. This could enable attackers to steal session tokens, perform actions on behalf of the user, or exfiltrate sensitive information accessible through the webmail interface.\n",
+      "cvss_score": 7.2,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "Roundcube",
+      "product": "Roundcube Webmail",
+      "cwe_id": "CWE-79",
+      "shodan_query": "http.title:\"Roundcube\"",
+      "tags": [
+        "cve",
+        "cve2025",
+        "roundcube",
+        "xss",
+        "svg"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-68461",
+        "https://roundcube.net/news/2025/12/13/security-updates-1.6.12-and-1.5.12",
+        "https://github.com/roundcube/roundcubemail/commit/bfa032631c36b900e7444dfa278340b33cbf7cdb",
+        "https://radar.offseq.com/threat/cve-2025-68461-cwe-79-improper-neutralization-of-i-1c741b3e"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-66376",
+      "name": "CVE-2025-66376 - Zimbra Collaboration Classic UI Cross-Site Scripting",
+      "path": "2025/CVE-2025-66376.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "Zimbra Collaboration Classic UI contains a cross-site scripting vulnerability in affected 10.0.x and 10.1.x releases. This template passively extracts the exposed Zimbra client version from ZmSettings.js and matches the affected ranges listed by NVD and CISA KEV.\n",
+      "cvss_score": 7.2,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "Synacor",
+      "product": "Zimbra Collaboration Suite",
+      "cwe_id": null,
+      "shodan_query": null,
+      "tags": [
+        "cve",
+        "cve2025",
+        "kev",
+        "zimbra",
+        "xss"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-66376",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-65964",
+      "name": "CVE-2025-65964 - n8n Workflow Automation Vulnerability",
+      "path": "2025/CVE-2025-65964.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "low",
+      "description": "n8n 0.123.1 through 1.119.1 contains a remote code execution caused by insufficient protection in pre-commit hooks via arbitrary Git configuration in Add Config operation, letting attackers execute commands on the host, exploit requires workflow creation or modification using Git node.\n",
+      "cvss_score": 0.0,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "n8n",
+      "product": "n8n Workflow Automation",
+      "cwe_id": "CWE-829",
+      "shodan_query": "http.favicon.hash:-831756631",
+      "tags": [
+        "cve",
+        "cve2025",
+        "n8n",
+        "workflow",
+        "rce"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-65964",
+        "https://github.com/n8n-io/n8n/commit/d5a1171f95f75def5c3ac577707ab913e22aef04",
+        "https://github.com/n8n-io/n8n/releases/tag/n8n%401.119.2",
+        "https://github.com/n8n-io/n8n/security/advisories/GHSA-wpqc-h9wp-chmq",
+        "https://n8n-docs.teamlab.info/hosting/securing/blocking-nodes/#exclude-nodes"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-64155",
+      "name": "CVE-2025-64155 - Fortinet FortiSIEM OS Command Injection RCE",
+      "path": "2025/CVE-2025-64155.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Fortinet FortiSIEM versions 6.7.0 through 7.4.0 contain a critical OS command injection vulnerability resulting from improper neutralization of special elements used in operating system commands. Unauthenticated attackers can exploit this vulnerability by sending specially crafted TCP requests, potentially leading to unauthorized code execution on the affected system. The vulnerability has a CVSS v3.1 base score of 9.8. Patched versions include FortiSIEM 7.4.1, 7.3.5, and 7.2.7.\n",
+      "cvss_score": 9.4,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "fortinet",
+      "product": "fortisiem",
+      "cwe_id": "CWE-78",
+      "shodan_query": [
+        "http.favicon.hash:-1341442175",
+        "http.html:\"var hst = location.hostname\""
+      ],
+      "tags": [
+        "cve",
+        "cve2025",
+        "fortinet",
+        "fortisiem",
+        "os-command-injection",
+        "rce"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-64155",
+        "https://fortiguard.fortinet.com/psirt/FG-IR-25-772"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-62726",
+      "name": "CVE-2025-62726 - n8n Workflow Automation - Remote Code Execution",
+      "path": "2025/CVE-2025-62726.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "n8n < 1.113.0 contains a remote code execution caused by execution of malicious pre-commit hooks in the Git Node component, letting remote attackers execute arbitrary code, exploit requires cloning a remote repository with a pre-commit hook.\n",
+      "cvss_score": 8.8,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "n8n",
+      "product": "n8n Workflow Automation",
+      "cwe_id": "CWE-829",
+      "shodan_query": "http.favicon.hash:-831756631",
+      "tags": [
+        "cve",
+        "cve2025",
+        "n8n",
+        "workflow",
+        "rce"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-62726",
+        "https://github.com/n8n-io/n8n/commit/5bf3db5ba84d3195bbe11bbd3c62f7086e090997",
+        "https://github.com/n8n-io/n8n/pull/19559",
+        "https://github.com/n8n-io/n8n/security/advisories/GHSA-xgp7-7qjq-vg47"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-62481",
+      "name": "CVE-2025-62481 - Oracle E-Business Suite Marketing Missing Authentication",
+      "path": "2025/CVE-2025-62481.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Oracle E-Business Suite Marketing Administration component versions 12.2.3-12.2.14 contains a critical missing authentication vulnerability that enables unauthenticated remote attackers to compromise Oracle Marketing through network access via HTTP. The easily exploitable flaw requires no user interaction and can result in complete takeover of Oracle Marketing with high impact on confidentiality, integrity, and availability. This vulnerability is related to CVE-2025-53072 and was disclosed in Oracle's October 2025 Critical Patch Update by Yassine Bengana of Michelin CERT. No current evidence of active exploitation, but warrants immediate patching given critical severity.\n",
+      "cvss_score": 9.8,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "Oracle",
+      "product": "E-Business Suite Marketing",
+      "cwe_id": "CWE-306",
+      "shodan_query": "html:\"OA_HTML\"",
+      "tags": [
+        "cve",
+        "cve2025",
+        "oracle",
+        "ebusiness-suite",
+        "missing-auth"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-62481",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-53072",
+        "https://www.oracle.com/security-alerts/cpuoct2025.html",
+        "https://cyberpress.org/oracle-e-business-suite-flaw/"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-61884",
+      "name": "CVE-2025-61884 - Oracle E-Business Suite Configurator SSRF",
+      "path": "2025/CVE-2025-61884.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "Oracle E-Business Suite Runtime component of Oracle Configurator versions 12.2.3-12.2.14 contains a Server-Side Request Forgery (SSRF) vulnerability combined with path traversal and CRLF injection weaknesses. Unauthenticated remote attackers can exploit this flaw via the /configurator/UiServlet endpoint without authentication to access sensitive resources. The vulnerability was linked to leaked exploits used in July 2025 attacks. CISA confirmed active exploitation and added it to the Known Exploited Vulnerabilities catalogue, mandating federal agency remediation by November 10, 2025. Multiple public PoC exploits are available on GitHub.\n",
+      "cvss_score": 7.5,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "Oracle",
+      "product": "E-Business Suite Configurator",
+      "cwe_id": "CWE-918",
+      "shodan_query": "html:\"OA_HTML\"",
+      "tags": [
+        "cve",
+        "cve2025",
+        "kev",
+        "oracle",
+        "ebusiness-suite",
+        "ssrf",
+        "path-traversal"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-61884",
+        "https://www.oracle.com/security-alerts/alert-cve-2025-61884.html",
+        "https://socradar.io/cve-2025-61884-oracle-e-business-suite-vulnerability/",
+        "https://www.bleepingcomputer.com/news/security/cisa-confirms-hackers-exploited-oracle-e-business-suite-ssrf-flaw/"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-61882",
+      "name": "CVE-2025-61882 - Oracle E-Business Suite BI Publisher Path Traversal RCE",
+      "path": "2025/CVE-2025-61882.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Oracle E-Business Suite Concurrent Processing (BI Publisher Integration) versions 12.2.3-12.2.14 contains a critical path traversal vulnerability that chains multiple flaws to achieve unauthenticated remote code execution. The vulnerability has been actively exploited in the wild by the Cl0p ransomware gang since August 9, 2025. Successful exploitation allows remote attackers to execute arbitrary code without authentication over the network. CISA added this to the Known Exploited Vulnerabilities catalogue on October 6, 2025. Oracle published an emergency security alert and patch on October 4, 2025. The October 2023 Critical Patch Update is a prerequisite for applying this security update.\n",
+      "cvss_score": 9.8,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "Oracle",
+      "product": "E-Business Suite",
+      "cwe_id": "CWE-22",
+      "shodan_query": "html:\"OA_HTML\"",
+      "tags": [
+        "cve",
+        "cve2025",
+        "kev",
+        "oracle",
+        "ebusiness-suite",
+        "path-traversal",
+        "rce",
+        "zero-day"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-61882",
+        "https://www.oracle.com/security-alerts/alert-cve-2025-61882.html",
+        "https://www.rapid7.com/blog/post/etr-cve-2025-61882-critical-0day-in-oracle-e-business-suite-exploited-in-the-wild/",
+        "https://labs.watchtowr.com/well-well-well-its-another-day-oracle-e-business-suite-pre-auth-rce-chain-cve-2025-61882well-well-well-its-another-day-oracle-e-business-suite-pre-auth-rce-chain-cve-2025-61882/"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-58360",
+      "name": "CVE-2025-58360 - GeoServer WMS GetMap Unauthenticated XXE",
+      "path": "2025/CVE-2025-58360.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "GeoServer versions prior to 2.25.6, 2.26.0-2.26.1 contain a critical unauthenticated XML External Entity (XXE) vulnerability in the WMS GetMap operation endpoint. The application accepts XML input without proper validation of external entities, allowing attackers to access arbitrary files from the server's file system, conduct Server-Side Request Forgery attacks against internal systems, or launch denial-of-service attacks through resource exhaustion. This vulnerability has been actively exploited in the wild as confirmed by the Canadian Centre for Cyber Security. CISA added it to the KEV catalogue on December 11, 2025, mandating federal agencies to patch by January 1, 2026. Discovered by XBOW AI-powered vulnerability platform.\n",
+      "cvss_score": 9.8,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "OSGeo",
+      "product": "GeoServer",
+      "cwe_id": "CWE-611",
+      "shodan_query": [
+        "http.title:\"GeoServer: Redirecting\"",
+        "http.html_hash:1093634893 \"Content-Disposition: inline\""
+      ],
+      "tags": [
+        "cve",
+        "cve2025",
+        "kev",
+        "geoserver",
+        "xxe",
+        "ssrf"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-58360",
+        "https://thehackernews.com/2025/12/cisa-flags-actively-exploited-geoserver.html",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+        "https://www.securityweek.com/recent-geoserver-vulnerability-exploited-in-attacks/"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-58177",
+      "name": "CVE-2025-58177 - n8n Workflow Automation - Cross-Site Scripting",
+      "path": "2025/CVE-2025-58177.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "n8n 1.24.0 to before 1.107.0 contains a stored cross-site scripting caused by malicious JavaScript in the initialMessages field of LangChain Chat Trigger node, letting authorized users execute scripts in browsers of public chat visitors, exploit requires authorized user to configure node and enable public access.\n",
+      "cvss_score": 5.4,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "n8n",
+      "product": "n8n Workflow Automation",
+      "cwe_id": "CWE-79",
+      "shodan_query": "http.favicon.hash:-831756631",
+      "tags": [
+        "cve",
+        "cve2025",
+        "n8n",
+        "workflow"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-58177",
+        "https://github.com/n8n-io/n8n/commit/d4ef191be0b39b65efa68559a3b8d5dad2e102b2",
+        "https://github.com/n8n-io/n8n/pull/18148",
+        "https://github.com/n8n-io/n8n/security/advisories/GHSA-mvh4-2cm2-6hpg"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-57819",
+      "name": "CVE-2025-57819 - Sangoma FreePBX Authentication Bypass and SQL Injection RCE",
+      "path": "2025/CVE-2025-57819.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Sangoma FreePBX versions 15, 16, and 17 contain a critical authentication bypass vulnerability due to insufficiently sanitized user-supplied data. The flaw allows unauthenticated attackers to access the FreePBX Administrator control panel (ACP) and perform arbitrary database manipulation leading to remote code execution. This zero-day vulnerability has been actively exploited since August 21, 2025, targeting systems with ACP exposed to the public internet and inadequate IP filtering. CISA added this to the Known Exploited Vulnerabilities catalogue on August 29, 2025, with a remediation deadline of September 19, 2025. Patched in endpoint versions 15.0.66, 16.0.89, and 17.0.3.\n",
+      "cvss_score": 10.0,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "Sangoma",
+      "product": "FreePBX",
+      "cwe_id": "CWE-89",
+      "shodan_query": [
+        "http.title:\"FreePBX Administration\""
+      ],
+      "tags": [
+        "cve",
+        "cve2025",
+        "kev",
+        "freepbx",
+        "auth-bypass",
+        "sqli",
+        "rce",
+        "zero-day"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-57819",
+        "https://thehackernews.com/2025/08/freepbx-servers-targeted-by-zero-day.html",
+        "https://horizon3.ai/attack-research/vulnerabilities/cve-2025-57819/",
+        "https://www.securityweek.com/sangoma-patches-critical-zero-day-exploited-to-hack-freepbx-servers/"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-57749",
+      "name": "CVE-2025-57749 - n8n Workflow Automation Vulnerability",
+      "path": "2025/CVE-2025-57749.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "n8n < 1.106.0 contains a path traversal caused by improper handling of symbolic links in the Read/Write File node, letting attackers with symlink creation ability read or write restricted files, exploit requires symlink creation capability.\n",
+      "cvss_score": 6.5,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "n8n",
+      "product": "n8n Workflow Automation",
+      "cwe_id": "CWE-59",
+      "shodan_query": "http.favicon.hash:-831756631",
+      "tags": [
+        "cve",
+        "cve2025",
+        "n8n",
+        "workflow"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-57749",
+        "https://github.com/n8n-io/n8n/pull/17735",
+        "https://github.com/n8n-io/n8n/security/advisories/GHSA-ggjm-f3g4-rwmm"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-53770",
+      "name": "CVE-2025-53770 - Microsoft SharePoint Server Deserialization RCE",
+      "path": "2025/CVE-2025-53770.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Microsoft SharePoint Server (on-premises) 2016, 2019, and Subscription Edition contain a critical unauthenticated deserialization vulnerability that allows remote code execution. The flaw stems from unsafe deserialization of untrusted data, enabling unauthorized attackers to execute code over a network without authentication. This vulnerability is a patch bypass for CVE-2025-49704 and part of the \"ToolShell\" vulnerability chain. Active zero-day exploitation has been observed since July 17, 2025, by threat actor CL-CRI-1040. CISA added this to the Known Exploited Vulnerabilities catalogue on July 20, 2025. SharePoint Online is not affected.\n",
+      "cvss_score": 9.8,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "Microsoft",
+      "product": "SharePoint Server",
+      "cwe_id": "CWE-502",
+      "shodan_query": [
+        "http.favicon.hash:-19436759",
+        "http.favicon.hash:-146638980",
+        "http.favicon.hash:-1969918997"
+      ],
+      "tags": [
+        "cve",
+        "cve2025",
+        "kev",
+        "microsoft",
+        "sharepoint",
+        "deserialization",
+        "rce",
+        "zero-day"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-53770",
+        "https://www.microsoft.com/en-us/msrc/blog/2025/07/customer-guidance-for-sharepoint-vulnerability-cve-2025-53770",
+        "https://www.cisa.gov/news-events/alerts/2025/07/20/microsoft-releases-guidance-exploitation-sharepoint-vulnerability-cve-2025-53770",
+        "https://unit42.paloaltonetworks.com/microsoft-sharepoint-cve-2025-49704-cve-2025-49706-cve-2025-53770/"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-53690",
+      "name": "CVE-2025-53690 - Sitecore CMS Deserialization of Untrusted Data RCE",
+      "path": "2025/CVE-2025-53690.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Sitecore Experience Platform (XP) 9.0, Experience Manager (XM), Experience Commerce (XC), and Managed Cloud deployments configured with sample ASP.NET machine keys from pre-2017 guides contain a critical deserialization vulnerability. Attackers can exploit exposed ASP.NET machine keys to deserialize untrusted data and achieve remote code execution. This zero-day vulnerability has been actively exploited since December 2024 for remote code execution and data theft, with threat actors deploying WeepSteel reconnaissance malware. CISA added this to the Known Exploited Vulnerabilities catalogue with a remediation deadline of September 25, 2025. Qualys assigned a QVS score of 92 indicating extremely high risk.\n",
+      "cvss_score": 9.0,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "Sitecore",
+      "product": "Sitecore Experience Platform",
+      "cwe_id": "CWE-502",
+      "shodan_query": "title:\"sitecore\"",
+      "tags": [
+        "cve",
+        "cve2025",
+        "kev",
+        "sitecore",
+        "deserialization",
+        "rce",
+        "zero-day"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-53690",
+        "https://support.sitecore.com/kb?id=kb_article_view&sysparm_article=KB1003865",
+        "https://thehackernews.com/2025/09/cisa-orders-immediate-patch-of-critical.html",
+        "https://socradar.io/cve-2025-53690-sitecore-deployments-weepsteel-malware/"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-53072",
+      "name": "CVE-2025-53072 - Oracle E-Business Suite Marketing Missing Authentication",
+      "path": "2025/CVE-2025-53072.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Oracle E-Business Suite Marketing component (Marketing Administration) versions 12.2.3 through 12.2.14 contains a critical missing authentication vulnerability that allows unauthenticated attackers with network access via HTTP to compromise Oracle Marketing. The easily exploitable flaw requires no user interaction and can result in complete takeover of Oracle Marketing with high impact on confidentiality, integrity, and availability. Successful attacks can lead to unauthorized access to sensitive resources. This vulnerability is related to CVE-2025-62481 and was disclosed in Oracle's October 2025 Critical Patch Update by Yassine Bengana of Michelin CERT.\n",
+      "cvss_score": 9.8,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "Oracle",
+      "product": "E-Business Suite Marketing",
+      "cwe_id": "CWE-306",
+      "shodan_query": "html:\"OA_HTML\"",
+      "tags": [
+        "cve",
+        "cve2025",
+        "oracle",
+        "ebusiness-suite",
+        "auth-bypass"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-53072",
+        "https://www.oracle.com/security-alerts/cpuoct2025.html",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-62481",
+        "https://cyberpress.org/oracle-e-business-suite-flaw/"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-52914",
+      "name": "CVE-2025-52914 - Mitel MiCollab SQL Injection",
+      "path": "2025/CVE-2025-52914.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "Mitel MiCollab Suite Applications Services component contains an SQL injection vulnerability affecting versions 10.0 (10.0.0.26) through 10.0 SP1 FP1 (10.0.1.101), and 9.8 SP3 (9.8.3.1) and earlier. The flaw stems from insufficient validation of user input in the Suite Applications Services component. Authenticated attackers can conduct SQL injection attacks to gain unauthorized access to provisioning information and execute arbitrary SQL database commands, with potential impacts on system confidentiality, integrity, and availability. Discovered by Jasper Korten of Bureau Veritas Cybersecurity and addressed in Mitel advisory MISA-2025-0008.\n",
+      "cvss_score": 8.8,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "Mitel",
+      "product": "MiCollab",
+      "cwe_id": "CWE-89",
+      "shodan_query": null,
+      "tags": [
+        "cve",
+        "cve2025",
+        "mitel",
+        "micollab",
+        "sqli"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-52914",
+        "https://www.mitel.com/support/security-advisories/mitel-product-security-advisory-misa-2025-0008",
+        "https://www.redpacketsecurity.com/cve_alert_cve-2025-52914/",
+        "https://latesthackingnews.com/2025/08/04/mitel-fixed-multiple-vulnerabilities-including-an-auth-bypass-flaw/"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-52554",
+      "name": "CVE-2025-52554 - n8n Workflow Automation Vulnerability",
+      "path": "2025/CVE-2025-52554.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "n8n < 1.99.1 contains an authorization vulnerability caused by improper access control in /rest/executions/:id/stop endpoint, letting authenticated users stop workflow executions they do not own, exploit requires user authentication.\n",
+      "cvss_score": 4.3,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "n8n",
+      "product": "n8n Workflow Automation",
+      "cwe_id": "CWE-862",
+      "shodan_query": "http.favicon.hash:-831756631",
+      "tags": [
+        "cve",
+        "cve2025",
+        "n8n",
+        "workflow"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-52554",
+        "https://github.com/dudanogueira/n8n/commit/ca2f90c7fbaa1d661ade2f45d587d9469bc287e1",
+        "https://github.com/n8n-io/n8n/commit/e5edc60e344924230baafb11fa1f0af788e9ca9a",
+        "https://github.com/n8n-io/n8n/pull/16405",
+        "https://github.com/n8n-io/n8n/security/advisories/GHSA-gq57-v332-7666"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-52478",
+      "name": "CVE-2025-52478 - n8n Workflow Automation - Cross-Site Scripting",
+      "path": "2025/CVE-2025-52478.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "n8n 1.77.0 to < 1.98.2 contains a stored XSS caused by improper sanitization in the Form Trigger node's HTML form element, letting authenticated attackers execute arbitrary JavaScript and perform account takeover via session cookie theft, exploit requires authentication.\n",
+      "cvss_score": 8.7,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "n8n",
+      "product": "n8n Workflow Automation",
+      "cwe_id": "CWE-79",
+      "shodan_query": "http.favicon.hash:-831756631",
+      "tags": [
+        "cve",
+        "cve2025",
+        "n8n",
+        "workflow",
+        "xss"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-52478",
+        "https://github.com/n8n-io/n8n/commit/7940384a85041a1890b1203d69c092c887312500",
+        "https://github.com/n8n-io/n8n/pull/16329",
+        "https://github.com/n8n-io/n8n/security/advisories/GHSA-hfmv-hhh3-43f2"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-49595",
+      "name": "CVE-2025-49595 - n8n Workflow Automation Vulnerability",
+      "path": "2025/CVE-2025-49595.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "n8n < 1.99.0 contains a denial of service caused by processing empty filesystem URIs in /rest/binary-data endpoint, letting authenticated attackers cause service unavailability via malformed URI requests.\n",
+      "cvss_score": 4.9,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "n8n",
+      "product": "n8n Workflow Automation",
+      "cwe_id": "CWE-400",
+      "shodan_query": "http.favicon.hash:-831756631",
+      "tags": [
+        "cve",
+        "cve2025",
+        "n8n",
+        "workflow"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-49595",
+        "https://github.com/n8n-io/n8n/commit/43c52a8b4f844e91b02e3cc9df92826a2d7b6052",
+        "https://github.com/n8n-io/n8n/pull/16229",
+        "https://github.com/n8n-io/n8n/security/advisories/GHSA-pr9r-gxgp-9rm8"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-49592",
+      "name": "CVE-2025-49592 - n8n Workflow Automation Vulnerability",
+      "path": "2025/CVE-2025-49592.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "n8n < 1.98.0 contains an open redirect caused by improper validation of redirect URLs in the login flow, letting authenticated users be redirected to attacker-controlled domains, exploit requires user authentication.\n",
+      "cvss_score": 4.6,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "n8n",
+      "product": "n8n Workflow Automation",
+      "cwe_id": "CWE-601",
+      "shodan_query": "http.favicon.hash:-831756631",
+      "tags": [
+        "cve",
+        "cve2025",
+        "n8n",
+        "workflow"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-49592",
+        "https://github.com/n8n-io/n8n/commit/4865d1e360a0fe7b045e295b5e1a29daad12314e",
+        "https://github.com/n8n-io/n8n/pull/16034",
+        "https://github.com/n8n-io/n8n/releases/tag/n8n%401.98.0",
+        "https://github.com/n8n-io/n8n/security/advisories/GHSA-5vj6-wjr7-5v9f"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-49113",
+      "name": "CVE-2025-49113 - Roundcube Webmail PHP Object Deserialization RCE",
+      "path": "2025/CVE-2025-49113.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Roundcube Webmail versions prior to 1.5.10 and 1.6.0-1.6.10 contain a critical PHP object deserialization vulnerability in the upload.php file. Authenticated users can trigger remote code execution through improper validation of the _from parameter in program/actions/settings/upload.php. The flaw affects all Roundcube versions released over the past decade, impacting approximately 2.5 million potentially vulnerable devices. Discovered by Kirill Firsov and disclosed on June 1, 2025, exploits are actively being sold in underground forums with an EPSS score of 81 indicating extremely high probability of exploitation.\n",
+      "cvss_score": 9.9,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "Roundcube",
+      "product": "Roundcube Webmail",
+      "cwe_id": "CWE-502",
+      "shodan_query": null,
+      "tags": [
+        "cve",
+        "cve2025",
+        "roundcube",
+        "deserialization",
+        "rce",
+        "zero-day"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-49113",
+        "https://www.offsec.com/blog/cve-2025-49113/",
+        "https://socradar.io/cve-2025-49113-roundcube-vulnerability-rce/",
+        "https://github.com/hakaioffsec/CVE-2025-49113-exploit"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-47813",
+      "name": "CVE-2025-47813 - Wing FTP Server Information Disclosure",
+      "path": "2025/CVE-2025-47813.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "Wing FTP Server before 7.4.4 discloses the full local installation path via loginok.html when a long UID cookie value is supplied. This template performs passive version detection against the exposed Wing FTP login page and flags versions before 7.4.4.\n",
+      "cvss_score": null,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "WFTPServer",
+      "product": "Wing FTP Server",
+      "cwe_id": "CWE-209",
+      "shodan_query": "http.html:\"Wing FTP Server\"",
+      "tags": [
+        "cve",
+        "cve2025",
+        "kev",
+        "wingftp",
+        "info-disclosure"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-47813",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2025-47813",
+        "https://www.wftpserver.com/serverhistory.htm"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-47812",
+      "name": "CVE-2025-47812 - Wing FTP Server Null Byte Injection Remote Code Execution",
+      "path": "2025/CVE-2025-47812.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Wing FTP Server versions prior to 7.4.4 contain a critical null byte injection vulnerability in the user and admin web interfaces. Improper handling of '\\0' bytes allows injection of arbitrary Lua code into user session files, enabling execution of arbitrary system commands with root or SYSTEM privileges. The vulnerability can be exploited via anonymous FTP accounts, requiring no authentication. Active exploitation has been observed since July 1, 2025, with threat actors using it to download malicious Lua files, conduct reconnaissance, create persistence through new users, and install ScreenConnect remote access tools. CISA added this to the KEV catalogue on July 14, 2025.\n",
+      "cvss_score": 10.0,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "Wing FTP Software",
+      "product": "Wing FTP Server",
+      "cwe_id": "CWE-158",
+      "shodan_query": null,
+      "tags": [
+        "cve",
+        "cve2025",
+        "kev",
+        "wingftp",
+        "null-byte",
+        "rce"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-47812",
+        "https://thehackernews.com/2025/07/critical-wing-ftp-server-vulnerability.html",
+        "https://www.huntress.com/blog/wing-ftp-server-remote-code-execution-cve-2025-47812-exploited-in-wild",
+        "https://arcticwolf.com/resources/blog/cve-2025-47812/"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-46343",
+      "name": "CVE-2025-46343 - n8n Workflow Automation - Cross-Site Scripting",
+      "path": "2025/CVE-2025-46343.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "n8n prior to version 1.90.0 contains a stored cross-site scripting caused by uploading crafted HTML files with controllable MIME types, letting authenticated attackers execute malicious scripts in other users' browsers, exploit requires uploading malicious files and setting MIME type via GET parameter.\n",
+      "cvss_score": 5.0,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "n8n",
+      "product": "n8n Workflow Automation",
+      "cwe_id": "CWE-79",
+      "shodan_query": "http.favicon.hash:-831756631",
+      "tags": [
+        "cve",
+        "cve2025",
+        "n8n",
+        "workflow"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-46343",
+        "https://github.com/n8n-io/n8n/pull/14350",
+        "https://github.com/n8n-io/n8n/pull/14685",
+        "https://github.com/n8n-io/n8n/releases/tag/n8n%401.90.0",
+        "https://github.com/n8n-io/n8n/security/advisories/GHSA-c8hm-hr8h-5xjw"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-4428",
+      "name": "CVE-2025-4428 - Ivanti EPMM Code Injection Remote Code Execution",
+      "path": "2025/CVE-2025-4428.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Ivanti Endpoint Manager Mobile (EPMM) version 12.5.0.0 and prior contains a critical code injection vulnerability in the API component. The flaw stems from insufficient validation of inputs passed to execution functions, failing to properly sanitize user inputs. Authenticated attackers can execute arbitrary code via crafted API requests. This vulnerability is actively exploited in the wild, chained with CVE-2025-4427 authentication bypass to achieve unauthenticated remote code execution. CISA has added this to the Known Exploited Vulnerabilities catalogue. Threat actors deploy malicious listeners as backdoors on compromised systems.\n",
+      "cvss_score": 8.8,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "Ivanti",
+      "product": "Endpoint Manager Mobile",
+      "cwe_id": "CWE-94",
+      "shodan_query": "product:\"Ivanti Endpoint Manager Mobile (EPMM)\"",
+      "tags": [
+        "cve",
+        "cve2025",
+        "kev",
+        "ivanti",
+        "code-injection",
+        "rce"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-4428",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+        "https://labs.watchtowr.com/expression-payloads-meet-mayhem-cve-2025-4427-and-cve-2025-4428/",
+        "https://socprime.com/blog/detect-cve-2025-4427-and-cve-2025-4428-exploitation/",
+        "https://www.picussecurity.com/resource/blog/malicious-listeners-ivanti-epmm-cve-2025-4427-cve-2025-4428-backdoors"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-4427",
+      "name": "CVE-2025-4427 - Ivanti EPMM Authentication Bypass Leading to RCE",
+      "path": "2025/CVE-2025-4427.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "Ivanti Endpoint Manager Mobile (EPMM) version 12.5.0.0 and prior contains an authentication bypass vulnerability in the API component resulting from insecure implementation of the Spring Framework library. Attackers can access protected resources without proper credentials via crafted API requests. This vulnerability is actively exploited in the wild and has been added to CISA's Known Exploited Vulnerabilities catalogue. Threat actors chain CVE-2025-4427 with CVE-2025-4428 to achieve full remote code execution. The vulnerability enables malicious actors to create backdoor listeners on compromised systems.\n",
+      "cvss_score": 7.5,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "Ivanti",
+      "product": "Endpoint Manager Mobile",
+      "cwe_id": "CWE-288",
+      "shodan_query": "product:\"Ivanti Endpoint Manager Mobile (EPMM)\"",
+      "tags": [
+        "cve",
+        "cve2025",
+        "kev",
+        "ivanti",
+        "auth-bypass",
+        "rce"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-4427",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+        "https://labs.watchtowr.com/expression-payloads-meet-mayhem-cve-2025-4427-and-cve-2025-4428/",
+        "https://socprime.com/blog/detect-cve-2025-4427-and-cve-2025-4428-exploitation/"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-42944",
+      "name": "CVE-2025-42944 - SAP NetWeaver RMI-P4 Deserialization Remote Code Execution",
+      "path": "2025/CVE-2025-42944.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "SAP NetWeaver Application Server Java version 7.50 contains a critical insecure deserialization vulnerability in the Remote Method Invocation Protocol (RMI-P4) module. Unauthenticated remote attackers can exploit the system by submitting malicious payloads to open ports (typically 5NN04). The vulnerability achieves maximum CVSS score of 10.0 due to requiring no authentication, having low attack complexity, needing no user interaction, enabling network exploitation, and allowing complete system compromise with changed scope. Multiple public PoC exploits exist. SAP underpins core enterprise systems including ERP, CRM, and SCM platforms, making this a high-value target.\n",
+      "cvss_score": 10.0,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "SAP",
+      "product": "NetWeaver Application Server Java",
+      "cwe_id": "CWE-502",
+      "shodan_query": "http.favicon.hash:-266008933",
+      "tags": [
+        "cve",
+        "cve2025",
+        "sap",
+        "deserialization",
+        "rce"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-42944",
+        "https://zeropath.com/blog/sap-netweaver-cve-2025-42944",
+        "https://redrays.io/blog/cve-2025-42944-critical-severity-remote-code-execution-in-sap-netweaver-rmi-p4/",
+        "https://www.bleepingcomputer.com/news/security/sap-fixes-maximum-severity-netweaver-command-execution-flaw/"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-41244",
+      "name": "CVE-2025-41244 - VMware Aria Operations and Tools Privilege Escalation",
+      "path": "2025/CVE-2025-41244.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "VMware Aria Operations and VMware Tools contain a local privilege escalation vulnerability resulting from untrusted search paths. The service discovery feature can be abused by unprivileged users through staging of malicious binaries that are subsequently elevated for version discovery. A malicious local actor with non-administrative privileges on a VM with VMware Tools installed and managed by Aria Operations with SDMP enabled can exploit this to escalate privileges to root. This zero-day vulnerability has been actively exploited since mid-October 2024, attributed to UNC5174, a suspected China-sponsored group. CISA added it to the KEV catalogue with a remediation deadline of November 20, 2025.\n",
+      "cvss_score": 7.8,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "VMware (Broadcom)",
+      "product": "Aria Operations and VMware Tools",
+      "cwe_id": "CWE-426",
+      "shodan_query": null,
+      "tags": [
+        "cve",
+        "cve2025",
+        "kev",
+        "vmware",
+        "privilege-escalation",
+        "zero-day"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-41244",
+        "https://blog.nviso.eu/2025/09/29/you-name-it-vmware-elevates-it-cve-2025-41244/",
+        "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/36149",
+        "https://socprime.com/blog/cve-2025-41244-zero-day-vulnerability/"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-40602",
+      "name": "CVE-2025-40602 - SonicWall SMA 1000 AMC Privilege Escalation",
+      "path": "2025/CVE-2025-40602.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "CVE-2025-40602 is a local privilege escalation vulnerability in the appliance management console (AMC) of SonicWall Secure Mobile Access (SMA) 1000 series appliances. The vulnerability stems from insufficient authorization in the AMC, allowing authenticated remote attackers to escalate privileges on affected devices. When chained with CVE-2025-23006, attackers can achieve unauthenticated remote code execution with root privileges. This zero-day vulnerability has been actively exploited in the wild and was added to CISA's Known Exploited Vulnerabilities catalogue on December 17, 2025.\n",
+      "cvss_score": 6.6,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "sonicwall",
+      "product": "secure-mobile-access-sma-1000",
+      "cwe_id": "CWE-285",
+      "shodan_query": "title:\"Appliance Management Console\"",
+      "tags": [
+        "cve",
+        "cve2025",
+        "sonicwall",
+        "sma",
+        "privilege-escalation",
+        "kev",
+        "zero-day"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-40602",
+        "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2025-0019",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+        "https://thehackernews.com/2025/12/sonicwall-fixes-actively-exploited-cve.html",
+        "https://www.tenable.com/blog/cve-2025-40602-sonicwall-secure-mobile-access-sma-1000-zero-day-exploited",
+        "https://www.bleepingcomputer.com/news/security/sonicwall-warns-of-new-sma1000-zero-day-exploited-in-attacks/"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-40554",
+      "name": "CVE-2025-40554 - SolarWinds Web Help Desk Authentication Bypass",
+      "path": "2025/CVE-2025-40554.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "SolarWinds Web Help Desk version 12.8.8 Hotfix 1 and prior contains a critical authentication bypass vulnerability (CWE-1390: Weak Authentication) that allows a remote unauthenticated attacker to execute actions or methods on a target system which are intended to be gated by authentication. With a CVSS score of 9.8, this vulnerability can be exploited over the network with low complexity, requires no privileges, and has high impact on confidentiality, integrity, and availability. Based upon the vendor supplied CVSS scores, the impact is equivalent to the RCE deserialization vulnerabilities, likely meaning it can also be leveraged for remote code execution. This vulnerability was discovered by watchTowr's Piotr Bazydlo and disclosed on January 28, 2026. Customers are advised to update to Web Help Desk version 2026.1 on an urgent basis outside of normal patching cycles.\n",
+      "cvss_score": 9.8,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "SolarWinds",
+      "product": "Web Help Desk",
+      "cwe_id": "CWE-1390",
+      "shodan_query": "http.favicon.hash:\"1895809524\"",
+      "tags": [
+        "cve",
+        "cve2025",
+        "solarwinds",
+        "webhelpdesk",
+        "authbypass",
+        "rce"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-40554",
+        "https://www.rapid7.com/blog/post/etr-multiple-critical-solarwinds-web-help-desk-vulnerabilities-cve-2025-40551-40552-40553-40554/",
+        "https://www.bleepingcomputer.com/news/security/solarwinds-warns-of-critical-web-help-desk-rce-auth-bypass-flaws/"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-40552",
+      "name": "CVE-2025-40552 - SolarWinds Web Help Desk Authentication Bypass",
+      "path": "2025/CVE-2025-40552.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "SolarWinds Web Help Desk version 12.8.8 Hotfix 1 and prior contains a critical authentication bypass vulnerability (CWE-1390: Weak Authentication) that allows a remote unauthenticated attacker to execute actions or methods on a target system which are intended to be gated by authentication. With a CVSS score of 9.8, this vulnerability can be exploited over the network with low complexity, requires no privileges, and has high impact on confidentiality, integrity, and availability. Based upon the vendor supplied CVSS scores, the impact is equivalent to the RCE deserialization vulnerabilities, likely meaning it can also be leveraged for remote code execution. This vulnerability was discovered by watchTowr's Piotr Bazydlo and disclosed on January 28, 2026. Customers are advised to update to Web Help Desk version 2026.1 on an urgent basis outside of normal patching cycles.\n",
+      "cvss_score": 9.8,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "SolarWinds",
+      "product": "Web Help Desk",
+      "cwe_id": "CWE-1390",
+      "shodan_query": "http.favicon.hash:\"1895809524\"",
+      "tags": [
+        "cve",
+        "cve2025",
+        "solarwinds",
+        "webhelpdesk",
+        "authbypass",
+        "rce"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-40552",
+        "https://www.rapid7.com/blog/post/etr-multiple-critical-solarwinds-web-help-desk-vulnerabilities-cve-2025-40551-40552-40553-40554/",
+        "https://www.bleepingcomputer.com/news/security/solarwinds-warns-of-critical-web-help-desk-rce-auth-bypass-flaws/"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-40551",
+      "name": "CVE-2025-40551 - SolarWinds Web Help Desk Deserialization RCE",
+      "path": "2025/CVE-2025-40551.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "SolarWinds Web Help Desk before 2026.1 contains an unauthenticated deserialization vulnerability that can lead to remote code execution. This template reuses the public Web Help Desk build token to identify affected versions.\n",
+      "cvss_score": null,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "SolarWinds",
+      "product": "Web Help Desk",
+      "cwe_id": "CWE-502",
+      "shodan_query": "http.favicon.hash:\"1895809524\"",
+      "tags": [
+        "cve",
+        "cve2025",
+        "kev",
+        "solarwinds",
+        "webhelpdesk",
+        "deserialization",
+        "rce"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-40551",
+        "https://www.solarwinds.com/trust-center/security-advisories/CVE-2025-40551",
+        "https://documentation.solarwinds.com/en/success_center/whd/content/release_notes/whd_2026-1_release_notes.htm",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2025-40551"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-40536",
+      "name": "CVE-2025-40536 - SolarWinds Web Help Desk Security Control Bypass",
+      "path": "2025/CVE-2025-40536.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "SolarWinds Web Help Desk before 2026.1 contains a security control bypass vulnerability that may allow unauthenticated access to restricted functionality. This template reuses the public Web Help Desk build token to identify affected versions.\n",
+      "cvss_score": null,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "SolarWinds",
+      "product": "Web Help Desk",
+      "cwe_id": "CWE-693",
+      "shodan_query": "http.favicon.hash:\"1895809524\"",
+      "tags": [
+        "cve",
+        "cve2025",
+        "kev",
+        "solarwinds",
+        "webhelpdesk",
+        "security-bypass"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-40536",
+        "https://www.solarwinds.com/trust-center/security-advisories/CVE-2025-40536",
+        "https://documentation.solarwinds.com/en/success_center/whd/content/release_notes/whd_2026-1_release_notes.htm",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2025-40536"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-37164",
+      "name": "CVE-2025-37164 - HPE OneView Unauthenticated Remote Code Execution",
+      "path": "2025/CVE-2025-37164.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "CVE-2025-37164 is a critical unauthenticated remote code execution vulnerability in HPE OneView with a maximum CVSS score of 10.0. The vulnerability stems from improper control of code generation (CWE-94), allowing unauthenticated threat actors to exploit the flaw via low-complexity code injection attacks over the network. No privileges or user interaction are required for exploitation, and successful attacks can grant total control over data centres. The vulnerability affects all HPE OneView versions released before v11.00 (specifically versions 5.20 through 10.20). HPE has released version 11.00 and security hotfixes for affected versions to address this critical flaw.\n\nHow does this detection method work? This template matches on the OneView title tag, extracts the version from the JavaScript artifactVersion variable, and flags instances running versions below 11.00 as potentially vulnerable. Note that instances flagged by this template are possibly vulnerable as the detection method cannot determine whether the Z7550-98077 security hotfix has been applied to versions 5.20-10.20 - only upgrading to version 11.00+ can be reliably verified as patched.\n",
+      "cvss_score": 10.0,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "hpe",
+      "product": "oneview",
+      "cwe_id": "CWE-94",
+      "shodan_query": "http.favicon.hash:-1569311459",
+      "tags": [
+        "cve",
+        "cve2025",
+        "hpe",
+        "oneview",
+        "rce",
+        "code-injection",
+        "critical"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-37164",
+        "https://support.hpe.com/hpesc/public/docDisplay?docId=a00117617en_us&docLocale=en_US",
+        "https://www.bleepingcomputer.com/news/security/hpe-warns-of-maximum-severity-rce-flaw-in-oneview-software/",
+        "https://securityonline.info/cve-2025-37164-cvss-10-0-unauthenticated-hpe-oneview-rce-grants-total-control-over-data-centers/",
+        "https://ccb.belgium.be/advisories/warning-critical-rce-vulnerability-identified-hpe-oneview-patch-immediately"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-34299",
+      "name": "CVE-2025-34299 - Monsta FTP Unauthenticated Arbitrary File Upload RCE",
+      "path": "2025/CVE-2025-34299.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Monsta FTP versions 2.11 and earlier contain a critical unauthenticated arbitrary file upload vulnerability in the API endpoint /mftp/application/api/api.php. The application accepts user-supplied file paths through the localPath parameter without adequate validation, allowing attackers to manipulate input and write files to arbitrary locations on the web server. This flaw enables remote code execution without authentication or prior access. The vulnerability has been actively exploited in the wild since its disclosure. Patches released in version 2.11.3 on August 26, 2025.\n",
+      "cvss_score": 9.3,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "Monsta",
+      "product": "Monsta FTP",
+      "cwe_id": "CWE-434",
+      "shodan_query": "http.title:\"Monsta FTP\"",
+      "tags": [
+        "cve",
+        "cve2025",
+        "monsta",
+        "ftp",
+        "file-upload",
+        "rce",
+        "zero-day"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-34299",
+        "https://labs.watchtowr.com/whats-that-coming-over-the-hill-monsta-ftp-remote-code-execution-cve-2025-34299/",
+        "https://github.com/advisories/GHSA-42m5-3r2p-wr92",
+        "https://www.vulncheck.com/advisories/monsta-ftp-unauthenticated-arbitrary-file-upload"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-31324",
+      "name": "CVE-2025-31324 - SAP NetWeaver Visual Composer Unrestricted File Upload",
+      "path": "2025/CVE-2025-31324.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "SAP NetWeaver Visual Composer Metadata Uploader contains a critical unrestricted file upload vulnerability due to missing authorization checks on the /developmentserver/metadatauploader endpoint. Unauthenticated remote attackers can upload arbitrary files (JSP, WAR, JAR, or executables) to the application server's filesystem and execute them with SAP Java stack privileges, often at administrator level. This zero-day vulnerability has been actively exploited since March 2025 by BianLian and RansomEXX ransomware groups. CISA added it to the Known Exploited Vulnerabilities catalogue on April 29, 2025, with a remediation deadline of May 20, 2025.\n",
+      "cvss_score": 10.0,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "SAP",
+      "product": "NetWeaver Visual Composer",
+      "cwe_id": "CWE-434",
+      "shodan_query": "http.favicon.hash:-266008933",
+      "tags": [
+        "cve",
+        "cve2025",
+        "kev",
+        "sap",
+        "file-upload",
+        "rce",
+        "zero-day"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-31324",
+        "https://www.ionix.io/blog/exploited-sap-netweaver-visual-composer-unauthenticated-file-upload-vulnerability-cve-2025-31324/",
+        "https://www.paloaltonetworks.com/blog/security-operations/rapid-response-to-cve-2025-31324-mitigating-sap-netweaver-visual-composer-exploitation/",
+        "https://ccb.belgium.be/advisories/warning-critical-actively-exploited-improper-authorization-vulnerability-sap-netweaver"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-30220",
+      "name": "CVE-2025-30220 - GeoServer WFS Service XML External Entity Processing",
+      "path": "2025/CVE-2025-30220.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "GeoServer versions prior to 2.27.1, 2.26.3, and 2.25.7 contain a critical XML External Entity (XXE) vulnerability in the WFS service. Insufficient entity resolution validation in the GeoTools XSD library bypasses AllowListEntityResolver security controls, enabling attackers to trigger parsing of external DTDs and entities. This allows Out-of-Band data exfiltration of local files accessible by the GeoServer process and Server-Side Request Forgery attacks. The vulnerability affects approximately 2.5 million potentially vulnerable devices and can be exploited without authentication.\n",
+      "cvss_score": 9.9,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "OSGeo",
+      "product": "GeoServer",
+      "cwe_id": "CWE-611",
+      "shodan_query": [
+        "http.title:\"GeoServer: Redirecting\"",
+        "http.html_hash:1093634893 \"Content-Disposition: inline\""
+      ],
+      "tags": [
+        "cve",
+        "cve2025",
+        "geoserver",
+        "xxe",
+        "ssrf"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-30220",
+        "https://github.com/geoserver/geoserver/security/advisories/GHSA-jj54-8f66-c5pc",
+        "https://geoserver.org/vulnerability/2025/06/10/cve-disclosure.html",
+        "https://kudelskisecurity.com/research/xml-external-entity-xxe-processing-vulnerability-in-geoserver-wfs-service-cve-2025-30220"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-26466",
+      "name": "CVE-2025-26466 - OpenSSH Pre-Authentication Denial of Service",
+      "path": "2025/CVE-2025-26466.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "OpenSSH client and server versions 9.5p1 through 9.9p1 contain a pre-authentication denial of service vulnerability. For each ping packet received, the SSH server allocates a pong packet in a memory buffer and stores it in a queue, which is only freed after the server/client key exchange completes. Malicious clients can continuously send ping packets causing uncontrolled memory consumption on the server, leading to denial of service. The vulnerability requires high attack complexity and affects approximately 3.5 million internet-facing OpenSSH instances. Patched in OpenSSH 9.9p2.\n",
+      "cvss_score": 5.9,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "OpenBSD",
+      "product": "OpenSSH",
+      "cwe_id": "CWE-400",
+      "shodan_query": null,
+      "tags": [
+        "cve",
+        "cve2025",
+        "ssh",
+        "openssh",
+        "dos"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-26466",
+        "https://thehackernews.com/2025/02/new-openssh-flaws-enable-man-in-middle.html",
+        "https://github.com/rxerium/CVE-2025-26466",
+        "https://www.upwind.io/feed/openssh-vulnerabilities-cve-2025-26465-and-cve-2025-26466-enable-man-in-the-middle-and-dos-attacks"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-26465",
+      "name": "CVE-2025-26465 - OpenSSH Host Key Verification Man-in-the-Middle",
+      "path": "2025/CVE-2025-26465.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "OpenSSH client versions 6.8p1 through 9.9p1 contain a logic error in host key verification when the VerifyHostKeyDNS option is enabled. The vulnerability stems from mishandling error codes during host key verification, allowing malicious actors to impersonate legitimate servers through man-in-the-middle attacks. For successful exploitation, attackers must first exhaust the client's memory resources, increasing attack complexity. This flaw affects approximately 3.5 million internet-facing OpenSSH servers. Patched in OpenSSH 9.9p2.\n",
+      "cvss_score": 6.8,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "OpenBSD",
+      "product": "OpenSSH",
+      "cwe_id": "CWE-390",
+      "shodan_query": null,
+      "tags": [
+        "cve",
+        "cve2025",
+        "ssh",
+        "openssh",
+        "mitm"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-26465",
+        "https://thehackernews.com/2025/02/new-openssh-flaws-enable-man-in-middle.html",
+        "https://www.upwind.io/feed/openssh-vulnerabilities-cve-2025-26465-and-cve-2025-26466-enable-man-in-the-middle-and-dos-attacks",
+        "https://socprime.com/blog/cve-2025-26465-cve-2025-26466-vulnerabilities/"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-26399",
+      "name": "CVE-2025-26399 - SolarWinds Web Help Desk Unauthenticated Deserialization RCE",
+      "path": "2025/CVE-2025-26399.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "SolarWinds Web Help Desk version 12.8.7 and prior contains a critical unauthenticated AjaxProxy deserialization vulnerability that enables remote code execution without authentication or user interaction. Attackers can exploit this flaw to execute arbitrary commands on the host machine. This vulnerability represents the third iteration of patch bypasses, following CVE-2024-28988 and the originally exploited CVE-2024-28986. With a CVSS score of 9.8, this requires immediate patching to version 12.8.7 Hotfix 1. The complete attack vector requires no privileges, low complexity, and has high impact on confidentiality, integrity, and availability.\n",
+      "cvss_score": 9.8,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "SolarWinds",
+      "product": "Web Help Desk",
+      "cwe_id": "CWE-502",
+      "shodan_query": "http.favicon.hash:\"1895809524\"",
+      "tags": [
+        "cve",
+        "cve2025",
+        "solarwinds",
+        "webhelpdesk",
+        "deserialization",
+        "rce"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-26399",
+        "https://thehackernews.com/2025/09/solarwinds-releases-hotfix-for-critical.html",
+        "https://securityonline.info/cve-2025-26399-cvss-9-8-solarwinds-web-help-desk-hit-by-critical-rce-vulnerability/",
+        "https://www.wiz.io/vulnerability-database/cve/cve-2025-26399"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-24016",
+      "name": "CVE-2025-24016 - Wazuh Server Unsafe Deserialization Remote Code Execution",
+      "path": "2025/CVE-2025-24016.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Wazuh, a free and open-source threat prevention platform, contains a critical unsafe deserialization vulnerability affecting versions 4.4.0 through 4.9.0. The flaw exists in the DistributedAPI parameter handling where JSON-serialized data is deserialized using as_wazuh_object without proper sanitization. Attackers with API access or, in certain configurations, compromised agents can inject unsanitized dictionaries to forge unhandled exceptions and execute arbitrary Python code on Wazuh servers. Active exploitation by Mirai botnets has been observed since March 2025. CISA added this vulnerability to the Known Exploited Vulnerabilities catalogue. Version 4.9.1 contains the fix.\n",
+      "cvss_score": 9.9,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "Wazuh",
+      "product": "Wazuh Platform",
+      "cwe_id": "CWE-502",
+      "shodan_query": null,
+      "tags": [
+        "cve",
+        "cve2025",
+        "kev",
+        "wazuh",
+        "deserialization",
+        "rce"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-24016",
+        "https://www.cve.org/CVERecord?id=CVE-2025-24016",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+        "https://securityonline.info/critical-wazuh-rce-cve-2025-24016-actively-exploited-by-mirai-botnets/",
+        "https://github.com/rxerium/CVE-2025-24016"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-23006",
+      "name": "CVE-2025-23006 - SonicWall SMA1000 Deserialization",
+      "path": "2025/CVE-2025-23006.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "SonicWall SMA1000 Appliance Management Console and Central Management Console contain a pre-authentication deserialization vulnerability that can allow unauthenticated remote command execution. This template passively extracts the SMA version from the Server header and matches affected builds before 12.4.3-02854.\n",
+      "cvss_score": 9.8,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "sonicwall",
+      "product": "secure-mobile-access-sma-1000",
+      "cwe_id": "CWE-502",
+      "shodan_query": "title:\"Appliance Management Console\"",
+      "tags": [
+        "cve",
+        "cve2025",
+        "sonicwall",
+        "sma",
+        "rce",
+        "kev"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-23006",
+        "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2025-0002",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-20337",
+      "name": "CVE-2025-20337 - Cisco Identity Services Engine Unauthenticated Remote Code Execution",
+      "path": "2025/CVE-2025-20337.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Cisco Identity Services Engine (ISE) versions 3.3 and 3.4, and ISE Passive Identity Connector (ISE-PIC) versions 3.1.0 through 3.4.0 contain a critical vulnerability stemming from insufficient validation of user-supplied input in a specific API. Unauthenticated remote attackers can exploit this flaw by sending crafted API requests to execute arbitrary code with root privileges. With a CVSS score of 10.0, this represents maximum severity. CISA added this vulnerability to the Known Exploited Vulnerabilities catalogue on July 28, 2025, confirming active exploitation in the wild. This template provides indirect detection using timestamp analysis.\n",
+      "cvss_score": 10.0,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "Cisco",
+      "product": "Identity Services Engine",
+      "cwe_id": "CWE-269",
+      "shodan_query": [
+        "html:\"Identity Services Engine\""
+      ],
+      "tags": [
+        "cve",
+        "cve2025",
+        "kev",
+        "cisco",
+        "ise",
+        "rce"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-20337",
+        "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-ise-unauth-rce-ZAd2GnJ6",
+        "https://securityaffairs.com/180044/security/cisco-patches-critical-cve-2025-20337-bug-in-identity-services-engine-with-cvss-10-severity.html"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-14611",
+      "name": "CVE-2025-14611 - Gladinet CentreStack and TrioFox Hardcoded Cryptographic Keys",
+      "path": "2025/CVE-2025-14611.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Gladinet CentreStack and TrioFox prior to 16.12.10420.56791 use hardcoded values in their AES cryptoscheme, weakening exposed endpoints and enabling unauthenticated local file inclusion when chained with crafted requests. This template extracts the exposed CentreStack build number and checks the affected range.\n",
+      "cvss_score": null,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "Gladinet",
+      "product": "CentreStack and TrioFox",
+      "cwe_id": "CWE-798",
+      "shodan_query": "title:\"CentreStack\"",
+      "tags": [
+        "cve",
+        "cve2025",
+        "kev",
+        "centrestack",
+        "triofox",
+        "gladinet",
+        "hardcoded-keys",
+        "lfi"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-14611",
+        "https://www.huntress.com/blog/active-exploitation-gladinet-centrestack-triofox-insecure-cryptography-vulnerability",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2025-14611"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-11371",
+      "name": "CVE-2025-11371 - Gladinet CentreStack and TrioFox Local File Inclusion",
+      "path": "2025/CVE-2025-11371.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "Gladinet CentreStack and TrioFox enterprise file-sharing products contain an unauthenticated local file inclusion vulnerability that enables unauthorized disclosure of system files. The flaw affects all versions prior to and including 16.7.10368.56560. Attackers chain this vulnerability with other exploits to access machine keys from web.config files, leading to remote code execution. Active exploitation has been detected in the wild since September 2025, with CISA adding it to the Known Exploited Vulnerabilities catalogue on November 4, 2025. Gladinet released a patched version 16.10.10408.56683 on October 14, 2025.\n",
+      "cvss_score": 7.5,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "Gladinet",
+      "product": "CentreStack and TrioFox",
+      "cwe_id": "CWE-552",
+      "shodan_query": "title:\"CentreStack\"",
+      "tags": [
+        "cve",
+        "cve2025",
+        "kev",
+        "panel",
+        "centrestack",
+        "gladinet",
+        "lfi",
+        "zero-day"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-11371",
+        "https://thehackernews.com/2025/10/from-lfi-to-rce-active-exploitation.html",
+        "https://www.huntress.com/blog/active-exploitation-gladinet-centrestack-triofox-insecure-cryptography-vulnerability",
+        "https://securityaffairs.com/183259/hacking/cve-2025-11371-unpatched-zero-day-in-gladinet-centrestack-triofox-under-attack.html"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-10035",
+      "name": "CVE-2025-10035 - Fortra GoAnywhere MFT Critical Deserialization Remote Code Execution",
+      "path": "2025/CVE-2025-10035.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Fortra GoAnywhere Managed File Transfer versions prior to 7.8.4 and sustain releases prior to 7.6.3 contain a critical deserialization vulnerability in the License Servlet Admin Console. The flaw allows unauthenticated remote attackers to deserialize arbitrary actor-controlled objects through validly forged license response signatures, leading to command injection and remote code execution. This vulnerability has been actively exploited in the wild by Storm-1175 threat group deploying Medusa ransomware. With a CVSS score of 10.0, this represents maximum severity requiring immediate patching.\n",
+      "cvss_score": 10.0,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "Fortra",
+      "product": "GoAnywhere Managed File Transfer",
+      "cwe_id": "CWE-502",
+      "shodan_query": null,
+      "tags": [
+        "cve",
+        "cve2025",
+        "critical",
+        "goanywhere",
+        "deserialization",
+        "rce"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-10035",
+        "https://www.fortra.com/security/advisories/product-security/fi-2025-012",
+        "https://www.microsoft.com/en-us/security/blog/2025/10/06/investigating-active-exploitation-of-cve-2025-10035-goanywhere-managed-file-transfer-vulnerability/",
+        "https://www.vulncheck.com/blog/cve-2025-10035-fortra-go-anywhere-mft"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-0994",
+      "name": "CVE-2025-0994 - Trimble Cityworks Deserialization Remote Code Execution",
+      "path": "2025/CVE-2025-0994.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Trimble Cityworks versions prior to 15.8.9 and Cityworks with Office Companion versions prior to 23.10 contain a critical deserialization vulnerability that allows authenticated attackers to perform remote code execution against Microsoft Internet Information Services (IIS) web servers. This vulnerability has been actively exploited in the wild, with threat actors deploying Rust-based loaders launching Cobalt Strike and Go-based remote access tool VShell. CISA has confirmed active exploitation and added this vulnerability to the Known Exploited Vulnerabilities catalogue.\n",
+      "cvss_score": 8.6,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "Trimble",
+      "product": "Cityworks",
+      "cwe_id": "CWE-502",
+      "shodan_query": null,
+      "tags": [
+        "cve",
+        "cve2025",
+        "kev",
+        "cityworks",
+        "deserialization",
+        "rce"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-0994",
+        "https://www.cisa.gov/news-events/ics-advisories/icsa-25-037-04",
+        "https://censys.com/advisory/cve-2025-0994",
+        "https://thehackernews.com/2025/02/cisa-warns-of-active-exploitation-in.html"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2024-7593",
+      "name": "CVE-2024-7593 - Ivanti Virtual Traffic Manager Authentication Bypass",
+      "path": "2024/CVE-2024-7593.yaml",
+      "year": "2024",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Ivanti Virtual Traffic Manager (vTM) versions other than 22.2R1 and 22.7R2 are affected by a critical authentication bypass vulnerability due to incorrect implementation of an authentication algorithm. Remote unauthenticated attackers can exploit this flaw to bypass authentication of the admin panel and create administrator accounts, granting them full control over the system. This zero-day vulnerability has been actively exploited in the wild and is listed in CISA's KEV catalogue.",
+      "cvss_score": 9.8,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "Ivanti",
+      "product": "Virtual Traffic Manager",
+      "cwe_id": "CWE-287",
+      "shodan_query": null,
+      "tags": [
+        "cve",
+        "cve2024",
+        "ivanti",
+        "virtual-traffic-manager",
+        "auth-bypass",
+        "kev"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-7593",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+        "https://www.tenable.com/blog/cve-2024-7593-ivanti-virtual-traffic-manager-authentication-bypass-vulnerability",
+        "https://www.cyfirma.com/research/cve-2024-7593-vulnerability-in-ivanti-virtual-traffic-manager-vulnerability-analysis-and-exploitation/"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2024-57378",
+      "name": "CVE-2024-57378 - Wazuh SIEM Broken Access Control",
+      "path": "2024/CVE-2024-57378.yaml",
+      "year": "2024",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "Wazuh SIEM version 4.8.2 is affected by a broken access control vulnerability due to improper access control mechanisms. This security flaw enables attackers to create internal user accounts without proper role assignment, bypassing normal authentication controls. The vulnerability potentially enables unauthorized privilege escalation and access to sensitive resources within the SIEM platform, impacting confidentiality, integrity, and availability of the system.",
+      "cvss_score": 7.3,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "Wazuh",
+      "product": "Wazuh SIEM",
+      "cwe_id": "CWE-284",
+      "shodan_query": null,
+      "tags": [
+        "cve",
+        "cve2024",
+        "wazuh",
+        "access-control"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-57378",
+        "https://www.cvedetails.com/vulnerability-list/vendor_id-19545/product_id-51675/Wazuh-Wazuh.html"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2024-55550",
+      "name": "CVE-2024-55550 - Mitel MiCollab Path Traversal",
+      "path": "2024/CVE-2024-55550.yaml",
+      "year": "2024",
+      "author": "rxerium",
+      "severity": "low",
+      "description": "Mitel MiCollab contains a path traversal vulnerability affecting versions through 9.8 SP1 FP2. This template passively extracts the MiCollab server version from exposed portal resources and matches affected versions through 9.8.1.201.\n",
+      "cvss_score": 2.7,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "Mitel",
+      "product": "MiCollab",
+      "cwe_id": null,
+      "shodan_query": null,
+      "tags": [
+        "cve",
+        "cve2024",
+        "kev",
+        "mitel",
+        "micollab",
+        "path-traversal"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-55550",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2024-42009",
+      "name": "CVE-2024-42009 - Roundcube Webmail Cross-Site Scripting",
+      "path": "2024/CVE-2024-42009.yaml",
+      "year": "2024",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Roundcube Webmail versions through 1.5.7 and 1.6.x through 1.6.7 contain a critical cross-site scripting (XSS) vulnerability that allows a remote attacker to steal and send emails of a victim via a crafted e-mail message. The vulnerability abuses a desanitization issue in message_body() in program/actions/mail/show.php. This vulnerability was added to CISA's Known Exploited Vulnerabilities catalog on June 9, 2025, and has been actively exploited by UNC1151 (associated with Belarusian government) and Russian intelligence services to steal user credentials in spearphishing campaigns.\n",
+      "cvss_score": 9.3,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "Roundcube",
+      "product": "Roundcube Webmail",
+      "cwe_id": "CWE-79",
+      "shodan_query": null,
+      "tags": [
+        "cve",
+        "cve2024",
+        "kev",
+        "roundcube",
+        "xss"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-42009",
+        "https://github.com/advisories/GHSA-j43g-prf4-578j",
+        "https://www.wiz.io/vulnerability-database/cve/cve-2024-42009",
+        "https://www.cisa.gov/news-events/alerts/2025/06/09/cisa-adds-two-known-exploited-vulnerabilities-catalog",
+        "https://cert.pl/en/posts/2025/06/unc1151-campaign-roundcube/"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2024-41713",
+      "name": "CVE-2024-41713 - Mitel MiCollab Path Traversal",
+      "path": "2024/CVE-2024-41713.yaml",
+      "year": "2024",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Mitel MiCollab through 9.8 SP1 FP2, version 9.8.1.201, contains a path traversal vulnerability in the NuPoint Unified Messaging component. This template extracts the MiCollab portal version and flags versions up to and including 9.8.1.201.\n",
+      "cvss_score": null,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "Mitel",
+      "product": "MiCollab",
+      "cwe_id": "CWE-22",
+      "shodan_query": null,
+      "tags": [
+        "cve",
+        "cve2024",
+        "kev",
+        "mitel",
+        "micollab",
+        "path-traversal"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-41713",
+        "https://www.mitel.com/support/security-advisories/mitel-product-security-advisory-misa-2024-0029",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2024-41713"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2024-39929",
+      "name": "CVE-2024-39929 - Exim Mail Server RFC 2231 Header Parsing Bypass",
+      "path": "2024/CVE-2024-39929.yaml",
+      "year": "2024",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "Exim mail transfer agent through version 4.97.1 contains a parsing defect in handling multiline RFC 2231-compliant email headers. This vulnerability allows remote attackers to bypass the $mime_filename extension-blocking protection mechanism, potentially enabling delivery of executable attachments to end-user mailboxes despite security filters. The flaw affects approximately 1.5 million publicly exposed Exim servers running vulnerable versions, with proof-of-concept exploits available.\n",
+      "cvss_score": 5.4,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "Exim",
+      "product": "Exim Mail Transfer Agent",
+      "cwe_id": "CWE-116",
+      "shodan_query": null,
+      "tags": [
+        "cve",
+        "cve2024",
+        "exim",
+        "mail",
+        "filter-bypass"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-39929",
+        "https://thehackernews.com/2024/07/critical-exim-mail-server-vulnerability.html",
+        "https://censys.com/advisory/cve-2024-39929",
+        "https://github.com/michael-david-fry/CVE-2024-39929"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2024-37384",
+      "name": "CVE-2024-37384 - Roundcube Webmail Cross-Site Scripting via List Columns",
+      "path": "2024/CVE-2024-37384.yaml",
+      "year": "2024",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "Roundcube Webmail versions before 1.5.7 and 1.6.x before 1.6.7 allow XSS via list columns from user preferences. This vulnerability can be exploited by attackers to inject malicious scripts through specially crafted user preference settings, potentially leading to session hijacking and unauthorized access to user accounts.\n",
+      "cvss_score": 6.1,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "Roundcube",
+      "product": "Roundcube Webmail",
+      "cwe_id": "CWE-79",
+      "shodan_query": null,
+      "tags": [
+        "cve",
+        "cve2024",
+        "roundcube",
+        "xss"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-37384",
+        "https://github.com/advisories/GHSA-r96m-mwvr-946h",
+        "https://vulert.com/vuln-db/debian-11-roundcube-169799",
+        "https://ubuntu.com/security/CVE-2024-37384"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2024-37383",
+      "name": "CVE-2024-37383 - Roundcube Webmail Cross-Site Scripting via SVG",
+      "path": "2024/CVE-2024-37383.yaml",
+      "year": "2024",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "Roundcube Webmail versions before 1.5.7 and 1.6.x before 1.6.7 allow XSS via SVG animate attributes. This vulnerability has been exploited in phishing attacks targeting government agencies for credential theft. The vulnerability is tracked in CISA's Known Exploited Vulnerabilities catalog due to evidence of active exploitation in the wild.\n",
+      "cvss_score": 6.1,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "Roundcube",
+      "product": "Roundcube Webmail",
+      "cwe_id": "CWE-79",
+      "shodan_query": null,
+      "tags": [
+        "cve",
+        "cve2024",
+        "kev",
+        "roundcube",
+        "xss"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-37383",
+        "https://www.wiz.io/vulnerability-database/cve/cve-2024-37383",
+        "https://socradar.io/roundcube-vulnerability-cve-2024-37383-exploited-in-phishing-attacks-targeting-government-agencies-for-credential-theft/",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2024-32444",
+      "name": "CVE-2024-32444 - RealHomes WordPress Theme Privilege Escalation",
+      "path": "2024/CVE-2024-32444.yaml",
+      "year": "2024",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "InspiryThemes RealHomes WordPress theme through version 4.3.6 is affected by a critical privilege escalation vulnerability due to improper assignment of user permissions. The theme allows users to register new accounts via the inspiry_ajax_register function but fails to properly check authorization or implement nonce validation. If registration is enabled, attackers can arbitrarily specify their role as \"Administrator\" in a specially crafted HTTP request, gaining full control of the WordPress site including content manipulation, script injection, and access to sensitive data. Over 32,000 websites are at risk.\n",
+      "cvss_score": 9.8,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "InspiryThemes",
+      "product": "RealHomes",
+      "cwe_id": "CWE-266",
+      "shodan_query": null,
+      "tags": [
+        "cve",
+        "cve2024",
+        "wordpress",
+        "theme",
+        "privilege-escalation"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-32444",
+        "https://github.com/rxerium/CVE-2024-32444",
+        "https://patchstack.com/database/wordpress/theme/realhomes/vulnerability/wordpress-real-homes-plugin-4-3-6-privilege-escalation-vulnerability",
+        "https://www.bleepingcomputer.com/news/security/critical-zero-days-impact-premium-wordpress-real-estate-plugins/"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2024-28987",
+      "name": "CVE-2024-28987 - SolarWinds Web Help Desk Hardcoded Credential",
+      "path": "2024/CVE-2024-28987.yaml",
+      "year": "2024",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "SolarWinds Web Help Desk before 12.8.3 Hotfix 2 contains a hardcoded credential vulnerability that can allow a remote unauthenticated user to access internal functionality and modify data. This template uses the public Web Help Desk build token and flags versions before 12.8.3.2 conservatively as affected.\n",
+      "cvss_score": null,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "SolarWinds",
+      "product": "Web Help Desk",
+      "cwe_id": "CWE-798",
+      "shodan_query": "http.favicon.hash:\"1895809524\"",
+      "tags": [
+        "cve",
+        "cve2024",
+        "kev",
+        "solarwinds",
+        "webhelpdesk",
+        "hardcoded-credential"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-28987",
+        "https://www.solarwinds.com/trust-center/security-advisories/cve-2024-28987",
+        "https://support.solarwinds.com/SuccessCenter/s/article/SolarWinds-Web-Help-Desk-12-8-3-Hotfix-2",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2024-28987"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2024-28986",
+      "name": "CVE-2024-28986 - SolarWinds Web Help Desk Java Deserialization RCE",
+      "path": "2024/CVE-2024-28986.yaml",
+      "year": "2024",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "SolarWinds Web Help Desk versions up to 12.8.2 and 12.8.3 GA are affected by a Java deserialization remote code execution vulnerability. This template uses the public Web Help Desk build token and flags versions before 12.8.3 Hotfix 1 conservatively as affected.\n",
+      "cvss_score": null,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "SolarWinds",
+      "product": "Web Help Desk",
+      "cwe_id": "CWE-502",
+      "shodan_query": "http.favicon.hash:\"1895809524\"",
+      "tags": [
+        "cve",
+        "cve2024",
+        "kev",
+        "solarwinds",
+        "webhelpdesk",
+        "deserialization",
+        "rce"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-28986",
+        "https://www.solarwinds.com/trust-center/security-advisories/CVE-2024-28986",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2024-28986"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2024-12084",
+      "name": "CVE-2024-12084 - rsync Daemon Heap Buffer Overflow",
+      "path": "2024/CVE-2024-12084.yaml",
+      "year": "2024",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "rsync versions 3.2.7 through 3.3.0 are affected by a critical heap-based buffer overflow vulnerability in the rsync daemon. The flaw stems from improper handling of attacker-controlled checksum lengths (s2length) in the code. When MAX_DIGEST_LEN exceeds the fixed SUM_LENGTH (16 bytes), an attacker can write out of bounds in the sum2 buffer, leading to potential remote code execution without authentication. This vulnerability affects over 600,000 systems exposed to the Internet and enables attackers to execute arbitrary code with the privileges of the rsync daemon.\n",
+      "cvss_score": 9.8,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "Samba",
+      "product": "rsync",
+      "cwe_id": "CWE-787",
+      "shodan_query": "rsync 31.0",
+      "tags": [
+        "cve",
+        "cve2024",
+        "rsync",
+        "rce",
+        "buffer-overflow"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-12084",
+        "https://www.sysdig.com/blog/detecting-and-mitigating-cve-2024-12084-rsync-remote-code-execution",
+        "https://access.redhat.com/security/cve/cve-2024-12084",
+        "https://www.wiz.io/vulnerability-database/cve/cve-2024-12084"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2024-0204",
+      "name": "CVE-2024-0204 - Fortra GoAnywhere MFT Authentication Bypass",
+      "path": "2024/CVE-2024-0204.yaml",
+      "year": "2024",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Fortra GoAnywhere MFT versions prior to 7.4.1 contain a critical authentication bypass vulnerability that allows unauthorized users to create admin users via the admin portal. The vulnerability enables remote attackers to bypass authentication requirements and gain administrative access to the system without valid credentials. This flaw poses a significant risk to organizations using affected versions.\n",
+      "cvss_score": 9.8,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "Fortra",
+      "product": "GoAnywhere MFT",
+      "cwe_id": "CWE-287",
+      "shodan_query": null,
+      "tags": [
+        "cve",
+        "cve2024",
+        "goanywhere",
+        "mft",
+        "auth-bypass"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-0204",
+        "https://www.goanywhere.com/support/advisory/68x",
+        "https://www.rapid7.com/blog/post/2024/01/23/etr-cve-2024-0204-critical-authentication-bypass-in-fortra-goanywhere-mft/",
+        "https://www.fortra.com/security/advisories/product-security/fi-2024-002"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2023-6000",
+      "name": "CVE-2023-6000 - Popup Builder WordPress Plugin Stored XSS",
+      "path": "2023/CVE-2023-6000.yaml",
+      "year": "2023",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "The Popup Builder WordPress plugin before version 4.2.3 is affected by a stored cross-site scripting vulnerability. The plugin fails to restrict unauthorized users from modifying existing popups and embedding JavaScript code within them, enabling stored XSS attacks. Attackers can inject malicious scripts that execute when other users view the compromised popups. This vulnerability has been actively exploited in the wild by the Balada Injector malware campaign, which infected over 7,100 WordPress sites using this flaw.\n",
+      "cvss_score": 6.1,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "Sygnoos",
+      "product": "Popup Builder",
+      "cwe_id": "CWE-79",
+      "shodan_query": null,
+      "tags": [
+        "cve",
+        "cve2023",
+        "wordpress",
+        "wp-plugin",
+        "xss"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2023-6000",
+        "https://github.com/rxerium/CVE-2023-6000",
+        "https://wpscan.com/vulnerability/cdb3a8bd-4ee0-4ce0-9029-0490273bcfc8/",
+        "https://thehackernews.com/2024/01/balada-injector-infects-over-7100.html"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2023-5631",
+      "name": "CVE-2023-5631 - Roundcube Webmail Stored Cross-Site Scripting",
+      "path": "2023/CVE-2023-5631.yaml",
+      "year": "2023",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "Roundcube Webmail versions before 1.4.15, 1.5.x before 1.5.5, and 1.6.x before 1.6.4 allow stored XSS via an HTML e-mail message with a crafted SVG document. The vulnerability exists in program/lib/Roundcube/rcube_washtml.php behavior which fails to properly sanitize SVG content embedded in HTML emails. This vulnerability was exploited by threat actor Winter Vivern to target government entities and organizations in targeted espionage campaigns.\n",
+      "cvss_score": 6.1,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "Roundcube",
+      "product": "Roundcube Webmail",
+      "cwe_id": "CWE-79",
+      "shodan_query": null,
+      "tags": [
+        "cve",
+        "cve2023",
+        "roundcube",
+        "xss"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2023-5631",
+        "https://www.wiz.io/vulnerability-database/cve/cve-2023-5631",
+        "https://news.cpanel.com/roundcube-stored-xss-cve-2023-5631-cve-2023-43770/",
+        "https://www.prio-n.com/blog/roundcubes-cve-2023-5631-vulnerability-a-target-for-threat-actor-winter-vivern",
+        "https://support.plesk.com/hc/en-us/articles/18573638599831-CVE-2023-5631-vulnerability-in-Roundcube"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2023-48788",
+      "name": "CVE-2023-48788 - Fortinet FortiClient EMS SQL Injection",
+      "path": "2023/CVE-2023-48788.yaml",
+      "year": "2023",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Fortinet FortiClient EMS 7.0.1 through 7.0.10 and 7.2.0 through 7.2.2 contain an unauthenticated SQL injection vulnerability that can allow command execution via crafted packets. This template extracts the FortiClient EMS version from the sign-in page and checks the affected ranges.\n",
+      "cvss_score": 9.8,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "fortinet",
+      "product": "forticlientems",
+      "cwe_id": "CWE-89",
+      "shodan_query": "http.favicon.hash:-800551065",
+      "tags": [
+        "cve",
+        "cve2023",
+        "kev",
+        "fortinet",
+        "forticlientems",
+        "sqli",
+        "rce"
+      ],
+      "references": [
+        "https://fortiguard.com/psirt/FG-IR-24-007",
+        "https://nvd.nist.gov/vuln/detail/CVE-2023-48788",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2023-48788"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2023-43770",
+      "name": "CVE-2023-43770 - Roundcube Webmail Cross-Site Scripting",
+      "path": "2023/CVE-2023-43770.yaml",
+      "year": "2023",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "Roundcube Webmail versions before 1.4.14, 1.5.x before 1.5.4, and 1.6.x before 1.6.3 allow XSS via linkrefs in plain text messages. This persistent cross-site scripting vulnerability allows attackers to obtain sensitive information through specially crafted links in plain text messages. The vulnerability was added to CISA's Known Exploited Vulnerabilities catalog in February 2024 due to active exploitation by Russian threat actors including APT28 and Winter Vivern. The vulnerability was fixed on September 15, 2023, but continued to be exploited in the wild months after the patch was released.\n",
+      "cvss_score": 6.1,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "Roundcube",
+      "product": "Roundcube Webmail",
+      "cwe_id": "CWE-79",
+      "shodan_query": null,
+      "tags": [
+        "cve",
+        "cve2023",
+        "kev",
+        "roundcube",
+        "xss"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2023-43770",
+        "https://www.wiz.io/vulnerability-database/cve/cve-2023-43770",
+        "https://www.helpnetsecurity.com/2024/02/13/cve-2023-43770/",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+        "https://roundcube.net/news/2023/09/15/security-updates-1.6.3-1.5.4-and-1.4.14"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2023-40000",
+      "name": "CVE-2023-40000 - LiteSpeed Cache WordPress Plugin XSS",
+      "path": "2023/CVE-2023-40000.yaml",
+      "year": "2023",
+      "author": "rxerium,sorrowx3",
+      "severity": "medium",
+      "description": "Improper Neutralization of Input During Web Page Generation vulnerability in LiteSpeed Technologies LiteSpeed Cache allows Stored XSS. The LiteSpeed Cache plugin for WordPress versions up to and including 5.7 is affected by a cross-site scripting vulnerability that enables attackers to inject malicious scripts that persist in the application, potentially compromising site integrity and user data. The vulnerability results from lack of user input sanitization in the update_cdn_status() function.\n",
+      "cvss_score": 6.1,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "LiteSpeed Technologies",
+      "product": "LiteSpeed Cache",
+      "cwe_id": "CWE-79",
+      "shodan_query": "vuln:CVE-2023-40000",
+      "tags": [
+        "cve",
+        "cve2023",
+        "wordpress",
+        "wp-plugin",
+        "litespeed-cache",
+        "xss"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2023-40000",
+        "https://thehackernews.com/2024/02/wordpress-litespeed-plugin.html",
+        "https://wordpress.org/plugins/litespeed-cache",
+        "https://patchstack.com/database/vulnerability/litespeed-cache/wordpress-litespeed-cache-plugin-6-5-1-privilege-escalation-vulnerability",
+        "https://www.wordfence.com/blog/2024/08/over-5000000-site-owners-affected-by-critical-privilege-escalation-vulnerability-patched-in-litespeed-cache-plugin/"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2023-35078",
+      "name": "CVE-2023-35078 - Ivanti EPMM Authentication Bypass",
+      "path": "2023/CVE-2023-35078.yaml",
+      "year": "2023",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Ivanti Endpoint Manager Mobile contains an authentication bypass vulnerability that can allow unauthorised access to restricted functionality. This template passively extracts the exposed EPMM version from the login page and matches the affected ranges listed by NVD and CISA KEV.\n",
+      "cvss_score": 9.8,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "Ivanti",
+      "product": "Endpoint Manager Mobile",
+      "cwe_id": null,
+      "shodan_query": "product:\"Ivanti Endpoint Manager Mobile (EPMM)\"",
+      "tags": [
+        "cve",
+        "cve2023",
+        "kev",
+        "ivanti",
+        "epmm",
+        "auth-bypass"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2023-35078",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2023-27564",
+      "name": "CVE-2023-27564 - n8n Workflow Automation Vulnerability",
+      "path": "2023/CVE-2023-27564.yaml",
+      "year": "2023",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "n8n package 0.218.0 for Node.js contains an information disclosure vulnerability caused by improper handling in the package, letting attackers retrieve sensitive information, exploit requires no special privileges or user interaction.\n",
+      "cvss_score": 7.5,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "n8n",
+      "product": "n8n Workflow Automation",
+      "cwe_id": "CWE-668",
+      "shodan_query": "http.favicon.hash:-831756631",
+      "tags": [
+        "cve",
+        "cve2023",
+        "n8n",
+        "workflow"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2023-27564",
+        "https://github.com/n8n-io/n8n/releases",
+        "https://www.synacktiv.com/sites/default/files/2023-05/Synacktiv-N8N-Multiple-Vulnerabilities_0.pdf",
+        "https://security.netapp.com/advisory/ntap-20230622-0007/"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2023-27563",
+      "name": "CVE-2023-27563 - n8n Workflow Automation Vulnerability",
+      "path": "2023/CVE-2023-27563.yaml",
+      "year": "2023",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "n8n package 0.218.0 for Node.js contains a privilege escalation vulnerability caused by improper access control in its components, letting attackers escalate privileges, exploit requires attacker to have access to the system.\n",
+      "cvss_score": 8.8,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "n8n",
+      "product": "n8n Workflow Automation",
+      "cwe_id": "NVD-CWE-noinfo",
+      "shodan_query": "http.favicon.hash:-831756631",
+      "tags": [
+        "cve",
+        "cve2023",
+        "n8n",
+        "workflow"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2023-27563",
+        "https://github.com/n8n-io/n8n/releases",
+        "https://www.synacktiv.com/sites/default/files/2023-05/Synacktiv-N8N-Multiple-Vulnerabilities_0.pdf",
+        "https://security.netapp.com/advisory/ntap-20230622-0007/"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2023-27562",
+      "name": "CVE-2023-27562 - n8n Workflow Automation Vulnerability",
+      "path": "2023/CVE-2023-27562.yaml",
+      "year": "2023",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "n8n package 0.218.0 for Node.js contains a directory traversal caused by insufficient validation in file handling, letting attackers access arbitrary files, exploit requires no special privileges or user interaction.\n",
+      "cvss_score": 6.5,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "n8n",
+      "product": "n8n Workflow Automation",
+      "cwe_id": "CWE-22",
+      "shodan_query": "http.favicon.hash:-831756631",
+      "tags": [
+        "cve",
+        "cve2023",
+        "n8n",
+        "workflow"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2023-27562",
+        "https://github.com/n8n-io/n8n/releases",
+        "https://www.synacktiv.com/sites/default/files/2023-05/Synacktiv-N8N-Multiple-Vulnerabilities_0.pdf",
+        "https://security.netapp.com/advisory/ntap-20230622-0007/"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2023-22527",
+      "name": "CVE-2023-22527 - Atlassian Confluence Template Injection",
+      "path": "2023/CVE-2023-22527.yaml",
+      "year": "2023",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Atlassian Confluence Data Center and Server contains a template injection vulnerability that can allow unauthenticated remote code execution. This template passively extracts the Confluence version from exposed page metadata and matches the affected ranges listed by NVD and CISA KEV.\n",
+      "cvss_score": 9.8,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "Atlassian",
+      "product": "Confluence Data Center and Server",
+      "cwe_id": null,
+      "shodan_query": null,
+      "tags": [
+        "cve",
+        "cve2023",
+        "kev",
+        "atlassian",
+        "confluence",
+        "rce"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2023-22527",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2023-22518",
+      "name": "CVE-2023-22518 - Atlassian Confluence Improper Authorisation",
+      "path": "2023/CVE-2023-22518.yaml",
+      "year": "2023",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Atlassian Confluence Data Center and Server contains an improper authorisation vulnerability that can lead to significant data loss when exploited by an unauthenticated attacker. This template passively extracts the Confluence version from exposed page metadata and matches the affected ranges listed by NVD and CISA KEV.\n",
+      "cvss_score": 9.8,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "Atlassian",
+      "product": "Confluence Data Center and Server",
+      "cwe_id": null,
+      "shodan_query": null,
+      "tags": [
+        "cve",
+        "cve2023",
+        "kev",
+        "atlassian",
+        "confluence",
+        "auth-bypass"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2023-22518",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2023-22515",
+      "name": "CVE-2023-22515 - Atlassian Confluence Broken Access Control",
+      "path": "2023/CVE-2023-22515.yaml",
+      "year": "2023",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Atlassian Confluence Data Center and Server versions 8.0.0-8.3.2, 8.4.0-8.4.2, and 8.5.0-8.5.1 are affected by a critical broken access control vulnerability. Unauthenticated remote attackers can exploit this vulnerability to create unauthorized Confluence administrator accounts and access Confluence instances without authentication. This zero-day vulnerability has been actively exploited in the wild by threat actors to gain initial access to networks.",
+      "cvss_score": 9.8,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "Atlassian",
+      "product": "Confluence Data Center and Server",
+      "cwe_id": "CWE-20",
+      "shodan_query": null,
+      "tags": [
+        "cve",
+        "cve2023",
+        "atlassian",
+        "confluence",
+        "auth-bypass",
+        "kev"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2023-22515",
+        "https://confluence.atlassian.com/security/cve-2023-22515-broken-access-control-vulnerability-in-confluence-data-center-and-server-1295682276.html",
+        "https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-289a",
+        "https://www.rapid7.com/blog/post/2023/10/04/etr-cve-2023-22515-zero-day-privilege-escalation-in-confluence-server-and-data-center/"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2023-0669",
+      "name": "CVE-2023-0669 - Fortra GoAnywhere MFT Remote Code Execution",
+      "path": "2023/CVE-2023-0669.yaml",
+      "year": "2023",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "GoAnywhere MFT versions prior to 7.1.2 contain a pre-authentication command injection vulnerability in the License Response Servlet. This vulnerability was exploited by the Clop ransomware group in January 2023, resulting in data breaches for 130 companies using GoAnywhere MFT. The vulnerability allows unauthenticated attackers to achieve remote code execution on affected systems.\n",
+      "cvss_score": 7.2,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "Fortra",
+      "product": "GoAnywhere MFT",
+      "cwe_id": "CWE-77",
+      "shodan_query": null,
+      "tags": [
+        "cve",
+        "cve2023",
+        "kev",
+        "goanywhere",
+        "mft",
+        "rce"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2023-0669",
+        "https://www.goanywhere.com/support/advisory/68x",
+        "https://www.rapid7.com/blog/post/2023/02/03/exploitation-of-goanywhere-mft-zero-day-vulnerability/",
+        "https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-158a"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2022-41352",
+      "name": "CVE-2022-41352 - Zimbra Collaboration Suite Remote Code Execution",
+      "path": "2022/CVE-2022-41352.yaml",
+      "year": "2022",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Zimbra Collaboration Suite (ZCS) 8.8.15 and 9.0 are affected by a remote code execution vulnerability that allows an unauthenticated attacker to upload arbitrary files through amavis via a cpio loophole. The vulnerability results from unsafe use of the cpio utility by Zimbra's antivirus engine (Amavis), enabling extraction to /opt/zimbra/jetty/webapps/zimbra/public and unauthorized access to user accounts. Exploitation requires emailing a .cpio, .tar, or .rpm file to an affected server.",
+      "cvss_score": 9.8,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "Synacor",
+      "product": "Zimbra Collaboration Suite",
+      "cwe_id": null,
+      "shodan_query": null,
+      "tags": [
+        "cve",
+        "cve2022",
+        "zimbra",
+        "rce",
+        "fileupload",
+        "kev"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2022-41352",
+        "https://wiki.zimbra.com/wiki/Zimbra_Security_Advisories",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+        "https://www.rapid7.com/blog/post/2022/10/06/exploitation-of-unpatched-zero-day-remote-code-execution-vulnerability-in-zimbra-collaboration-suite-cve-2022-41352/",
+        "https://github.com/Cr4ckC4t/cve-2022-41352-zimbra-rce"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2022-26134",
+      "name": "CVE-2022-26134 - Atlassian Confluence OGNL Injection",
+      "path": "2022/CVE-2022-26134.yaml",
+      "year": "2022",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Atlassian Confluence Data Center and Server contains an OGNL injection vulnerability that can allow unauthenticated remote code execution. This template passively extracts the Confluence version from exposed page metadata and matches the affected ranges listed by NVD and CISA KEV.\n",
+      "cvss_score": 9.8,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "Atlassian",
+      "product": "Confluence Data Center and Server",
+      "cwe_id": null,
+      "shodan_query": null,
+      "tags": [
+        "cve",
+        "cve2022",
+        "kev",
+        "atlassian",
+        "confluence",
+        "rce"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2022-26134",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2022-24086",
+      "name": "CVE-2022-24086 - Zimbra Collaboration Calendar XSS",
+      "path": "2022/CVE-2022-24086.yaml",
+      "year": "2022",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "An issue was discovered in the Calendar feature in Zimbra Collaboration Suite 8.8.x before 8.8.15 patch 30 (update 1), as exploited in the wild starting in December 2021. An attacker could place HTML containing executable JavaScript inside element attributes. This markup becomes unescaped, causing arbitrary markup to be injected into the document, allowing attackers to steal session cookie files.",
+      "cvss_score": 6.1,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "Synacor",
+      "product": "Zimbra Collaboration Suite",
+      "cwe_id": null,
+      "shodan_query": null,
+      "tags": [
+        "cve",
+        "cve2022",
+        "zimbra",
+        "xss",
+        "kev"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2022-24086",
+        "https://wiki.zimbra.com/wiki/Zimbra_Security_Advisories",
+        "https://www.cisa.gov/news-events/cybersecurity-advisories/aa22-228a",
+        "https://www.volexity.com/blog/2022/02/03/operation-emailthief-active-exploitation-of-zero-day-xss-vulnerability-in-zimbra/"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2021-46830",
+      "name": "CVE-2021-46830 - Fortra GoAnywhere MFT Path Traversal",
+      "path": "2021/CVE-2021-46830.yaml",
+      "year": "2021",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "A path traversal vulnerability exists within GoAnywhere MFT before 6.8.3 that utilize self-registration for the GoAnywhere Web Client. This vulnerability could potentially allow an external user who self-registers with a specific username and/or profile information to gain access to files at a higher directory level than intended.\n",
+      "cvss_score": 6.5,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "Fortra",
+      "product": "GoAnywhere MFT",
+      "cwe_id": "CWE-22",
+      "shodan_query": null,
+      "tags": [
+        "cve",
+        "cve2021",
+        "goanywhere",
+        "mft",
+        "path-traversal"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2021-46830",
+        "https://www.goanywhere.com/support/advisory/68x"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2021-44026",
+      "name": "CVE-2021-44026 - Roundcube Webmail SQL Injection",
+      "path": "2021/CVE-2021-44026.yaml",
+      "year": "2021",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Roundcube Webmail versions before 1.3.17 and 1.4.x before 1.4.12 are prone to a potential SQL injection vulnerability via search or search_params parameters. This vulnerability allows attackers to execute arbitrary SQL commands and potentially gain unauthorized access to the underlying database. The vulnerability was added to CISA's Known Exploited Vulnerabilities catalog due to active exploitation by Russian state-sponsored APT28 hacking group in phishing campaigns with Ukrainian war news that contained exploits for this vulnerability.\n",
+      "cvss_score": 9.8,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "Roundcube",
+      "product": "Roundcube Webmail",
+      "cwe_id": "CWE-89",
+      "shodan_query": null,
+      "tags": [
+        "cve",
+        "cve2021",
+        "kev",
+        "roundcube",
+        "sqli"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2021-44026",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+        "https://socprime.com/blog/cve-2020-35730-cve-2021-44026-cve-2020-12641-exploit-detection-apt28-group-abuses-roundcube-flaws-in-spearphishing-espionage-attacks/",
+        "https://csirt.csi.cip.gov.ua/en/posts/apt28-group",
+        "https://ubuntu.com/security/notices/USN-5182-1"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2021-44025",
+      "name": "CVE-2021-44025 - Roundcube Webmail Cross-Site Scripting",
+      "path": "2021/CVE-2021-44025.yaml",
+      "year": "2021",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "Roundcube Webmail versions before 1.3.17 and 1.4.x before 1.4.12 are prone to XSS in handling an attachment's filename extension when displaying a MIME type warning message. This vulnerability allows attackers to inject malicious scripts through specially crafted attachment filenames, which are executed when the MIME type warning is displayed to users. The vulnerability can lead to session hijacking and unauthorized access to user email accounts.\n",
+      "cvss_score": 6.1,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "Roundcube",
+      "product": "Roundcube Webmail",
+      "cwe_id": "CWE-79",
+      "shodan_query": null,
+      "tags": [
+        "cve",
+        "cve2021",
+        "roundcube",
+        "xss"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2021-44025",
+        "https://app.opencve.io/cve/CVE-2021-44025",
+        "https://ubuntu.com/security/notices/USN-5182-1",
+        "https://security-tracker.debian.org/tracker/source-package/roundcube"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2020-35730",
+      "name": "CVE-2020-35730 - Roundcube Webmail Cross-Site Scripting",
+      "path": "2020/CVE-2020-35730.yaml",
+      "year": "2020",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "Roundcube Webmail versions before 1.2.13, 1.3.x before 1.3.16, and 1.4.x before 1.4.10 contain an XSS vulnerability where an attacker can send a plain text e-mail message with JavaScript in a link reference element that is mishandled by linkref_addindex in rcube_string_replacer.php. This vulnerability was actively exploited by Russian state-sponsored APT28 hacking group in phishing emails with Ukrainian war news that contained exploits for Roundcube vulnerabilities. The exploitation allows attackers to execute arbitrary JavaScript in victim's browser sessions.\n",
+      "cvss_score": 6.1,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "Roundcube",
+      "product": "Roundcube Webmail",
+      "cwe_id": "CWE-79",
+      "shodan_query": null,
+      "tags": [
+        "cve",
+        "cve2020",
+        "roundcube",
+        "xss"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2020-35730",
+        "https://socprime.com/blog/cve-2020-35730-cve-2021-44026-cve-2020-12641-exploit-detection-apt28-group-abuses-roundcube-flaws-in-spearphishing-espionage-attacks/",
+        "https://csirt.csi.cip.gov.ua/en/posts/apt28-group",
+        "https://dev.to/freedom_coder/cve-2020-35730-roundcube-webmail-cross-site-scripting-xss-vulnerability-2c10",
+        "https://ubuntu.com/security/notices/USN-5182-1"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2020-13965",
+      "name": "CVE-2020-13965 - Roundcube Webmail Cross-Site Scripting",
+      "path": "2020/CVE-2020-13965.yaml",
+      "year": "2020",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "Roundcube Webmail versions before 1.3.12 and 1.4.x before 1.4.5 contain a cross-site scripting (XSS) vulnerability. The vulnerability exists because text/xml is among the allowed types for preview, allowing XSS via a malicious XML attachment. This vulnerability was added to CISA's Known Exploited Vulnerabilities catalog due to active exploitation by Russian threat actors. Attackers can leverage this vulnerability to execute arbitrary JavaScript in the context of the victim's browser session, potentially leading to session hijacking and credential theft.\n",
+      "cvss_score": 6.1,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "Roundcube",
+      "product": "Roundcube Webmail",
+      "cwe_id": "CWE-79",
+      "shodan_query": null,
+      "tags": [
+        "cve",
+        "cve2020",
+        "kev",
+        "roundcube",
+        "xss"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2020-13965",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+        "https://www.wiz.io/vulnerability-database/cve/cve-2020-13965",
+        "https://github.com/mbadanoiu/CVE-2020-13965",
+        "https://cvefeed.io/vuln/detail/CVE-2020-13965"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2020-12641",
+      "name": "CVE-2020-12641 - Roundcube Webmail Remote Code Execution",
+      "path": "2020/CVE-2020-12641.yaml",
+      "year": "2020",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Roundcube Webmail versions before 1.2.10, 1.3.11, and 1.4.4 contain a critical remote code execution vulnerability in rcube_image.php. The vulnerability allows attackers to execute arbitrary code via shell metacharacters in a configuration setting for im_convert_path or im_identify_path. The issue stems from Roundcube not sanitizing shell metacharacters recovered from variables in its configuration settings. This vulnerability was actively exploited by Russian state-sponsored APT28 group in espionage campaigns, particularly targeting organizations with phishing emails containing Ukrainian war news exploits.\n",
+      "cvss_score": 9.8,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "Roundcube",
+      "product": "Roundcube Webmail",
+      "cwe_id": "CWE-78",
+      "shodan_query": null,
+      "tags": [
+        "cve",
+        "cve2020",
+        "roundcube",
+        "rce"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2020-12641",
+        "https://socprime.com/blog/cve-2020-35730-cve-2021-44026-cve-2020-12641-exploit-detection-apt28-group-abuses-roundcube-flaws-in-spearphishing-espionage-attacks/",
+        "https://csirt.csi.cip.gov.ua/en/posts/apt28-group",
+        "https://github.com/DrunkenShells/Disclosures/tree/master/CVE-2020-12641-Command%20Injection-Roundcube",
+        "https://roundcube.net/news/2020/04/29/security-updates-1.4.4-1.3.11-and-1.2.10"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2017-16651",
+      "name": "CVE-2017-16651 - Roundcube Webmail File Disclosure",
+      "path": "2017/CVE-2017-16651.yaml",
+      "year": "2017",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "Roundcube Webmail contains a file disclosure vulnerability in affected 1.1.x, 1.2.x, and 1.3.x releases. This template passively derives the exposed Roundcube version from the rcversion JavaScript value and matches the affected ranges listed by NVD and CISA KEV.\n",
+      "cvss_score": 7.8,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "Roundcube",
+      "product": "Roundcube Webmail",
+      "cwe_id": null,
+      "shodan_query": null,
+      "tags": [
+        "cve",
+        "cve2017",
+        "kev",
+        "roundcube",
+        "file-disclosure"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2017-16651",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2013-1904",
+      "name": "CVE-2013-1904 - Roundcube Webmail Path Traversal",
+      "path": "2013/CVE-2013-1904.yaml",
+      "year": "2013",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "Roundcube Webmail contains a path traversal vulnerability in older 0.7.x and 0.8.x releases. This template passively matches affected Roundcube rcversion values exposed in the web UI.\n",
+      "cvss_score": 5.0,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "Roundcube",
+      "product": "Roundcube Webmail",
+      "cwe_id": null,
+      "shodan_query": null,
+      "tags": [
+        "cve",
+        "cve2013",
+        "roundcube",
+        "path-traversal"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2013-1904"
+      ],
+      "wip": false
+    }
+  ]
+}
