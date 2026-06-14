@@ -51,6 +51,14 @@ nuclei -t rxerium-templates/2025/ -u https://example.com
 nuclei -t rxerium-templates/ -l targets.txt
 ```
 
+## 📬 Subscribe to Updates
+
+Get notified whenever a new template is released:
+
+**[rxerium.com/templates-feed](https://rxerium.com/templates-feed/)**
+
+Subscribe to receive email notifications when new Nuclei templates are added to this repository.
+
 ## 📚 Resources
 
 - **Main Nuclei Templates:** [projectdiscovery/nuclei-templates](https://github.com/projectdiscovery/nuclei-templates)
