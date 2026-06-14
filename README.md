@@ -20,6 +20,8 @@ A curated collection of **115+ Nuclei templates** focusing on **zero-day and act
 - **CVSS Breakdown:** Critical (≥9.0): 54 | High (7.0-8.9): 19
 - **Year Distribution:** 2013: 1 | 2017: 1 | 2020: 3 | 2021: 3 | 2022: 3 | 2023: 13 | 2024: 13 | 2025: 54 | 2026: 24
 
+
+
 ## 🚀 Quick Start
 
 ### Installation
