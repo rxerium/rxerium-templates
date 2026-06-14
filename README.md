@@ -20,8 +20,6 @@ A curated collection of **115+ Nuclei templates** focusing on **zero-day and act
 - **CVSS Breakdown:** Critical (≥9.0): 54 | High (7.0-8.9): 19
 - **Year Distribution:** 2013: 1 | 2017: 1 | 2020: 3 | 2021: 3 | 2022: 3 | 2023: 13 | 2024: 13 | 2025: 54 | 2026: 24
 
-
-
 ## 🚀 Quick Start
 
 ### Installation
@@ -50,40 +48,6 @@ nuclei -t rxerium-templates/2025/ -u https://example.com
 # Bulk scan from file
 nuclei -t rxerium-templates/ -l targets.txt
 ```
-
-## 🛠️ Adding a New Template
-
-Use the helper to scaffold a consistent starter (it creates the file in the correct year folder, fills a realistic passive-detection skeleton, opens your editor, then refreshes `templates.json` + README stats locally):
-
-```bash
-# Interactive (recommended)
-python3 scripts/new_cve_template.py CVE-2026-12345
-
-# With some fields pre-filled + WIP flag + fully non-interactive
-python3 scripts/new_cve_template.py CVE-2026-9999 --wip --severity critical --vendor "Acme Corp" --product "Foo" --cvss 9.8 -y --no-edit
-
-# Or via Make
-make new CVE=CVE-2026-12345
-make new CVE=CVE-2026-9999-WIP VENDOR=Acme PRODUCT=Foo CVSS=9.8 WIP=1
-```
-
-After the editor closes, review the generated matcher/extractor/description sections, then:
-
-```bash
-git add <the-new-file>.yaml templates.json README.md
-git commit -m "feat: add Nuclei template for CVE-2026-12345"
-git push
-```
-
-The GitHub Action will:
-1. Run `scripts/validate_templates.py` (fails the run on bad YAML/structure)
-2. Update stats + `templates.json`
-3. Commit the refreshed indexes with `[skip ci]`
-
-Local shortcuts:
-- `make validate`
-- `make update`
-- `python3 scripts/validate_templates.py`
 
 ## 📚 Resources
 
