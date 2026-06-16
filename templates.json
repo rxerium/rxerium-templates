@@ -1,8 +1,8 @@
 {
   "name": "rxerium-templates",
   "schema_version": "1.0",
-  "total": 115,
-  "completed": 114,
+  "total": 116,
+  "completed": 115,
   "wip": 1,
   "templates": [
     {
@@ -31,6 +31,38 @@
       "references": [
         "https://nvd.nist.gov/vuln/detail/CVE-2026-6973",
         "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2026-53435",
+      "name": "Jenkins Core - Deserialization Vulnerability",
+      "path": "2026/CVE-2026-53435.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "Jenkins 2.567 and earlier, LTS 2.555.2 and earlier, allows attackers with Overall/Read permission and specific configuration permissions to submit attacker-controlled config.xml content that can lead to user impersonation, arbitrary HTTP requests, script console use, or arbitrary file reads from the Jenkins controller.\n",
+      "cvss_score": 8.8,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "jenkins",
+      "product": "jenkins",
+      "cwe_id": "CWE-502",
+      "shodan_query": [
+        "product:\"Jenkins\"",
+        "http.favicon.hash:\"81586312\"",
+        "http.title:\"Jenkins\""
+      ],
+      "tags": [
+        "cve",
+        "cve2026",
+        "jenkins",
+        "deserialization",
+        "rce"
+      ],
+      "references": [
+        "https://www.jenkins.io/security/advisory/2026-06-10/#SECURITY-3707",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-53435"
       ],
       "wip": false
     },
