@@ -1,8 +1,8 @@
 {
   "name": "rxerium-templates",
   "schema_version": "1.0",
-  "total": 116,
-  "completed": 115,
+  "total": 117,
+  "completed": 116,
   "wip": 1,
   "templates": [
     {
@@ -63,6 +63,40 @@
       "references": [
         "https://www.jenkins.io/security/advisory/2026-06-10/#SECURITY-3707",
         "https://nvd.nist.gov/vuln/detail/CVE-2026-53435"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2026-48907",
+      "name": "Widget Factory Joomla Content Editor - Improper Access Control (CVE-2026-48907)",
+      "path": "2026/CVE-2026-48907.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Joomla Content Editor (JCE) contains an improper access control vulnerability\nthat allows unauthenticated users to create editor profiles. This can lead to\nPHP upload and code execution on affected Joomla sites. JCE 2.7.x, 2.8.x,\nand 2.9.x versions before 2.9.99.5 are affected.\n",
+      "cvss_score": 10.0,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "Widget Factory",
+      "product": "Joomla Content Editor",
+      "cwe_id": "CWE-284",
+      "shodan_query": "http.html:\"com_jce\"",
+      "tags": [
+        "cve",
+        "cve2026",
+        "jce",
+        "joomla",
+        "joomla-content-editor",
+        "widget-factory",
+        "kev",
+        "improper-access-control",
+        "version-check"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-48907",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+        "https://www.joomlacontenteditor.net/news/jce-security-update-and-a-free-patch-for-older-sites",
+        "https://www.joomlacontenteditor.net/support/changelog/editor"
       ],
       "wip": false
     },
