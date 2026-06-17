@@ -63,6 +63,7 @@ Subscribe to receive email notifications when new Nuclei templates are added to 
 
 - **Main Nuclei Templates:** [projectdiscovery/nuclei-templates](https://github.com/projectdiscovery/nuclei-templates)
 - **Nuclei Documentation:** [docs.nuclei.sh](https://docs.nuclei.sh)
+- **Active exploitation intel:** [DefusedCyber](https://defusedcyber.com/) | [CISA KEV](https://www.cisa.gov/known-exploited-vulnerabilities-catalog) | [VulnCheck KEV](https://vulncheck.com/kev) | [EPSS](https://www.first.org/epss/)
 
 ## 🏆 Recognition
 
