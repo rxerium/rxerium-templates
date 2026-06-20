@@ -1,8 +1,8 @@
 {
   "name": "rxerium-templates",
   "schema_version": "1.0",
-  "total": 125,
-  "completed": 124,
+  "total": 133,
+  "completed": 132,
   "wip": 1,
   "templates": [
     {
@@ -247,6 +247,39 @@
       "references": [
         "https://fortiguard.fortinet.com/psirt/FG-IR-26-100",
         "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39808"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2026-3564",
+      "name": "CVE-2026-3564 - ConnectWise ScreenConnect Cryptographic Material Exposure",
+      "path": "2026/CVE-2026-3564.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "ConnectWise ScreenConnect versions prior to 26.1 may allow actors with access to server-level cryptographic material to obtain unauthorized access. The Server response header exposes the ScreenConnect build token (validated across 19+ internet-facing hosts).\n",
+      "cvss_score": 9.0,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "connectwise",
+      "product": "screenconnect",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.favicon.hash:-82958153",
+        "http.title:\"ScreenConnect\"",
+        "\"ScreenConnect\""
+      ],
+      "tags": [
+        "cve",
+        "cve2026",
+        "screenconnect",
+        "connectwise",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-3564",
+        "https://www.connectwise.com/company/trust/security-bulletins/2026-03-17-screenconnect-bulletin",
+        "https://kevintel.com/CVE-2026-3564"
       ],
       "wip": false
     },
@@ -2018,6 +2051,41 @@
       "wip": false
     },
     {
+      "id": "CVE-2025-3935",
+      "name": "CVE-2025-3935 - ConnectWise ScreenConnect ASP.NET ViewState Exposure",
+      "path": "2025/CVE-2025-3935.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "ConnectWise ScreenConnect versions prior to 25.2.4 may be susceptible to ASP.NET ViewState code injection when server machine keys are compromised. The Server response header exposes the ScreenConnect build token (validated across 19+ internet-facing hosts).\n",
+      "cvss_score": 8.1,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "connectwise",
+      "product": "screenconnect",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.favicon.hash:-82958153",
+        "http.title:\"ScreenConnect\"",
+        "\"ScreenConnect\""
+      ],
+      "tags": [
+        "cve",
+        "cve2025",
+        "kev",
+        "screenconnect",
+        "connectwise",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-3935",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2025-3935",
+        "https://www.connectwise.com/company/trust/security-bulletins/screenconnect-security-patch-2025.4",
+        "https://kevintel.com/CVE-2025-3935"
+      ],
+      "wip": false
+    },
+    {
       "id": "CVE-2025-37164",
       "name": "CVE-2025-37164 - HPE OneView Unauthenticated Remote Code Execution",
       "path": "2025/CVE-2025-37164.yaml",
@@ -2887,6 +2955,41 @@
       "wip": false
     },
     {
+      "id": "CVE-2024-21762",
+      "name": "CVE-2024-21762 - Fortinet FortiOS SSL-VPN Out-of-Bounds Write",
+      "path": "2024/CVE-2024-21762.yaml",
+      "year": "2024",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Fortinet FortiOS SSL-VPN contains an out-of-bounds write vulnerability in multiple 6.x, 7.x, and 7.4.x releases. Internet-facing FortiGate SSL-VPN portals expose the /remote/login page with fgt_lang markers (validated across 50+ probed hosts). No passive firmware version is exposed on the login page.\n",
+      "cvss_score": 9.6,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "fortinet",
+      "product": "fortios",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.html:\"fgt_lang\"",
+        "http.title:\"Please Login\"",
+        "ssl:\"FortiGate\""
+      ],
+      "tags": [
+        "cve",
+        "cve2024",
+        "kev",
+        "fortinet",
+        "fortios",
+        "ssl-vpn",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-21762",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2024-21762",
+        "https://kevintel.com/CVE-2024-21762"
+      ],
+      "wip": false
+    },
+    {
       "id": "CVE-2024-21410",
       "name": "CVE-2024-21410 - Microsoft Exchange Server Privilege Escalation",
       "path": "2024/CVE-2024-21410.yaml",
@@ -2954,6 +3057,71 @@
         "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2024-1709",
         "https://www.connectwise.com/company/trust/security-bulletins/connectwise-screenconnect-23.9.8",
         "https://kevintel.com/CVE-2024-1709"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2024-1708",
+      "name": "CVE-2024-1708 - ConnectWise ScreenConnect Path Traversal",
+      "path": "2024/CVE-2024-1708.yaml",
+      "year": "2024",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "ConnectWise ScreenConnect 23.9.7 and prior are affected by a path traversal vulnerability. The Server response header exposes the ScreenConnect build token (validated across 19+ internet-facing hosts). Passive fingerprinting cannot distinguish security-patched builds within the same release line.\n",
+      "cvss_score": 8.4,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "connectwise",
+      "product": "screenconnect",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.favicon.hash:-82958153",
+        "http.title:\"ScreenConnect\"",
+        "\"ScreenConnect\""
+      ],
+      "tags": [
+        "cve",
+        "cve2024",
+        "kev",
+        "screenconnect",
+        "connectwise",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-1708",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2024-1708",
+        "https://www.connectwise.com/company/trust/security-bulletins/connectwise-screenconnect-23.9.8",
+        "https://kevintel.com/CVE-2024-1708"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2024-12686",
+      "name": "CVE-2024-12686 - BeyondTrust Remote Support Command Injection",
+      "path": "2024/CVE-2024-12686.yaml",
+      "year": "2024",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "BeyondTrust Remote Support and Privileged Remote Access are affected by command injection in versions 24.3.1 and earlier. Internet-facing appliances expose the login page with a strict \"Redistribution Prohibited\" footer (validated on live BeyondTrust hosts). No passive version string is available on the login page.\n",
+      "cvss_score": 6.6,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "beyondtrust",
+      "product": "remote_support",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.html:\"redistribution prohibited\" beyondtrust",
+        "http.title:\"Remote Support\""
+      ],
+      "tags": [
+        "cve",
+        "cve2024",
+        "beyondtrust",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-12686",
+        "https://kevintel.com/CVE-2024-12686"
       ],
       "wip": false
     },
@@ -3587,6 +3755,75 @@
       "wip": false
     },
     {
+      "id": "CVE-2021-27101",
+      "name": "CVE-2021-27101 - Accellion FTA / Kiteworks totemomail SQL Injection",
+      "path": "2021/CVE-2021-27101.yaml",
+      "year": "2021",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Accellion FTA 9_12_370 and earlier is affected by SQL injection via a crafted Host header. Legacy deployments are now branded as Kiteworks totemomail WebMail. Passive detection fingerprints the totemomail WebMail login interface (live-validated on internet-facing hosts).\n",
+      "cvss_score": 9.8,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "accellion",
+      "product": "fta",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.html:\"totemomail\"",
+        "http.title:\"totemomail\""
+      ],
+      "tags": [
+        "cve",
+        "cve2021",
+        "kev",
+        "accellion",
+        "kiteworks",
+        "totemomail",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2021-27101",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2021-27101",
+        "https://kevintel.com/CVE-2021-27101"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2021-20016",
+      "name": "CVE-2021-20016 - SonicWall SMA100 SSL-VPN SQL Injection",
+      "path": "2021/CVE-2021-20016.yaml",
+      "year": "2021",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "SonicWall SMA100 build version 10.x is affected by an unauthenticated SQL injection in the SSL-VPN virtual office portal. The /auth.html login page exposes sslvpnLogin markers and SonicWall branding (validated across 6+ internet-facing hosts).\n",
+      "cvss_score": 9.8,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "sonicwall",
+      "product": "sma100",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.title:\"SonicWall\"",
+        "http.html:\"sslvpnLogin\""
+      ],
+      "tags": [
+        "cve",
+        "cve2021",
+        "kev",
+        "sonicwall",
+        "sma100",
+        "ssl-vpn",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2021-20016",
+        "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0001",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2021-20016",
+        "https://kevintel.com/CVE-2021-20016"
+      ],
+      "wip": false
+    },
+    {
       "id": "CVE-2020-35730",
       "name": "CVE-2020-35730 - Roundcube Webmail Cross-Site Scripting",
       "path": "2020/CVE-2020-35730.yaml",
@@ -3804,6 +4041,41 @@
       "references": [
         "https://nvd.nist.gov/vuln/detail/CVE-2017-16651",
         "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2017-1000353",
+      "name": "CVE-2017-1000353 - Jenkins Core Unauthenticated Remote Code Execution",
+      "path": "2017/CVE-2017-1000353.yaml",
+      "year": "2017",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Jenkins versions 2.56 and earlier as well as 2.46.1 LTS and earlier are vulnerable to unauthenticated remote code execution via deserialization. The x-jenkins response header exposes the running version; validated across 50 internet-facing hosts (all currently patched builds).\n",
+      "cvss_score": 9.8,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "jenkins",
+      "product": "jenkins",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.favicon.hash:\"81586312\"",
+        "http.title:\"jenkins\"",
+        "product:\"Jenkins\""
+      ],
+      "tags": [
+        "cve",
+        "cve2017",
+        "kev",
+        "jenkins",
+        "deserialization",
+        "passive"
+      ],
+      "references": [
+        "https://www.jenkins.io/security/advisory/2017-04-26/",
+        "https://nvd.nist.gov/vuln/detail/CVE-2017-1000353",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2017-1000353",
+        "https://kevintel.com/CVE-2017-1000353"
       ],
       "wip": false
     },
