@@ -1,8 +1,8 @@
 {
   "name": "rxerium-templates",
   "schema_version": "1.0",
-  "total": 122,
-  "completed": 121,
+  "total": 125,
+  "completed": 124,
   "wip": 1,
   "templates": [
     {
@@ -2703,7 +2703,7 @@
       "year": "2024",
       "author": "rxerium",
       "severity": "medium",
-      "description": "TBK DVR-4104 and DVR-4216 devices are affected by OS command injection. This template fingerprints the exposed web viewer version validated across 20+ internet-facing hosts.\n",
+      "description": "TBK DVR-4104 and DVR-4216 devices with firmware up to 20240412 are affected by OS command injection. Internet-facing Samsung-branded web viewers do not expose firmware versions passively; this template detects the vulnerable TBK web viewer surface validated across 50+ hosts.\n",
       "cvss_score": 6.3,
       "cisa_kev": true,
       "verified": true,
@@ -2735,7 +2735,7 @@
       "year": "2024",
       "author": "rxerium",
       "severity": "medium",
-      "description": "KubePi JWT token validation has a defect in versions before 1.6.5. This template extracts the exposed KubePi version from the web UI and matches affected builds validated across 9+ internet-facing hosts.\n",
+      "description": "KubePi JWT token validation has a defect in versions 1.6.3 through 1.7.x (patched in 1.8.0). This template fingerprints the KubePi release embedded in the SPA bundle after confirming the /kubepi/ asset layout. Product fingerprinting was validated across 49+ internet-facing hosts; version v1.7.5 was confirmed in the affected range. Versions below 1.6.3 (e.g. v1.1.2) are not affected.\n",
       "cvss_score": 6.3,
       "cisa_kev": true,
       "verified": true,
@@ -2755,6 +2755,7 @@
       ],
       "references": [
         "https://nvd.nist.gov/vuln/detail/CVE-2024-36111",
+        "https://github.com/1Panel-dev/KubePi/security/advisories/GHSA-8q5r-cvcw-4wx7",
         "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2024-36111",
         "https://kevintel.com/CVE-2024-36111"
       ],
@@ -2853,13 +2854,46 @@
       "wip": false
     },
     {
+      "id": "CVE-2024-2389",
+      "name": "CVE-2024-2389 - Progress Flowmon Unauthenticated Command Injection",
+      "path": "2024/CVE-2024-2389.yaml",
+      "year": "2024",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Progress Flowmon versions prior to 11.1.14 (11.x) and 12.3.5 (12.x) contain an unauthenticated OS command injection vulnerability in the management interface. The Flowmon web UI embeds the release version in theme.css query strings (validated across 5+ internet-facing hosts).\n",
+      "cvss_score": 9.8,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "progress",
+      "product": "flowmon",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.title:\"flowmon\"",
+        "http.html:\"/css/themes/flowmon/\""
+      ],
+      "tags": [
+        "cve",
+        "cve2024",
+        "kev",
+        "flowmon",
+        "progress",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-2389",
+        "https://support.kemptechnologies.com/hc/en-us/articles/24878235038733-CVE-2024-2389-Flowmon-critical-security-vulnerability",
+        "https://kevintel.com/CVE-2024-2389"
+      ],
+      "wip": false
+    },
+    {
       "id": "CVE-2024-21410",
       "name": "CVE-2024-21410 - Microsoft Exchange Server Privilege Escalation",
       "path": "2024/CVE-2024-21410.yaml",
       "year": "2024",
       "author": "rxerium",
       "severity": "critical",
-      "description": "Microsoft Exchange Server 2016 CU23, Exchange Server 2019 CU13, and Exchange Server 2019 CU14 are vulnerable to an elevation of privilege vulnerability. Internet-facing OWA exposes the CU build number for passive version fingerprinting validated across 40+ hosts.\n",
+      "description": "Microsoft Exchange Server 2016 CU23 (15.1.2507), Exchange Server 2019 CU13 (15.2.1258), and Exchange Server 2019 CU14 (15.2.1544) are vulnerable to an elevation of privilege vulnerability. OWA auth theme paths expose CU build numbers validated across 40+ internet-facing hosts. Passive OWA fingerprinting cannot distinguish security-patched builds within the same cumulative update.\n",
       "cvss_score": 9.8,
       "cisa_kev": true,
       "verified": true,
@@ -2885,6 +2919,41 @@
         "https://nvd.nist.gov/vuln/detail/CVE-2024-21410",
         "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2024-21410",
         "https://kevintel.com/CVE-2024-21410"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2024-1709",
+      "name": "CVE-2024-1709 - ConnectWise ScreenConnect Authentication Bypass",
+      "path": "2024/CVE-2024-1709.yaml",
+      "year": "2024",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "ConnectWise ScreenConnect 23.9.7 and prior are affected by an authentication bypass vulnerability. The Server response header exposes the ScreenConnect build token (validated across 19+ internet-facing hosts). Passive fingerprinting cannot distinguish security-patched builds within the same release line.\n",
+      "cvss_score": 10.0,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "connectwise",
+      "product": "screenconnect",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.favicon.hash:-82958153",
+        "http.title:\"ScreenConnect\"",
+        "\"ScreenConnect\""
+      ],
+      "tags": [
+        "cve",
+        "cve2024",
+        "kev",
+        "screenconnect",
+        "connectwise",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-1709",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2024-1709",
+        "https://www.connectwise.com/company/trust/security-bulletins/connectwise-screenconnect-23.9.8",
+        "https://kevintel.com/CVE-2024-1709"
       ],
       "wip": false
     },
@@ -3615,7 +3684,7 @@
       "year": "2020",
       "author": "rxerium",
       "severity": "high",
-      "description": "A remote code execution vulnerability exists in Microsoft Exchange Server when the software fails to properly handle objects in memory. Affected builds include Exchange 2013, Exchange 2016 CU14/CU15, and Exchange 2019 CU3/CU4 at cumulative update build numbers exposed via OWA, validated across 40+ internet-facing hosts.\n",
+      "description": "A remote code execution vulnerability exists in Microsoft Exchange Server when the software fails to properly handle objects in memory. Affected cumulative updates are Exchange 2013 CU23 (15.0.x), Exchange 2016 CU14/CU15 (15.1.1847, 15.1.1979), and Exchange 2019 CU3/CU4 (15.2.464, 15.2.529). OWA auth theme paths expose build numbers validated across 40+ internet-facing hosts. Exchange 2010 (14.x) is not covered by this OWA fingerprint; passive detection cannot distinguish security-patched builds within the same cumulative update.\n",
       "cvss_score": 8.8,
       "cisa_kev": true,
       "verified": true,
@@ -3645,13 +3714,47 @@
       "wip": false
     },
     {
+      "id": "CVE-2019-11510",
+      "name": "CVE-2019-11510 - Pulse Connect Secure / Ivanti Connect Secure Arbitrary File Read",
+      "path": "2019/CVE-2019-11510.yaml",
+      "year": "2019",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Pulse Connect Secure and Ivanti Connect Secure expose the appliance package version via PkgVersion on the /dana-na/auth/url_default/welcome.cgi login page. Validated across 22+ internet-facing hosts. Map extracted R-builds to vendor advisories for affected ranges (9.0RX before 9.0R3.4, 8.3RX before 8.3R7.1, 8.2RX before 8.2R12.1, 8.1RX before 8.1R15.1).\n",
+      "cvss_score": 10.0,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "pulsesecure",
+      "product": "pulse_connect_secure",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.title:\"ivanti connect secure\"",
+        "http.title:\"pulse connect secure\"",
+        "http.html:\"/dana-na/\""
+      ],
+      "tags": [
+        "cve",
+        "cve2019",
+        "kev",
+        "ivanti",
+        "pulse",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2019-11510",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2019-11510",
+        "https://kevintel.com/CVE-2019-11510"
+      ],
+      "wip": false
+    },
+    {
       "id": "CVE-2017-8226",
       "name": "CVE-2017-8226 - Amcrest IPM-721S Default Credentials",
       "path": "2017/CVE-2017-8226.yaml",
       "year": "2017",
       "author": "rxerium",
       "severity": "critical",
-      "description": "Amcrest IPM-721S V2.420.AC00.16.R.20160909 devices have default credentials hardcoded in firmware. This template passively extracts the exposed web UI asset version and matches affected builds observed across 7+ internet-facing hosts.\n",
+      "description": "Amcrest IPM-721S firmware up to V2.420.AC00.16.R.20160909 has default credentials hardcoded. This template passively fingerprints the Amcrest web UI jsCore asset version (2.400 observed on 7+ hosts), which maps to the V2.420 firmware line.\n",
       "cvss_score": 9.8,
       "cisa_kev": true,
       "verified": true,
