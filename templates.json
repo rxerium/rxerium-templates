@@ -1,8 +1,8 @@
 {
   "name": "rxerium-templates",
   "schema_version": "1.0",
-  "total": 117,
-  "completed": 116,
+  "total": 194,
+  "completed": 193,
   "wip": 1,
   "templates": [
     {
@@ -159,6 +159,70 @@
       "wip": false
     },
     {
+      "id": "CVE-2026-4368",
+      "name": "ADC - CVE-2026-4368",
+      "path": "2026/CVE-2026-4368.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "Race Condition leading to User Session Mixup\n",
+      "cvss_score": 7.7,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "citrix",
+      "product": "netscaler",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.title:\"citrix login\"",
+        "http.html:\"Citrix Gateway\"",
+        "http.favicon.hash:-1292923998,-1166125415"
+      ],
+      "tags": [
+        "cve",
+        "cve2026",
+        "kev",
+        "citrix",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-4368",
+        "https://kevintel.com/CVE-2026-4368"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2026-42897",
+      "name": "Microsoft Exchange Server 2016 Cumulative Update - CVE-2026-42897",
+      "path": "2026/CVE-2026-42897.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "Microsoft Exchange Server Spoofing Vulnerability\n",
+      "cvss_score": 8.1,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "microsoft",
+      "product": "exchange_server",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.favicon.hash:1768726119 -port:25 -port:587 -port:993 -port:110 -port:143 -port:465",
+        "http.title:\"Outlook\" -port:25 -port:587 -port:993",
+        "cpe:\"cpe:2.3:a:microsoft:exchange_server\""
+      ],
+      "tags": [
+        "cve",
+        "cve2026",
+        "kev",
+        "microsoft",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-42897",
+        "https://kevintel.com/CVE-2026-42897"
+      ],
+      "wip": false
+    },
+    {
       "id": "CVE-2026-39987",
       "name": "CVE-2026-39987",
       "path": "2026/CVE-2026-39987.yaml",
@@ -251,6 +315,39 @@
       "wip": false
     },
     {
+      "id": "CVE-2026-3564",
+      "name": "CVE-2026-3564 - ConnectWise ScreenConnect Cryptographic Material Exposure",
+      "path": "2026/CVE-2026-3564.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "ConnectWise ScreenConnect versions prior to 26.1 may allow actors with access to server-level cryptographic material to obtain unauthorized access. The Server response header exposes the ScreenConnect build token (validated across 19+ internet-facing hosts).\n",
+      "cvss_score": 9.0,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "connectwise",
+      "product": "screenconnect",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.favicon.hash:-82958153",
+        "http.title:\"ScreenConnect\"",
+        "\"ScreenConnect\""
+      ],
+      "tags": [
+        "cve",
+        "cve2026",
+        "screenconnect",
+        "connectwise",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-3564",
+        "https://www.connectwise.com/company/trust/security-bulletins/2026-03-17-screenconnect-bulletin",
+        "https://kevintel.com/CVE-2026-3564"
+      ],
+      "wip": false
+    },
+    {
       "id": "CVE-2026-35616",
       "name": "Fortinet FortiClient EMS - API Authentication Bypass",
       "path": "2026/CVE-2026-35616.yaml",
@@ -275,6 +372,37 @@
       "references": [
         "https://www.fortiguard.com/psirt/FG-IR-26-099",
         "https://nvd.nist.gov/vuln/detail/CVE-2026-35616"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2026-32201",
+      "name": "Microsoft SharePoint Enterprise Server 2016 - CVE-2026-32201",
+      "path": "2026/CVE-2026-32201.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "Microsoft SharePoint Server Spoofing Vulnerability\n",
+      "cvss_score": 6.5,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "microsoft",
+      "product": "sharepoint_server",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.html:\"Microsoft SharePoint\" http.title:\"Sign In\"",
+        "cpe:\"cpe:2.3:a:microsoft:exchange_server\""
+      ],
+      "tags": [
+        "cve",
+        "cve2026",
+        "kev",
+        "microsoft",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-32201",
+        "https://kevintel.com/CVE-2026-32201"
       ],
       "wip": false
     },
@@ -335,6 +463,37 @@
         "https://github.com/n8n-io/n8n/security/advisories/GHSA-6cqr-8cfr-67f8",
         "https://github.com/n8n-io/n8n/commit/7860896909b3d42993a36297f053d2b0e633235d",
         "https://github.com/n8n-io/n8n/commit/936c06cfc1ad269a89e8ef7f8ac79c104436d54b"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2026-24858",
+      "name": "FortiWeb - CVE-2026-24858",
+      "path": "2026/CVE-2026-24858.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "An Authentication Bypass Using an Alternate Path or Channel vulnerability [CWE-288] vulnerability in Fortinet FortiAnalyzer 7.6.0 through 7.6.5,...\n",
+      "cvss_score": 9.4,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "fortinet",
+      "product": "fortimanager",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.title:\"FortiManager\"",
+        "product:\"Fortinet FortiGate\""
+      ],
+      "tags": [
+        "cve",
+        "cve2026",
+        "kev",
+        "fortinet",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-24858",
+        "https://kevintel.com/CVE-2026-24858"
       ],
       "wip": false
     },
@@ -426,6 +585,38 @@
       "wip": false
     },
     {
+      "id": "CVE-2026-21962",
+      "name": "Oracle HTTP Server - CVE-2026-21962",
+      "path": "2026/CVE-2026-21962.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Vulnerability in the Oracle HTTP Server, Oracle Weblogic Server Proxy Plug-in product of Oracle Fusion Middleware (component: Weblogic Server Proxy...\n",
+      "cvss_score": 10.0,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "oracle",
+      "product": "weblogic_server",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.title:\"WebLogic Server Administration Console\" port:7001",
+        "product:\"Oracle WebLogic Server\"",
+        "\"Oracle HTTP Server\""
+      ],
+      "tags": [
+        "cve",
+        "cve2026",
+        "kev",
+        "oracle",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-21962",
+        "https://kevintel.com/CVE-2026-21962"
+      ],
+      "wip": false
+    },
+    {
       "id": "CVE-2026-21877",
       "name": "CVE-2026-21877 - n8n Remote Code Execution via Arbitrary File Write",
       "path": "2026/CVE-2026-21877.yaml",
@@ -510,6 +701,37 @@
         "https://fortiguard.fortinet.com/psirt/FG-IR-25-1142",
         "https://nvd.nist.gov/vuln/detail/CVE-2026-21643",
         "https://github.com/0xBlackash/CVE-2026-21643"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2026-20963",
+      "name": "Microsoft SharePoint Enterprise Server 2016 - CVE-2026-20963",
+      "path": "2026/CVE-2026-20963.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Microsoft SharePoint Remote Code Execution Vulnerability\n",
+      "cvss_score": 9.8,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "microsoft",
+      "product": "sharepoint_server",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.html:\"Microsoft SharePoint\" http.title:\"Sign In\"",
+        "cpe:\"cpe:2.3:a:microsoft:exchange_server\""
+      ],
+      "tags": [
+        "cve",
+        "cve2026",
+        "kev",
+        "microsoft",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-20963",
+        "https://kevintel.com/CVE-2026-20963"
       ],
       "wip": false
     },
@@ -906,6 +1128,38 @@
       "wip": false
     },
     {
+      "id": "CVE-2025-7776",
+      "name": "ADC - CVE-2025-7776",
+      "path": "2025/CVE-2025-7776.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "Memory overflow vulnerability leading to unpredictable or erroneous behavior and Denial of Service\n",
+      "cvss_score": 8.8,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "citrix",
+      "product": "netscaler",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.title:\"citrix login\"",
+        "http.html:\"Citrix Gateway\"",
+        "http.favicon.hash:-1292923998,-1166125415"
+      ],
+      "tags": [
+        "cve",
+        "cve2025",
+        "kev",
+        "citrix",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-7776",
+        "https://kevintel.com/CVE-2025-7776"
+      ],
+      "wip": false
+    },
+    {
       "id": "CVE-2025-7775",
       "name": "CVE-2025-7775 - Citrix NetScaler ADC/Gateway Memory Corruption RCE",
       "path": "2025/CVE-2025-7775.yaml",
@@ -1085,6 +1339,38 @@
       "wip": false
     },
     {
+      "id": "CVE-2025-6543",
+      "name": "ADC - CVE-2025-6543",
+      "path": "2025/CVE-2025-6543.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Memory overflow vulnerability leading to unintended control flow and Denial of Service\n",
+      "cvss_score": 9.2,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "citrix",
+      "product": "netscaler",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.title:\"citrix login\"",
+        "http.html:\"Citrix Gateway\"",
+        "http.favicon.hash:-1292923998,-1166125415"
+      ],
+      "tags": [
+        "cve",
+        "cve2025",
+        "kev",
+        "citrix",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-6543",
+        "https://kevintel.com/CVE-2025-6543"
+      ],
+      "wip": false
+    },
+    {
       "id": "CVE-2025-64155",
       "name": "CVE-2025-64155 - Fortinet FortiSIEM OS Command Injection RCE",
       "path": "2025/CVE-2025-64155.yaml",
@@ -1242,6 +1528,39 @@
       "wip": false
     },
     {
+      "id": "CVE-2025-59718",
+      "name": "FortiSwitchManager - CVE-2025-59718",
+      "path": "2025/CVE-2025-59718.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "A improper verification of cryptographic signature vulnerability in Fortinet FortiOS 7.6.0 through 7.6.3, FortiOS 7.4.0 through 7.4.8, FortiOS...\n",
+      "cvss_score": 9.1,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "fortinet",
+      "product": "fortios",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.html:\"fgt_lang\"",
+        "http.title:\"Please Login\"",
+        "ssl:\"FortiGate\"",
+        "product:\"Fortinet FortiGate\""
+      ],
+      "tags": [
+        "cve",
+        "cve2025",
+        "kev",
+        "fortinet",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-59718",
+        "https://kevintel.com/CVE-2025-59718"
+      ],
+      "wip": false
+    },
+    {
       "id": "CVE-2025-58360",
       "name": "CVE-2025-58360 - GeoServer WMS GetMap Unauthenticated XXE",
       "path": "2025/CVE-2025-58360.yaml",
@@ -1368,6 +1687,37 @@
       "wip": false
     },
     {
+      "id": "CVE-2025-54309",
+      "name": "CrushFTP - CVE-2025-54309",
+      "path": "2025/CVE-2025-54309.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "CrushFTP 10 before 10.8.5 and 11 before 11.3.4_23, when the DMZ proxy feature is not used, mishandles AS2 validation and consequently allows remote...\n",
+      "cvss_score": 9.0,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "crushftp",
+      "product": "crushftp",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.title:\"crushftp\"",
+        "http.html:\"CrushFTP\" http.html:\"CrushFTP\""
+      ],
+      "tags": [
+        "cve",
+        "cve2025",
+        "kev",
+        "crushftp",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-54309",
+        "https://kevintel.com/CVE-2025-54309"
+      ],
+      "wip": false
+    },
+    {
       "id": "CVE-2025-53770",
       "name": "CVE-2025-53770 - Microsoft SharePoint Server Deserialization RCE",
       "path": "2025/CVE-2025-53770.yaml",
@@ -1433,6 +1783,38 @@
         "https://support.sitecore.com/kb?id=kb_article_view&sysparm_article=KB1003865",
         "https://thehackernews.com/2025/09/cisa-orders-immediate-patch-of-critical.html",
         "https://socradar.io/cve-2025-53690-sitecore-deployments-weepsteel-malware/"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-53652",
+      "name": "Jenkins Git Parameter Plugin - CVE-2025-53652",
+      "path": "2025/CVE-2025-53652.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "Jenkins Git Parameter Plugin 439.vb_0e46ca_14534 and earlier does not validate that the Git parameter value submitted to the build matches one of...\n",
+      "cvss_score": 8.2,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "jenkins",
+      "product": "jenkins",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.favicon.hash:\"81586312\"",
+        "http.title:\"jenkins\"",
+        "x-jenkins"
+      ],
+      "tags": [
+        "cve",
+        "cve2025",
+        "kev",
+        "jenkins",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-53652",
+        "https://kevintel.com/CVE-2025-53652"
       ],
       "wip": false
     },
@@ -1557,6 +1939,37 @@
       "wip": false
     },
     {
+      "id": "CVE-2025-49704",
+      "name": "Microsoft SharePoint Enterprise Server 2016 - CVE-2025-49704",
+      "path": "2025/CVE-2025-49704.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "Microsoft SharePoint Remote Code Execution Vulnerability\n",
+      "cvss_score": 8.8,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "microsoft",
+      "product": "sharepoint_server",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.html:\"Microsoft SharePoint\" http.title:\"Sign In\"",
+        "cpe:\"cpe:2.3:a:microsoft:exchange_server\""
+      ],
+      "tags": [
+        "cve",
+        "cve2025",
+        "kev",
+        "microsoft",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-49704",
+        "https://kevintel.com/CVE-2025-49704"
+      ],
+      "wip": false
+    },
+    {
       "id": "CVE-2025-49595",
       "name": "CVE-2025-49595 - n8n Workflow Automation Vulnerability",
       "path": "2025/CVE-2025-49595.yaml",
@@ -1647,6 +2060,37 @@
       "wip": false
     },
     {
+      "id": "CVE-2025-48700",
+      "name": "Zimbra Collaboration - CVE-2025-48700",
+      "path": "2025/CVE-2025-48700.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "An issue was discovered in Zimbra Collaboration (ZCS) 8.8.15 and 9.0 and 10.0 and 10.1. A Cross-Site Scripting (XSS) vulnerability in the Zimbra...\n",
+      "cvss_score": 6.1,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "zimbra",
+      "product": "zimbra",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.html:\"zimbra collaboration suite web client\"",
+        "http.html:\"Zimbra\" http.html:\"Zimbra Collaboration\""
+      ],
+      "tags": [
+        "cve",
+        "cve2025",
+        "kev",
+        "zimbra",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-48700",
+        "https://kevintel.com/CVE-2025-48700"
+      ],
+      "wip": false
+    },
+    {
       "id": "CVE-2025-47813",
       "name": "CVE-2025-47813 - Wing FTP Server Information Disclosure",
       "path": "2025/CVE-2025-47813.yaml",
@@ -1703,6 +2147,37 @@
         "https://thehackernews.com/2025/07/critical-wing-ftp-server-vulnerability.html",
         "https://www.huntress.com/blog/wing-ftp-server-remote-code-execution-cve-2025-47812-exploited-in-wild",
         "https://arcticwolf.com/resources/blog/cve-2025-47812/"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-47172",
+      "name": "Microsoft SharePoint Enterprise Server 2016 - CVE-2025-47172",
+      "path": "2025/CVE-2025-47172.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "Microsoft SharePoint Server Remote Code Execution Vulnerability\n",
+      "cvss_score": 8.8,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "microsoft",
+      "product": "sharepoint_server",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.html:\"Microsoft SharePoint\" http.title:\"Sign In\"",
+        "cpe:\"cpe:2.3:a:microsoft:exchange_server\""
+      ],
+      "tags": [
+        "cve",
+        "cve2025",
+        "kev",
+        "microsoft",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-47172",
+        "https://kevintel.com/CVE-2025-47172"
       ],
       "wip": false
     },
@@ -2018,6 +2493,41 @@
       "wip": false
     },
     {
+      "id": "CVE-2025-3935",
+      "name": "CVE-2025-3935 - ConnectWise ScreenConnect ASP.NET ViewState Exposure",
+      "path": "2025/CVE-2025-3935.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "ConnectWise ScreenConnect versions prior to 25.2.4 may be susceptible to ASP.NET ViewState code injection when server machine keys are compromised. The Server response header exposes the ScreenConnect build token (validated across 19+ internet-facing hosts).\n",
+      "cvss_score": 8.1,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "connectwise",
+      "product": "screenconnect",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.favicon.hash:-82958153",
+        "http.title:\"ScreenConnect\"",
+        "\"ScreenConnect\""
+      ],
+      "tags": [
+        "cve",
+        "cve2025",
+        "kev",
+        "screenconnect",
+        "connectwise",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-3935",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2025-3935",
+        "https://www.connectwise.com/company/trust/security-bulletins/screenconnect-security-patch-2025.4",
+        "https://kevintel.com/CVE-2025-3935"
+      ],
+      "wip": false
+    },
+    {
       "id": "CVE-2025-37164",
       "name": "CVE-2025-37164 - HPE OneView Unauthenticated Remote Code Execution",
       "path": "2025/CVE-2025-37164.yaml",
@@ -2079,6 +2589,36 @@
         "https://labs.watchtowr.com/whats-that-coming-over-the-hill-monsta-ftp-remote-code-execution-cve-2025-34299/",
         "https://github.com/advisories/GHSA-42m5-3r2p-wr92",
         "https://www.vulncheck.com/advisories/monsta-ftp-unauthenticated-arbitrary-file-upload"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-32975",
+      "name": "KACE Systems Management Appliance - CVE-2025-32975",
+      "path": "2025/CVE-2025-32975.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Quest KACE Systems Management Appliance (SMA) 13.0.x before 13.0.385, 13.1.x before 13.1.81, 13.2.x before 13.2.183, 14.0.x before 14.0.341 (Patch...\n",
+      "cvss_score": 10.0,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "quest",
+      "product": "kace_sma",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.title:\"KACE Systems Management Appliance\""
+      ],
+      "tags": [
+        "cve",
+        "cve2025",
+        "kev",
+        "quest",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-32975",
+        "https://kevintel.com/CVE-2025-32975"
       ],
       "wip": false
     },
@@ -2239,6 +2779,39 @@
       "wip": false
     },
     {
+      "id": "CVE-2025-24472",
+      "name": "FortiProxy - CVE-2025-24472",
+      "path": "2025/CVE-2025-24472.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "An Authentication Bypass Using an Alternate Path or Channel vulnerability [CWE-288] affecting FortiOS 7.0.0 through 7.0.16 and FortiProxy...\n",
+      "cvss_score": 8.1,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "fortinet",
+      "product": "fortios",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.html:\"fgt_lang\"",
+        "http.title:\"Please Login\"",
+        "ssl:\"FortiGate\"",
+        "product:\"Fortinet FortiGate\""
+      ],
+      "tags": [
+        "cve",
+        "cve2025",
+        "kev",
+        "fortinet",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-24472",
+        "https://kevintel.com/CVE-2025-24472"
+      ],
+      "wip": false
+    },
+    {
       "id": "CVE-2025-24016",
       "name": "CVE-2025-24016 - Wazuh Server Unsafe Deserialization Remote Code Execution",
       "path": "2025/CVE-2025-24016.yaml",
@@ -2297,6 +2870,39 @@
         "https://nvd.nist.gov/vuln/detail/CVE-2025-23006",
         "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2025-0002",
         "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-22457",
+      "name": "Connect Secure - CVE-2025-22457",
+      "path": "2025/CVE-2025-22457.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "A stack-based buffer overflow in Ivanti Connect Secure before version 22.7R2.6, Ivanti Policy Secure before version 22.7R1.4, and Ivanti ZTA...\n",
+      "cvss_score": 9.0,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "pulsesecure",
+      "product": "pulse_connect_secure",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.title:\"ivanti connect secure\"",
+        "http.title:\"pulse connect secure\"",
+        "http.html:\"/dana-na/\"",
+        "http.html:\"Ivanti\""
+      ],
+      "tags": [
+        "cve",
+        "cve2025",
+        "kev",
+        "pulsesecure",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-22457",
+        "https://kevintel.com/CVE-2025-22457"
       ],
       "wip": false
     },
@@ -2491,6 +3097,70 @@
       "wip": false
     },
     {
+      "id": "CVE-2024-57728",
+      "name": "SimpleHelp remote support software - CVE-2024-57728",
+      "path": "2024/CVE-2024-57728.yaml",
+      "year": "2024",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "SimpleHelp remote support software v5.5.7 and before allows admin users to upload arbitrary files anywhere on the file system by uploading a...\n",
+      "cvss_score": 7.2,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "beyondtrust",
+      "product": "beyondtrust",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.html:\"beyondtrust\" \"redistribution prohibited\"",
+        "set-cookie: nsbase_session",
+        "http.html:\"SimpleHelp remote\""
+      ],
+      "tags": [
+        "cve",
+        "cve2024",
+        "kev",
+        "beyondtrust",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-57728",
+        "https://kevintel.com/CVE-2024-57728"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2024-57726",
+      "name": "SimpleHelp remote support software - CVE-2024-57726",
+      "path": "2024/CVE-2024-57726.yaml",
+      "year": "2024",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "SimpleHelp remote support software v5.5.7 and before has a vulnerability that allows low-privileges technicians to create API keys with excessive...\n",
+      "cvss_score": 9.9,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "beyondtrust",
+      "product": "beyondtrust",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.html:\"beyondtrust\" \"redistribution prohibited\"",
+        "set-cookie: nsbase_session",
+        "http.html:\"SimpleHelp remote\""
+      ],
+      "tags": [
+        "cve",
+        "cve2024",
+        "kev",
+        "beyondtrust",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-57726",
+        "https://kevintel.com/CVE-2024-57726"
+      ],
+      "wip": false
+    },
+    {
       "id": "CVE-2024-57378",
       "name": "CVE-2024-57378 - Wazuh SIEM Broken Access Control",
       "path": "2024/CVE-2024-57378.yaml",
@@ -2543,6 +3213,37 @@
       "references": [
         "https://nvd.nist.gov/vuln/detail/CVE-2024-55550",
         "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2024-47575",
+      "name": "FortiManager - CVE-2024-47575",
+      "path": "2024/CVE-2024-47575.yaml",
+      "year": "2024",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "A missing authentication for critical function in FortiManager 7.6.0, FortiManager 7.4.0 through 7.4.4, FortiManager 7.2.0 through 7.2.7,...\n",
+      "cvss_score": 9.8,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "fortinet",
+      "product": "fortimanager",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.title:\"FortiManager\"",
+        "product:\"Fortinet FortiGate\""
+      ],
+      "tags": [
+        "cve",
+        "cve2024",
+        "kev",
+        "fortinet",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-47575",
+        "https://kevintel.com/CVE-2024-47575"
       ],
       "wip": false
     },
@@ -2638,6 +3339,37 @@
       "wip": false
     },
     {
+      "id": "CVE-2024-38094",
+      "name": "Microsoft SharePoint Enterprise Server 2016 - CVE-2024-38094",
+      "path": "2024/CVE-2024-38094.yaml",
+      "year": "2024",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "Microsoft SharePoint Remote Code Execution Vulnerability\n",
+      "cvss_score": 7.2,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "microsoft",
+      "product": "sharepoint_server",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.html:\"Microsoft SharePoint\" http.title:\"Sign In\"",
+        "cpe:\"cpe:2.3:a:microsoft:exchange_server\""
+      ],
+      "tags": [
+        "cve",
+        "cve2024",
+        "kev",
+        "microsoft",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-38094",
+        "https://kevintel.com/CVE-2024-38094"
+      ],
+      "wip": false
+    },
+    {
       "id": "CVE-2024-37384",
       "name": "CVE-2024-37384 - Roundcube Webmail Cross-Site Scripting via List Columns",
       "path": "2024/CVE-2024-37384.yaml",
@@ -2693,6 +3425,71 @@
         "https://www.wiz.io/vulnerability-database/cve/cve-2024-37383",
         "https://socradar.io/roundcube-vulnerability-cve-2024-37383-exploited-in-phishing-attacks-targeting-government-agencies-for-credential-theft/",
         "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2024-3721",
+      "name": "CVE-2024-3721 - TBK DVR OS Command Injection",
+      "path": "2024/CVE-2024-3721.yaml",
+      "year": "2024",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "TBK DVR-4104 and DVR-4216 devices with firmware up to 20240412 are affected by OS command injection. Internet-facing Samsung-branded web viewers do not expose firmware versions passively; this template detects the vulnerable TBK web viewer surface validated across 50+ hosts.\n",
+      "cvss_score": 6.3,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "TBK",
+      "product": "DVR-4104",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.title:\"web viewer for samsung dvr\""
+      ],
+      "tags": [
+        "cve",
+        "cve2024",
+        "kev",
+        "tbk",
+        "dvr",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-3721",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2024-3721",
+        "https://kevintel.com/CVE-2024-3721"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2024-36111",
+      "name": "CVE-2024-36111 - KubePi JWT Validation Defect",
+      "path": "2024/CVE-2024-36111.yaml",
+      "year": "2024",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "KubePi JWT token validation has a defect in versions 1.6.3 through 1.7.x (patched in 1.8.0). This template fingerprints the KubePi release embedded in the SPA bundle after confirming the /kubepi/ asset layout. Product fingerprinting was validated across 49+ internet-facing hosts; version v1.7.5 was confirmed in the affected range. Versions below 1.6.3 (e.g. v1.1.2) are not affected.\n",
+      "cvss_score": 6.3,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "1Panel-dev",
+      "product": "KubePi",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.html:\"kubepi\""
+      ],
+      "tags": [
+        "cve",
+        "cve2024",
+        "kev",
+        "kubepi",
+        "kubernetes",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-36111",
+        "https://github.com/1Panel-dev/KubePi/security/advisories/GHSA-8q5r-cvcw-4wx7",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2024-36111",
+        "https://kevintel.com/CVE-2024-36111"
       ],
       "wip": false
     },
@@ -2785,6 +3582,307 @@
         "https://nvd.nist.gov/vuln/detail/CVE-2024-28986",
         "https://www.solarwinds.com/trust-center/security-advisories/CVE-2024-28986",
         "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2024-28986"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2024-2389",
+      "name": "CVE-2024-2389 - Progress Flowmon Unauthenticated Command Injection",
+      "path": "2024/CVE-2024-2389.yaml",
+      "year": "2024",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Progress Flowmon versions prior to 11.1.14 (11.x) and 12.3.5 (12.x) contain an unauthenticated OS command injection vulnerability in the management interface. The Flowmon web UI embeds the release version in theme.css query strings (validated across 5+ internet-facing hosts).\n",
+      "cvss_score": 9.8,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "progress",
+      "product": "flowmon",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.title:\"flowmon\"",
+        "http.html:\"/css/themes/flowmon/\""
+      ],
+      "tags": [
+        "cve",
+        "cve2024",
+        "kev",
+        "flowmon",
+        "progress",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-2389",
+        "https://support.kemptechnologies.com/hc/en-us/articles/24878235038733-CVE-2024-2389-Flowmon-critical-security-vulnerability",
+        "https://kevintel.com/CVE-2024-2389"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2024-23113",
+      "name": "FortiSwitchManager - CVE-2024-23113",
+      "path": "2024/CVE-2024-23113.yaml",
+      "year": "2024",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "A use of externally-controlled format string in Fortinet FortiOS versions 7.4.0 through 7.4.2, 7.2.0 through 7.2.6, 7.0.0 through 7.0.13,...\n",
+      "cvss_score": 9.8,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "fortinet",
+      "product": "fortios",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.html:\"fgt_lang\"",
+        "http.title:\"Please Login\"",
+        "ssl:\"FortiGate\"",
+        "product:\"Fortinet FortiGate\""
+      ],
+      "tags": [
+        "cve",
+        "cve2024",
+        "kev",
+        "fortinet",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-23113",
+        "https://kevintel.com/CVE-2024-23113"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2024-21762",
+      "name": "CVE-2024-21762 - Fortinet FortiOS SSL-VPN Out-of-Bounds Write",
+      "path": "2024/CVE-2024-21762.yaml",
+      "year": "2024",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Fortinet FortiOS SSL-VPN contains an out-of-bounds write vulnerability in multiple 6.x, 7.x, and 7.4.x releases. Internet-facing FortiGate SSL-VPN portals expose the /remote/login page with fgt_lang markers (validated across 50+ probed hosts). No passive firmware version is exposed on the login page.\n",
+      "cvss_score": 9.6,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "fortinet",
+      "product": "fortios",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.html:\"fgt_lang\"",
+        "http.title:\"Please Login\"",
+        "ssl:\"FortiGate\""
+      ],
+      "tags": [
+        "cve",
+        "cve2024",
+        "kev",
+        "fortinet",
+        "fortios",
+        "ssl-vpn",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-21762",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2024-21762",
+        "https://kevintel.com/CVE-2024-21762"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2024-21410",
+      "name": "CVE-2024-21410 - Microsoft Exchange Server Privilege Escalation",
+      "path": "2024/CVE-2024-21410.yaml",
+      "year": "2024",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Microsoft Exchange Server 2016 CU23 (15.1.2507), Exchange Server 2019 CU13 (15.2.1258), and Exchange Server 2019 CU14 (15.2.1544) are vulnerable to an elevation of privilege vulnerability. OWA auth theme paths expose CU build numbers validated across 40+ internet-facing hosts. Passive OWA fingerprinting cannot distinguish security-patched builds within the same cumulative update.\n",
+      "cvss_score": 9.8,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "microsoft",
+      "product": "exchange_server",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.favicon.hash:1768726119 -port:25 -port:587 -port:993 -port:110 -port:143 -port:465",
+        "http.title:\"Outlook\" -port:25 -port:587 -port:993",
+        "cpe:\"cpe:2.3:a:microsoft:exchange_server\" -port:25 -port:587 -port:993"
+      ],
+      "tags": [
+        "cve",
+        "cve2024",
+        "kev",
+        "exchange",
+        "microsoft",
+        "owa",
+        "passive"
+      ],
+      "references": [
+        "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-21410",
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-21410",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2024-21410",
+        "https://kevintel.com/CVE-2024-21410"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2024-21182",
+      "name": "WebLogic Server - CVE-2024-21182",
+      "path": "2024/CVE-2024-21182.yaml",
+      "year": "2024",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "Vulnerability in the Oracle WebLogic Server product of Oracle Fusion Middleware (component: Core).  Supported versions that are affected are...\n",
+      "cvss_score": 7.5,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "oracle",
+      "product": "weblogic_server",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.title:\"WebLogic Server Administration Console\" port:7001",
+        "product:\"Oracle WebLogic Server\"",
+        "\"WebLogic Server\""
+      ],
+      "tags": [
+        "cve",
+        "cve2024",
+        "kev",
+        "oracle",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-21182",
+        "https://kevintel.com/CVE-2024-21182"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2024-1709",
+      "name": "CVE-2024-1709 - ConnectWise ScreenConnect Authentication Bypass",
+      "path": "2024/CVE-2024-1709.yaml",
+      "year": "2024",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "ConnectWise ScreenConnect 23.9.7 and prior are affected by an authentication bypass vulnerability. The Server response header exposes the ScreenConnect build token (validated across 19+ internet-facing hosts). Passive fingerprinting cannot distinguish security-patched builds within the same release line.\n",
+      "cvss_score": 10.0,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "connectwise",
+      "product": "screenconnect",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.favicon.hash:-82958153",
+        "http.title:\"ScreenConnect\"",
+        "\"ScreenConnect\""
+      ],
+      "tags": [
+        "cve",
+        "cve2024",
+        "kev",
+        "screenconnect",
+        "connectwise",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-1709",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2024-1709",
+        "https://www.connectwise.com/company/trust/security-bulletins/connectwise-screenconnect-23.9.8",
+        "https://kevintel.com/CVE-2024-1709"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2024-1708",
+      "name": "CVE-2024-1708 - ConnectWise ScreenConnect Path Traversal",
+      "path": "2024/CVE-2024-1708.yaml",
+      "year": "2024",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "ConnectWise ScreenConnect 23.9.7 and prior are affected by a path traversal vulnerability. The Server response header exposes the ScreenConnect build token (validated across 19+ internet-facing hosts). Passive fingerprinting cannot distinguish security-patched builds within the same release line.\n",
+      "cvss_score": 8.4,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "connectwise",
+      "product": "screenconnect",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.favicon.hash:-82958153",
+        "http.title:\"ScreenConnect\"",
+        "\"ScreenConnect\""
+      ],
+      "tags": [
+        "cve",
+        "cve2024",
+        "kev",
+        "screenconnect",
+        "connectwise",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-1708",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2024-1708",
+        "https://www.connectwise.com/company/trust/security-bulletins/connectwise-screenconnect-23.9.8",
+        "https://kevintel.com/CVE-2024-1708"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2024-12686",
+      "name": "CVE-2024-12686 - BeyondTrust Remote Support Command Injection",
+      "path": "2024/CVE-2024-12686.yaml",
+      "year": "2024",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "BeyondTrust Remote Support and Privileged Remote Access are affected by command injection in versions 24.3.1 and earlier. Internet-facing appliances expose the login page with a strict \"Redistribution Prohibited\" footer (validated on live BeyondTrust hosts). No passive version string is available on the login page.\n",
+      "cvss_score": 6.6,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "beyondtrust",
+      "product": "remote_support",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.html:\"redistribution prohibited\" beyondtrust",
+        "http.title:\"Remote Support\""
+      ],
+      "tags": [
+        "cve",
+        "cve2024",
+        "beyondtrust",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-12686",
+        "https://kevintel.com/CVE-2024-12686"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2024-12356",
+      "name": "Remote Support - CVE-2024-12356",
+      "path": "2024/CVE-2024-12356.yaml",
+      "year": "2024",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Command Injection Vulnerability in Remote Support(RS) & Privileged Remote Access (PRA)\n",
+      "cvss_score": 9.8,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "beyondtrust",
+      "product": "beyondtrust",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.html:\"beyondtrust\" \"redistribution prohibited\"",
+        "set-cookie: nsbase_session",
+        "http.title:\"Remote Support\""
+      ],
+      "tags": [
+        "cve",
+        "cve2024",
+        "kev",
+        "beyondtrust",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-12356",
+        "https://kevintel.com/CVE-2024-12356"
       ],
       "wip": false
     },
@@ -3003,6 +4101,37 @@
       "wip": false
     },
     {
+      "id": "CVE-2023-37679",
+      "name": "Mirth Connect - CVE-2023-37679",
+      "path": "2023/CVE-2023-37679.yaml",
+      "year": "2023",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "A remote command execution (RCE) vulnerability in NextGen Mirth Connect v4.3.0 allows attackers to execute arbitrary commands on the hosting server.\n",
+      "cvss_score": 9.8,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "nextgen",
+      "product": "mirth_connect",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.title:\"mirth connect\"",
+        "http.title:\"Mirth Connect\""
+      ],
+      "tags": [
+        "cve",
+        "cve2023",
+        "kev",
+        "nextgen",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2023-37679",
+        "https://kevintel.com/CVE-2023-37679"
+      ],
+      "wip": false
+    },
+    {
       "id": "CVE-2023-35078",
       "name": "CVE-2023-35078 - Ivanti EPMM Authentication Bypass",
       "path": "2023/CVE-2023-35078.yaml",
@@ -3028,6 +4157,39 @@
       "references": [
         "https://nvd.nist.gov/vuln/detail/CVE-2023-35078",
         "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2023-27997",
+      "name": "FortiOS-6K7K - CVE-2023-27997",
+      "path": "2023/CVE-2023-27997.yaml",
+      "year": "2023",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "A heap-based buffer overflow vulnerability [CWE-122] in FortiOS version 7.2.4 and below, version 7.0.11 and below, version 6.4.12 and below,...\n",
+      "cvss_score": 9.2,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "fortinet",
+      "product": "fortios",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.html:\"fgt_lang\"",
+        "http.title:\"Please Login\"",
+        "ssl:\"FortiGate\"",
+        "product:\"Fortinet FortiGate\""
+      ],
+      "tags": [
+        "cve",
+        "cve2023",
+        "kev",
+        "fortinet",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2023-27997",
+        "https://kevintel.com/CVE-2023-27997"
       ],
       "wip": false
     },
@@ -3115,6 +4277,37 @@
         "https://github.com/n8n-io/n8n/releases",
         "https://www.synacktiv.com/sites/default/files/2023-05/Synacktiv-N8N-Multiple-Vulnerabilities_0.pdf",
         "https://security.netapp.com/advisory/ntap-20230622-0007/"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2023-24955",
+      "name": "Microsoft SharePoint Enterprise Server 2016 - CVE-2023-24955",
+      "path": "2023/CVE-2023-24955.yaml",
+      "year": "2023",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "Microsoft SharePoint Server Remote Code Execution Vulnerability\n",
+      "cvss_score": 7.2,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "microsoft",
+      "product": "sharepoint_server",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.html:\"Microsoft SharePoint\" http.title:\"Sign In\"",
+        "cpe:\"cpe:2.3:a:microsoft:exchange_server\""
+      ],
+      "tags": [
+        "cve",
+        "cve2023",
+        "kev",
+        "microsoft",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2023-24955",
+        "https://kevintel.com/CVE-2023-24955"
       ],
       "wip": false
     },
@@ -3208,6 +4401,38 @@
       "wip": false
     },
     {
+      "id": "CVE-2023-21529",
+      "name": "Microsoft Exchange Server 2019 Cumulative Update - CVE-2023-21529",
+      "path": "2023/CVE-2023-21529.yaml",
+      "year": "2023",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "Microsoft Exchange Server Remote Code Execution Vulnerability\n",
+      "cvss_score": 8.8,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "microsoft",
+      "product": "exchange_server",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.favicon.hash:1768726119 -port:25 -port:587 -port:993 -port:110 -port:143 -port:465",
+        "http.title:\"Outlook\" -port:25 -port:587 -port:993",
+        "cpe:\"cpe:2.3:a:microsoft:exchange_server\""
+      ],
+      "tags": [
+        "cve",
+        "cve2023",
+        "kev",
+        "microsoft",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2023-21529",
+        "https://kevintel.com/CVE-2023-21529"
+      ],
+      "wip": false
+    },
+    {
       "id": "CVE-2023-0669",
       "name": "CVE-2023-0669 - Fortra GoAnywhere MFT Remote Code Execution",
       "path": "2023/CVE-2023-0669.yaml",
@@ -3235,6 +4460,39 @@
         "https://www.goanywhere.com/support/advisory/68x",
         "https://www.rapid7.com/blog/post/2023/02/03/exploitation-of-goanywhere-mft-zero-day-vulnerability/",
         "https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-158a"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2022-42475",
+      "name": "FortiProxy - CVE-2022-42475",
+      "path": "2022/CVE-2022-42475.yaml",
+      "year": "2022",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "A heap-based buffer overflow vulnerability [CWE-122] in FortiOS SSL-VPN 7.2.0 through 7.2.2, 7.0.0 through 7.0.8, 6.4.0 through 6.4.10, 6.2.0...\n",
+      "cvss_score": 9.3,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "fortinet",
+      "product": "fortios",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.html:\"fgt_lang\"",
+        "http.title:\"Please Login\"",
+        "ssl:\"FortiGate\"",
+        "product:\"Fortinet FortiGate\""
+      ],
+      "tags": [
+        "cve",
+        "cve2022",
+        "kev",
+        "fortinet",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2022-42475",
+        "https://kevintel.com/CVE-2022-42475"
       ],
       "wip": false
     },
@@ -3267,6 +4525,133 @@
         "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
         "https://www.rapid7.com/blog/post/2022/10/06/exploitation-of-unpatched-zero-day-remote-code-execution-vulnerability-in-zimbra-collaboration-suite-cve-2022-41352/",
         "https://github.com/Cr4ckC4t/cve-2022-41352-zimbra-rce"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2022-41080",
+      "name": "Microsoft Exchange Server 2016 Cumulative Update - CVE-2022-41080",
+      "path": "2022/CVE-2022-41080.yaml",
+      "year": "2022",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "Microsoft Exchange Server Elevation of Privilege Vulnerability\n",
+      "cvss_score": 8.8,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "microsoft",
+      "product": "exchange_server",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.favicon.hash:1768726119 -port:25 -port:587 -port:993 -port:110 -port:143 -port:465",
+        "http.title:\"Outlook\" -port:25 -port:587 -port:993",
+        "cpe:\"cpe:2.3:a:microsoft:exchange_server\""
+      ],
+      "tags": [
+        "cve",
+        "cve2022",
+        "kev",
+        "microsoft",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2022-41080",
+        "https://kevintel.com/CVE-2022-41080"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2022-41040",
+      "name": "Microsoft Exchange Server 2013 Cumulative Update - CVE-2022-41040",
+      "path": "2022/CVE-2022-41040.yaml",
+      "year": "2022",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "Microsoft Exchange Server Elevation of Privilege Vulnerability\n",
+      "cvss_score": 8.8,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "microsoft",
+      "product": "exchange_server",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.favicon.hash:1768726119 -port:25 -port:587 -port:993 -port:110 -port:143 -port:465",
+        "http.title:\"Outlook\" -port:25 -port:587 -port:993",
+        "http.title:outlook exchange"
+      ],
+      "tags": [
+        "cve",
+        "cve2022",
+        "kev",
+        "microsoft",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2022-41040",
+        "https://kevintel.com/CVE-2022-41040"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2022-27925",
+      "name": "Collaboration - CVE-2022-27925",
+      "path": "2022/CVE-2022-27925.yaml",
+      "year": "2022",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "Zimbra Collaboration (aka ZCS) 8.8.15 and 9.0 has mboximport functionality that receives a ZIP archive and extracts files from it. An authenticated...\n",
+      "cvss_score": 7.2,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "zimbra",
+      "product": "zimbra",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.html:\"zimbra collaboration suite web client\"",
+        "http.html:\"Zimbra\" http.html:\"Zimbra Collaboration\""
+      ],
+      "tags": [
+        "cve",
+        "cve2022",
+        "kev",
+        "zimbra",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2022-27925",
+        "https://kevintel.com/CVE-2022-27925"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2022-27518",
+      "name": "Citrix Gateway - CVE-2022-27518",
+      "path": "2022/CVE-2022-27518.yaml",
+      "year": "2022",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Unauthenticated remote arbitrary code execution\n",
+      "cvss_score": 9.8,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "citrix",
+      "product": "netscaler",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.title:\"citrix login\"",
+        "http.html:\"Citrix Gateway\"",
+        "http.favicon.hash:-1292923998,-1166125415"
+      ],
+      "tags": [
+        "cve",
+        "cve2022",
+        "kev",
+        "citrix",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2022-27518",
+        "https://kevintel.com/CVE-2022-27518"
       ],
       "wip": false
     },
@@ -3418,6 +4803,457 @@
       "wip": false
     },
     {
+      "id": "CVE-2021-42321",
+      "name": "Microsoft Exchange Server 2016 Cumulative Update - CVE-2021-42321",
+      "path": "2021/CVE-2021-42321.yaml",
+      "year": "2021",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "Microsoft Exchange Server Remote Code Execution Vulnerability\n",
+      "cvss_score": 8.8,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "microsoft",
+      "product": "exchange_server",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.favicon.hash:1768726119 -port:25 -port:587 -port:993 -port:110 -port:143 -port:465",
+        "http.title:\"Outlook\" -port:25 -port:587 -port:993",
+        "cpe:\"cpe:2.3:a:microsoft:exchange_server\""
+      ],
+      "tags": [
+        "cve",
+        "cve2021",
+        "kev",
+        "microsoft",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2021-42321",
+        "https://kevintel.com/CVE-2021-42321"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2021-31207",
+      "name": "Microsoft Exchange Server 2013 Cumulative Update - CVE-2021-31207",
+      "path": "2021/CVE-2021-31207.yaml",
+      "year": "2021",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "Microsoft Exchange Server Security Feature Bypass Vulnerability\n",
+      "cvss_score": 6.6,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "microsoft",
+      "product": "exchange_server",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.favicon.hash:1768726119 -port:25 -port:587 -port:993 -port:110 -port:143 -port:465",
+        "http.title:\"Outlook\" -port:25 -port:587 -port:993",
+        "http.title:outlook exchange"
+      ],
+      "tags": [
+        "cve",
+        "cve2021",
+        "kev",
+        "microsoft",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2021-31207",
+        "https://kevintel.com/CVE-2021-31207"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2021-31196",
+      "name": "Microsoft Exchange Server 2019 Cumulative Update - CVE-2021-31196",
+      "path": "2021/CVE-2021-31196.yaml",
+      "year": "2021",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "Microsoft Exchange Server Remote Code Execution Vulnerability\n",
+      "cvss_score": 7.2,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "microsoft",
+      "product": "exchange_server",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.favicon.hash:1768726119 -port:25 -port:587 -port:993 -port:110 -port:143 -port:465",
+        "http.title:\"Outlook\" -port:25 -port:587 -port:993",
+        "cpe:\"cpe:2.3:a:microsoft:exchange_server\""
+      ],
+      "tags": [
+        "cve",
+        "cve2021",
+        "kev",
+        "microsoft",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2021-31196",
+        "https://kevintel.com/CVE-2021-31196"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2021-27101",
+      "name": "CVE-2021-27101 - Accellion FTA / Kiteworks totemomail SQL Injection",
+      "path": "2021/CVE-2021-27101.yaml",
+      "year": "2021",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Accellion FTA 9_12_370 and earlier is affected by SQL injection via a crafted Host header. Legacy deployments are now branded as Kiteworks totemomail WebMail. Passive detection fingerprints the totemomail WebMail login interface (live-validated on internet-facing hosts).\n",
+      "cvss_score": 9.8,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "accellion",
+      "product": "fta",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.html:\"totemomail\"",
+        "http.title:\"totemomail\""
+      ],
+      "tags": [
+        "cve",
+        "cve2021",
+        "kev",
+        "accellion",
+        "kiteworks",
+        "totemomail",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2021-27101",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2021-27101",
+        "https://kevintel.com/CVE-2021-27101"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2021-22899",
+      "name": "Pulse Connect Secure - CVE-2021-22899",
+      "path": "2021/CVE-2021-22899.yaml",
+      "year": "2021",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "A command injection vulnerability exists in Pulse Connect Secure before 9.1R11.4 allows a remote authenticated attacker to perform remote code...\n",
+      "cvss_score": 8.8,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "pulsesecure",
+      "product": "pulse_connect_secure",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.title:\"ivanti connect secure\"",
+        "http.title:\"pulse connect secure\"",
+        "http.html:\"/dana-na/\""
+      ],
+      "tags": [
+        "cve",
+        "cve2021",
+        "kev",
+        "pulsesecure",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2021-22899",
+        "https://kevintel.com/CVE-2021-22899"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2021-22894",
+      "name": "Pulse Connect Secure - CVE-2021-22894",
+      "path": "2021/CVE-2021-22894.yaml",
+      "year": "2021",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "A buffer overflow vulnerability exists in Pulse Connect Secure before 9.1R11.4 allows a remote authenticated attacker to execute arbitrary code as...\n",
+      "cvss_score": 8.8,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "pulsesecure",
+      "product": "pulse_connect_secure",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.title:\"ivanti connect secure\"",
+        "http.title:\"pulse connect secure\"",
+        "http.html:\"/dana-na/\""
+      ],
+      "tags": [
+        "cve",
+        "cve2021",
+        "kev",
+        "pulsesecure",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2021-22894",
+        "https://kevintel.com/CVE-2021-22894"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2021-22893",
+      "name": "Pulse Connect Secure - CVE-2021-22893",
+      "path": "2021/CVE-2021-22893.yaml",
+      "year": "2021",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Pulse Connect Secure 9.0R3/9.1R1 and higher is vulnerable to an authentication bypass vulnerability exposed by the Windows File Share Browser and...\n",
+      "cvss_score": 10.0,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "pulsesecure",
+      "product": "pulse_connect_secure",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.title:\"ivanti connect secure\"",
+        "http.title:\"pulse connect secure\"",
+        "http.html:\"/dana-na/\""
+      ],
+      "tags": [
+        "cve",
+        "cve2021",
+        "kev",
+        "pulsesecure",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2021-22893",
+        "https://kevintel.com/CVE-2021-22893"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2021-20016",
+      "name": "CVE-2021-20016 - SonicWall SMA100 SSL-VPN SQL Injection",
+      "path": "2021/CVE-2021-20016.yaml",
+      "year": "2021",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "SonicWall SMA100 build version 10.x is affected by an unauthenticated SQL injection in the SSL-VPN virtual office portal. The /auth.html login page exposes sslvpnLogin markers and SonicWall branding (validated across 6+ internet-facing hosts).\n",
+      "cvss_score": 9.8,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "sonicwall",
+      "product": "sma100",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.title:\"SonicWall\"",
+        "http.html:\"sslvpnLogin\""
+      ],
+      "tags": [
+        "cve",
+        "cve2021",
+        "kev",
+        "sonicwall",
+        "sma100",
+        "ssl-vpn",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2021-20016",
+        "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0001",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2021-20016",
+        "https://kevintel.com/CVE-2021-20016"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2020-8260",
+      "name": "Pulse Connect Secure / Pulse Policy Secure - CVE-2020-8260",
+      "path": "2020/CVE-2020-8260.yaml",
+      "year": "2020",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "A vulnerability in the Pulse Connect Secure < 9.1R9 admin web interface could allow an authenticated attacker to perform an arbitrary code...\n",
+      "cvss_score": 7.2,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "pulsesecure",
+      "product": "pulse_connect_secure",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.title:\"ivanti connect secure\"",
+        "http.title:\"pulse connect secure\"",
+        "http.html:\"/dana-na/\""
+      ],
+      "tags": [
+        "cve",
+        "cve2020",
+        "kev",
+        "pulsesecure",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2020-8260",
+        "https://kevintel.com/CVE-2020-8260"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2020-8218",
+      "name": "Pulse Connect Secure - CVE-2020-8218",
+      "path": "2020/CVE-2020-8218.yaml",
+      "year": "2020",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "A code injection vulnerability exists in Pulse Connect Secure <9.1R8 that allows an attacker to crafted a URI to perform an arbitrary code...\n",
+      "cvss_score": 7.2,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "pulsesecure",
+      "product": "pulse_connect_secure",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.title:\"ivanti connect secure\"",
+        "http.title:\"pulse connect secure\"",
+        "http.html:\"/dana-na/\""
+      ],
+      "tags": [
+        "cve",
+        "cve2020",
+        "kev",
+        "pulsesecure",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2020-8218",
+        "https://kevintel.com/CVE-2020-8218"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2020-8196",
+      "name": "Citrix ADC - CVE-2020-8196",
+      "path": "2020/CVE-2020-8196.yaml",
+      "year": "2020",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "Improper access control in Citrix ADC and Citrix Gateway versions before 13.0-58.30, 12.1-57.18, 12.0-63.21, 11.1-64.14 and 10.5-70.18 and Citrix...\n",
+      "cvss_score": 4.3,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "citrix",
+      "product": "netscaler",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.title:\"citrix login\"",
+        "http.html:\"Citrix Gateway\"",
+        "http.favicon.hash:-1292923998,-1166125415"
+      ],
+      "tags": [
+        "cve",
+        "cve2020",
+        "kev",
+        "citrix",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2020-8196",
+        "https://kevintel.com/CVE-2020-8196"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2020-8195",
+      "name": "Citrix ADC - CVE-2020-8195",
+      "path": "2020/CVE-2020-8195.yaml",
+      "year": "2020",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "Improper input validation in Citrix ADC and Citrix Gateway versions before 13.0-58.30, 12.1-57.18, 12.0-63.21, 11.1-64.14 and 10.5-70.18 and Citrix...\n",
+      "cvss_score": 6.5,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "citrix",
+      "product": "netscaler",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.title:\"citrix login\"",
+        "http.html:\"Citrix Gateway\"",
+        "http.favicon.hash:-1292923998,-1166125415"
+      ],
+      "tags": [
+        "cve",
+        "cve2020",
+        "kev",
+        "citrix",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2020-8195",
+        "https://kevintel.com/CVE-2020-8195"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2020-5735",
+      "name": "Amcrest - CVE-2020-5735",
+      "path": "2020/CVE-2020-5735.yaml",
+      "year": "2020",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "Amcrest cameras and NVR are vulnerable to a stack-based buffer overflow over port 37777. An authenticated remote attacker can abuse this issue to...\n",
+      "cvss_score": 8.8,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "amcrest",
+      "product": "amcrest",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.html:\"amcrest\"",
+        "\"Amcrest\""
+      ],
+      "tags": [
+        "cve",
+        "cve2020",
+        "kev",
+        "amcrest",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2020-5735",
+        "https://kevintel.com/CVE-2020-5735"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2020-36870",
+      "name": "RG-EG1000C - CVE-2020-36870",
+      "path": "2020/CVE-2020-36870.yaml",
+      "year": "2020",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Ruijie Gateway EG & NBR Models v11.1(6)B9P1 - 11.9(4)B12P1 RCE\n",
+      "cvss_score": 9.2,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "ruijie",
+      "product": "rg_eg",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.title:\"RG-EG\"",
+        "\"RG-EG1000C\""
+      ],
+      "tags": [
+        "cve",
+        "cve2020",
+        "kev",
+        "ruijie",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2020-36870",
+        "https://kevintel.com/CVE-2020-36870"
+      ],
+      "wip": false
+    },
+    {
       "id": "CVE-2020-35730",
       "name": "CVE-2020-35730 - Roundcube Webmail Cross-Site Scripting",
       "path": "2020/CVE-2020-35730.yaml",
@@ -3444,6 +5280,38 @@
         "https://csirt.csi.cip.gov.ua/en/posts/apt28-group",
         "https://dev.to/freedom_coder/cve-2020-35730-roundcube-webmail-cross-site-scripting-xss-vulnerability-2c10",
         "https://ubuntu.com/security/notices/USN-5182-1"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2020-17144",
+      "name": "Microsoft Exchange Server 2010 Service Pack 3 Up - CVE-2020-17144",
+      "path": "2020/CVE-2020-17144.yaml",
+      "year": "2020",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "Microsoft Exchange Remote Code Execution Vulnerability\n",
+      "cvss_score": 8.4,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "microsoft",
+      "product": "exchange_server",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.favicon.hash:1768726119 -port:25 -port:587 -port:993 -port:110 -port:143 -port:465",
+        "http.title:\"Outlook\" -port:25 -port:587 -port:993",
+        "http.title:outlook exchange"
+      ],
+      "tags": [
+        "cve",
+        "cve2020",
+        "kev",
+        "microsoft",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2020-17144",
+        "https://kevintel.com/CVE-2020-17144"
       ],
       "wip": false
     },
@@ -3479,6 +5347,39 @@
       "wip": false
     },
     {
+      "id": "CVE-2020-12812",
+      "name": "Fortinet FortiOS - CVE-2020-12812",
+      "path": "2020/CVE-2020-12812.yaml",
+      "year": "2020",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "An improper authentication vulnerability in SSL VPN in FortiOS 6.4.0, 6.2.0 to 6.2.3, 6.0.9 and below may result in a user being able to log in...\n",
+      "cvss_score": 9.8,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "fortinet",
+      "product": "fortios",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.html:\"fgt_lang\"",
+        "http.title:\"Please Login\"",
+        "ssl:\"FortiGate\"",
+        "product:\"Fortinet FortiGate\""
+      ],
+      "tags": [
+        "cve",
+        "cve2020",
+        "kev",
+        "fortinet",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2020-12812",
+        "https://kevintel.com/CVE-2020-12812"
+      ],
+      "wip": false
+    },
+    {
       "id": "CVE-2020-12641",
       "name": "CVE-2020-12641 - Roundcube Webmail Remote Code Execution",
       "path": "2020/CVE-2020-12641.yaml",
@@ -3505,6 +5406,431 @@
         "https://csirt.csi.cip.gov.ua/en/posts/apt28-group",
         "https://github.com/DrunkenShells/Disclosures/tree/master/CVE-2020-12641-Command%20Injection-Roundcube",
         "https://roundcube.net/news/2020/04/29/security-updates-1.4.4-1.3.11-and-1.2.10"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2020-0688",
+      "name": "CVE-2020-0688 - Microsoft Exchange Server Remote Code Execution",
+      "path": "2020/CVE-2020-0688.yaml",
+      "year": "2020",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "A remote code execution vulnerability exists in Microsoft Exchange Server when the software fails to properly handle objects in memory. Affected cumulative updates are Exchange 2013 CU23 (15.0.x), Exchange 2016 CU14/CU15 (15.1.1847, 15.1.1979), and Exchange 2019 CU3/CU4 (15.2.464, 15.2.529). OWA auth theme paths expose build numbers validated across 40+ internet-facing hosts. Exchange 2010 (14.x) is not covered by this OWA fingerprint; passive detection cannot distinguish security-patched builds within the same cumulative update.\n",
+      "cvss_score": 8.8,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "microsoft",
+      "product": "exchange_server",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.favicon.hash:1768726119 -port:25 -port:587 -port:993 -port:110 -port:143 -port:465",
+        "http.title:\"Outlook\" -port:25 -port:587 -port:993",
+        "cpe:\"cpe:2.3:a:microsoft:exchange_server\" -port:25 -port:587 -port:993"
+      ],
+      "tags": [
+        "cve",
+        "cve2020",
+        "kev",
+        "exchange",
+        "microsoft",
+        "owa",
+        "passive"
+      ],
+      "references": [
+        "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2020-0688",
+        "https://nvd.nist.gov/vuln/detail/CVE-2020-0688",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2020-0688",
+        "https://kevintel.com/CVE-2020-0688"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2019-6693",
+      "name": "FortiGate - CVE-2019-6693",
+      "path": "2019/CVE-2019-6693.yaml",
+      "year": "2019",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "Use of a hard-coded cryptographic key to cipher sensitive data in FortiOS configuration backup file may allow an attacker with access to the backup...\n",
+      "cvss_score": 6.5,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "fortinet",
+      "product": "fortios",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.html:\"fgt_lang\"",
+        "http.title:\"Please Login\"",
+        "ssl:\"FortiGate\"",
+        "product:\"Fortinet FortiGate\""
+      ],
+      "tags": [
+        "cve",
+        "cve2019",
+        "kev",
+        "fortinet",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2019-6693",
+        "https://kevintel.com/CVE-2019-6693"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2019-11539",
+      "name": "Pulse Connect Secure - CVE-2019-11539",
+      "path": "2019/CVE-2019-11539.yaml",
+      "year": "2019",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "In Pulse Secure Pulse Connect Secure version 9.0RX before 9.0R3.4, 8.3RX before 8.3R7.1, 8.2RX before 8.2R12.1, and 8.1RX before 8.1R15.1 and Pulse...\n",
+      "cvss_score": 8.0,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "pulsesecure",
+      "product": "pulse_connect_secure",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.title:\"ivanti connect secure\"",
+        "http.title:\"pulse connect secure\"",
+        "http.html:\"/dana-na/\""
+      ],
+      "tags": [
+        "cve",
+        "cve2019",
+        "kev",
+        "pulsesecure",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2019-11539",
+        "https://kevintel.com/CVE-2019-11539"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2019-11510",
+      "name": "CVE-2019-11510 - Pulse Connect Secure / Ivanti Connect Secure Arbitrary File Read",
+      "path": "2019/CVE-2019-11510.yaml",
+      "year": "2019",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Pulse Connect Secure and Ivanti Connect Secure expose the appliance package version via PkgVersion on the /dana-na/auth/url_default/welcome.cgi login page. Validated across 22+ internet-facing hosts. Map extracted R-builds to vendor advisories for affected ranges (9.0RX before 9.0R3.4, 8.3RX before 8.3R7.1, 8.2RX before 8.2R12.1, 8.1RX before 8.1R15.1).\n",
+      "cvss_score": 10.0,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "pulsesecure",
+      "product": "pulse_connect_secure",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.title:\"ivanti connect secure\"",
+        "http.title:\"pulse connect secure\"",
+        "http.html:\"/dana-na/\""
+      ],
+      "tags": [
+        "cve",
+        "cve2019",
+        "kev",
+        "ivanti",
+        "pulse",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2019-11510",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2019-11510",
+        "https://kevintel.com/CVE-2019-11510"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2019-1003030",
+      "name": "Jenkins Pipeline: Groovy Plugin - CVE-2019-1003030",
+      "path": "2019/CVE-2019-1003030.yaml",
+      "year": "2019",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "A sandbox bypass vulnerability exists in Jenkins Pipeline: Groovy Plugin 2.63 and earlier in pom.xml,...\n",
+      "cvss_score": 9.9,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "jenkins",
+      "product": "jenkins",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.favicon.hash:\"81586312\"",
+        "http.title:\"jenkins\"",
+        "x-jenkins"
+      ],
+      "tags": [
+        "cve",
+        "cve2019",
+        "kev",
+        "jenkins",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2019-1003030",
+        "https://kevintel.com/CVE-2019-1003030"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2019-1003029",
+      "name": "Jenkins Script Security Plugin - CVE-2019-1003029",
+      "path": "2019/CVE-2019-1003029.yaml",
+      "year": "2019",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "A sandbox bypass vulnerability exists in Jenkins Script Security Plugin 1.53 and earlier in...\n",
+      "cvss_score": 9.9,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "jenkins",
+      "product": "jenkins",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.favicon.hash:\"81586312\"",
+        "http.title:\"jenkins\"",
+        "x-jenkins"
+      ],
+      "tags": [
+        "cve",
+        "cve2019",
+        "kev",
+        "jenkins",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2019-1003029",
+        "https://kevintel.com/CVE-2019-1003029"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2019-0604",
+      "name": "Microsoft SharePoint Server - CVE-2019-0604",
+      "path": "2019/CVE-2019-0604.yaml",
+      "year": "2019",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "A remote code execution vulnerability exists in Microsoft SharePoint when the software fails to check the source markup of an application package,...\n",
+      "cvss_score": 9.8,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "microsoft",
+      "product": "sharepoint_server",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.html:\"Microsoft SharePoint\" http.title:\"Sign In\"",
+        "cpe:\"cpe:2.3:a:microsoft:exchange_server\""
+      ],
+      "tags": [
+        "cve",
+        "cve2019",
+        "kev",
+        "microsoft",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2019-0604",
+        "https://kevintel.com/CVE-2019-0604"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2018-8581",
+      "name": "Microsoft Exchange Server - CVE-2018-8581",
+      "path": "2018/CVE-2018-8581.yaml",
+      "year": "2018",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "An elevation of privilege vulnerability exists in Microsoft Exchange Server, aka \"Microsoft Exchange Server Elevation of Privilege Vulnerability.\"...\n",
+      "cvss_score": 7.4,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "microsoft",
+      "product": "exchange_server",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.favicon.hash:1768726119 -port:25 -port:587 -port:993 -port:110 -port:143 -port:465",
+        "http.title:\"Outlook\" -port:25 -port:587 -port:993",
+        "http.title:outlook exchange"
+      ],
+      "tags": [
+        "cve",
+        "cve2018",
+        "kev",
+        "microsoft",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2018-8581",
+        "https://kevintel.com/CVE-2018-8581"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2018-13383",
+      "name": "Fortinet FortiOS and FortiProxy - CVE-2018-13383",
+      "path": "2018/CVE-2018-13383.yaml",
+      "year": "2018",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "A heap buffer overflow in Fortinet FortiOS 6.0.0 through 6.0.4, 5.6.0 through 5.6.10, 5.4.0 through 5.4.12, 5.2.14 and earlier and FortiProxy...\n",
+      "cvss_score": 4.3,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "fortinet",
+      "product": "fortios",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.html:\"fgt_lang\"",
+        "http.title:\"Please Login\"",
+        "ssl:\"FortiGate\"",
+        "product:\"Fortinet FortiGate\""
+      ],
+      "tags": [
+        "cve",
+        "cve2018",
+        "kev",
+        "fortinet",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2018-13383",
+        "https://kevintel.com/CVE-2018-13383"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2018-13382",
+      "name": "Fortinet FortiOS - CVE-2018-13382",
+      "path": "2018/CVE-2018-13382.yaml",
+      "year": "2018",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "An Improper Authorization vulnerability in Fortinet FortiOS 6.0.0 to 6.0.4, 5.6.0 to 5.6.8 and 5.4.1 to 5.4.10 and FortiProxy 2.0.0, 1.2.0 to...\n",
+      "cvss_score": 9.1,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "fortinet",
+      "product": "fortios",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.html:\"fgt_lang\"",
+        "http.title:\"Please Login\"",
+        "ssl:\"FortiGate\"",
+        "product:\"Fortinet FortiGate\""
+      ],
+      "tags": [
+        "cve",
+        "cve2018",
+        "kev",
+        "fortinet",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2018-13382",
+        "https://kevintel.com/CVE-2018-13382"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2018-13374",
+      "name": "Fortinet FortiOS - CVE-2018-13374",
+      "path": "2018/CVE-2018-13374.yaml",
+      "year": "2018",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "A Improper Access Control in Fortinet FortiOS 6.0.2, 5.6.7 and before, FortiADC 6.1.0, 6.0.0 to 6.0.1, 5.4.0 to 5.4.4 allows attacker to obtain the...\n",
+      "cvss_score": 4.3,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "fortinet",
+      "product": "fortios",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.html:\"fgt_lang\"",
+        "http.title:\"Please Login\"",
+        "ssl:\"FortiGate\"",
+        "product:\"Fortinet FortiGate\""
+      ],
+      "tags": [
+        "cve",
+        "cve2018",
+        "kev",
+        "fortinet",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2018-13374",
+        "https://kevintel.com/CVE-2018-13374"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2017-8226",
+      "name": "CVE-2017-8226 - Amcrest IPM-721S Default Credentials",
+      "path": "2017/CVE-2017-8226.yaml",
+      "year": "2017",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Amcrest IPM-721S firmware up to V2.420.AC00.16.R.20160909 has default credentials hardcoded. This template passively fingerprints the Amcrest web UI jsCore asset version (2.400 observed on 7+ hosts), which maps to the V2.420 firmware line.\n",
+      "cvss_score": 9.8,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "Amcrest",
+      "product": "IPM-721S",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.html:\"amcrest\""
+      ],
+      "tags": [
+        "cve",
+        "cve2017",
+        "kev",
+        "amcrest",
+        "ipcamera",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2017-8226",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2017-8226",
+        "https://kevintel.com/CVE-2017-8226"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2017-6316",
+      "name": "NetScaler SD-WAN - CVE-2017-6316",
+      "path": "2017/CVE-2017-6316.yaml",
+      "year": "2017",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Citrix NetScaler SD-WAN devices through v9.1.2.26.561201 allow remote attackers to execute arbitrary shell commands as root via a CGISESSID cookie....\n",
+      "cvss_score": 9.8,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "citrix",
+      "product": "netscaler",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.title:\"citrix login\"",
+        "http.html:\"Citrix Gateway\"",
+        "http.title:\"citrix sd-wan\""
+      ],
+      "tags": [
+        "cve",
+        "cve2017",
+        "kev",
+        "citrix",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2017-6316",
+        "https://kevintel.com/CVE-2017-6316"
       ],
       "wip": false
     },
@@ -3537,6 +5863,105 @@
       "wip": false
     },
     {
+      "id": "CVE-2017-1000353",
+      "name": "CVE-2017-1000353 - Jenkins Core Unauthenticated Remote Code Execution",
+      "path": "2017/CVE-2017-1000353.yaml",
+      "year": "2017",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Jenkins versions 2.56 and earlier as well as 2.46.1 LTS and earlier are vulnerable to unauthenticated remote code execution via deserialization. The x-jenkins response header exposes the running version; validated across 50 internet-facing hosts (all currently patched builds).\n",
+      "cvss_score": 9.8,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "jenkins",
+      "product": "jenkins",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.favicon.hash:\"81586312\"",
+        "http.title:\"jenkins\"",
+        "product:\"Jenkins\""
+      ],
+      "tags": [
+        "cve",
+        "cve2017",
+        "kev",
+        "jenkins",
+        "deserialization",
+        "passive"
+      ],
+      "references": [
+        "https://www.jenkins.io/security/advisory/2017-04-26/",
+        "https://nvd.nist.gov/vuln/detail/CVE-2017-1000353",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2017-1000353",
+        "https://kevintel.com/CVE-2017-1000353"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2015-5317",
+      "name": "Jenkins - CVE-2015-5317",
+      "path": "2015/CVE-2015-5317.yaml",
+      "year": "2015",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "The Fingerprints pages in Jenkins before 1.638 and LTS before 1.625.2 might allow remote attackers to obtain sensitive job and build name...\n",
+      "cvss_score": 7.5,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "jenkins",
+      "product": "jenkins",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.favicon.hash:\"81586312\"",
+        "http.title:\"jenkins\"",
+        "\"Jenkins\" \"Jenkins\""
+      ],
+      "tags": [
+        "cve",
+        "cve2015",
+        "kev",
+        "jenkins",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2015-5317",
+        "https://kevintel.com/CVE-2015-5317"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2015-4852",
+      "name": "WebLogic Server - CVE-2015-4852",
+      "path": "2015/CVE-2015-4852.yaml",
+      "year": "2015",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "The WLS Security component in Oracle WebLogic Server 10.3.6.0, 12.1.2.0, 12.1.3.0, and 12.2.1.0 allows remote attackers to execute arbitrary...\n",
+      "cvss_score": 9.8,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "oracle",
+      "product": "weblogic_server",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.title:\"WebLogic Server Administration Console\" port:7001",
+        "product:\"Oracle WebLogic Server\"",
+        "\"WebLogic Server\""
+      ],
+      "tags": [
+        "cve",
+        "cve2015",
+        "kev",
+        "oracle",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2015-4852",
+        "https://kevintel.com/CVE-2015-4852"
+      ],
+      "wip": false
+    },
+    {
       "id": "CVE-2013-1904",
       "name": "CVE-2013-1904 - Roundcube Webmail Path Traversal",
       "path": "2013/CVE-2013-1904.yaml",
@@ -3559,6 +5984,68 @@
       ],
       "references": [
         "https://nvd.nist.gov/vuln/detail/CVE-2013-1904"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2010-1165",
+      "name": "JIRA - CVE-2010-1165",
+      "path": "2010/CVE-2010-1165.yaml",
+      "year": "2010",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "Atlassian JIRA 3.12 through 4.1 allows remote authenticated administrators to execute arbitrary code by modifying the (1) attachment (aka...\n",
+      "cvss_score": 9.0,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "atlassian",
+      "product": "jira",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.title:\"JIRA\" http.html:\"Atlassian\"",
+        "http.html:\"Atlassian\" http.html:\"JIRA\""
+      ],
+      "tags": [
+        "cve",
+        "cve2010",
+        "kev",
+        "atlassian",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2010-1165",
+        "https://kevintel.com/CVE-2010-1165"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2010-1164",
+      "name": "JIRA - CVE-2010-1164",
+      "path": "2010/CVE-2010-1164.yaml",
+      "year": "2010",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "Multiple cross-site scripting (XSS) vulnerabilities in Atlassian JIRA 3.12 through 4.1 allow remote attackers to inject arbitrary web script or...\n",
+      "cvss_score": 4.3,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "atlassian",
+      "product": "jira",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.title:\"JIRA\" http.html:\"Atlassian\"",
+        "http.html:\"Atlassian\" http.html:\"JIRA\""
+      ],
+      "tags": [
+        "cve",
+        "cve2010",
+        "kev",
+        "atlassian",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2010-1164",
+        "https://kevintel.com/CVE-2010-1164"
       ],
       "wip": false
     }
