@@ -1,8 +1,8 @@
 {
   "name": "rxerium-templates",
   "schema_version": "1.0",
-  "total": 185,
-  "completed": 184,
+  "total": 194,
+  "completed": 193,
   "wip": 1,
   "templates": [
     {
@@ -376,6 +376,37 @@
       "wip": false
     },
     {
+      "id": "CVE-2026-32201",
+      "name": "Microsoft SharePoint Enterprise Server 2016 - CVE-2026-32201",
+      "path": "2026/CVE-2026-32201.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "Microsoft SharePoint Server Spoofing Vulnerability\n",
+      "cvss_score": 6.5,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "microsoft",
+      "product": "sharepoint_server",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.html:\"Microsoft SharePoint\" http.title:\"Sign In\"",
+        "cpe:\"cpe:2.3:a:microsoft:exchange_server\""
+      ],
+      "tags": [
+        "cve",
+        "cve2026",
+        "kev",
+        "microsoft",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-32201",
+        "https://kevintel.com/CVE-2026-32201"
+      ],
+      "wip": false
+    },
+    {
       "id": "CVE-2026-3055",
       "name": "CVE-2026-3055 - Citrix NetScaler ADC/Gateway Privilege Escalation",
       "path": "2026/CVE-2026-3055.yaml",
@@ -568,7 +599,7 @@
       "product": "weblogic_server",
       "cwe_id": null,
       "shodan_query": [
-        "http.title:\"WebLogic Server\"",
+        "http.title:\"WebLogic Server Administration Console\" port:7001",
         "product:\"Oracle WebLogic Server\"",
         "\"Oracle HTTP Server\""
       ],
@@ -670,6 +701,37 @@
         "https://fortiguard.fortinet.com/psirt/FG-IR-25-1142",
         "https://nvd.nist.gov/vuln/detail/CVE-2026-21643",
         "https://github.com/0xBlackash/CVE-2026-21643"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2026-20963",
+      "name": "Microsoft SharePoint Enterprise Server 2016 - CVE-2026-20963",
+      "path": "2026/CVE-2026-20963.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Microsoft SharePoint Remote Code Execution Vulnerability\n",
+      "cvss_score": 9.8,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "microsoft",
+      "product": "sharepoint_server",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.html:\"Microsoft SharePoint\" http.title:\"Sign In\"",
+        "cpe:\"cpe:2.3:a:microsoft:exchange_server\""
+      ],
+      "tags": [
+        "cve",
+        "cve2026",
+        "kev",
+        "microsoft",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-20963",
+        "https://kevintel.com/CVE-2026-20963"
       ],
       "wip": false
     },
@@ -1877,6 +1939,37 @@
       "wip": false
     },
     {
+      "id": "CVE-2025-49704",
+      "name": "Microsoft SharePoint Enterprise Server 2016 - CVE-2025-49704",
+      "path": "2025/CVE-2025-49704.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "Microsoft SharePoint Remote Code Execution Vulnerability\n",
+      "cvss_score": 8.8,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "microsoft",
+      "product": "sharepoint_server",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.html:\"Microsoft SharePoint\" http.title:\"Sign In\"",
+        "cpe:\"cpe:2.3:a:microsoft:exchange_server\""
+      ],
+      "tags": [
+        "cve",
+        "cve2025",
+        "kev",
+        "microsoft",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-49704",
+        "https://kevintel.com/CVE-2025-49704"
+      ],
+      "wip": false
+    },
+    {
       "id": "CVE-2025-49595",
       "name": "CVE-2025-49595 - n8n Workflow Automation Vulnerability",
       "path": "2025/CVE-2025-49595.yaml",
@@ -2054,6 +2147,37 @@
         "https://thehackernews.com/2025/07/critical-wing-ftp-server-vulnerability.html",
         "https://www.huntress.com/blog/wing-ftp-server-remote-code-execution-cve-2025-47812-exploited-in-wild",
         "https://arcticwolf.com/resources/blog/cve-2025-47812/"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-47172",
+      "name": "Microsoft SharePoint Enterprise Server 2016 - CVE-2025-47172",
+      "path": "2025/CVE-2025-47172.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "Microsoft SharePoint Server Remote Code Execution Vulnerability\n",
+      "cvss_score": 8.8,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "microsoft",
+      "product": "sharepoint_server",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.html:\"Microsoft SharePoint\" http.title:\"Sign In\"",
+        "cpe:\"cpe:2.3:a:microsoft:exchange_server\""
+      ],
+      "tags": [
+        "cve",
+        "cve2025",
+        "kev",
+        "microsoft",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-47172",
+        "https://kevintel.com/CVE-2025-47172"
       ],
       "wip": false
     },
@@ -3215,6 +3339,37 @@
       "wip": false
     },
     {
+      "id": "CVE-2024-38094",
+      "name": "Microsoft SharePoint Enterprise Server 2016 - CVE-2024-38094",
+      "path": "2024/CVE-2024-38094.yaml",
+      "year": "2024",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "Microsoft SharePoint Remote Code Execution Vulnerability\n",
+      "cvss_score": 7.2,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "microsoft",
+      "product": "sharepoint_server",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.html:\"Microsoft SharePoint\" http.title:\"Sign In\"",
+        "cpe:\"cpe:2.3:a:microsoft:exchange_server\""
+      ],
+      "tags": [
+        "cve",
+        "cve2024",
+        "kev",
+        "microsoft",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-38094",
+        "https://kevintel.com/CVE-2024-38094"
+      ],
+      "wip": false
+    },
+    {
       "id": "CVE-2024-37384",
       "name": "CVE-2024-37384 - Roundcube Webmail Cross-Site Scripting via List Columns",
       "path": "2024/CVE-2024-37384.yaml",
@@ -3582,7 +3737,7 @@
       "product": "weblogic_server",
       "cwe_id": null,
       "shodan_query": [
-        "http.title:\"WebLogic Server\"",
+        "http.title:\"WebLogic Server Administration Console\" port:7001",
         "product:\"Oracle WebLogic Server\"",
         "\"WebLogic Server\""
       ],
@@ -4122,6 +4277,37 @@
         "https://github.com/n8n-io/n8n/releases",
         "https://www.synacktiv.com/sites/default/files/2023-05/Synacktiv-N8N-Multiple-Vulnerabilities_0.pdf",
         "https://security.netapp.com/advisory/ntap-20230622-0007/"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2023-24955",
+      "name": "Microsoft SharePoint Enterprise Server 2016 - CVE-2023-24955",
+      "path": "2023/CVE-2023-24955.yaml",
+      "year": "2023",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "Microsoft SharePoint Server Remote Code Execution Vulnerability\n",
+      "cvss_score": 7.2,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "microsoft",
+      "product": "sharepoint_server",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.html:\"Microsoft SharePoint\" http.title:\"Sign In\"",
+        "cpe:\"cpe:2.3:a:microsoft:exchange_server\""
+      ],
+      "tags": [
+        "cve",
+        "cve2023",
+        "kev",
+        "microsoft",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2023-24955",
+        "https://kevintel.com/CVE-2023-24955"
       ],
       "wip": false
     },
@@ -5423,6 +5609,37 @@
       "wip": false
     },
     {
+      "id": "CVE-2019-0604",
+      "name": "Microsoft SharePoint Server - CVE-2019-0604",
+      "path": "2019/CVE-2019-0604.yaml",
+      "year": "2019",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "A remote code execution vulnerability exists in Microsoft SharePoint when the software fails to check the source markup of an application package,...\n",
+      "cvss_score": 9.8,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "microsoft",
+      "product": "sharepoint_server",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.html:\"Microsoft SharePoint\" http.title:\"Sign In\"",
+        "cpe:\"cpe:2.3:a:microsoft:exchange_server\""
+      ],
+      "tags": [
+        "cve",
+        "cve2019",
+        "kev",
+        "microsoft",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2019-0604",
+        "https://kevintel.com/CVE-2019-0604"
+      ],
+      "wip": false
+    },
+    {
       "id": "CVE-2018-8581",
       "name": "Microsoft Exchange Server - CVE-2018-8581",
       "path": "2018/CVE-2018-8581.yaml",
@@ -5727,7 +5944,7 @@
       "product": "weblogic_server",
       "cwe_id": null,
       "shodan_query": [
-        "http.title:\"WebLogic Server\"",
+        "http.title:\"WebLogic Server Administration Console\" port:7001",
         "product:\"Oracle WebLogic Server\"",
         "\"WebLogic Server\""
       ],
@@ -5767,6 +5984,68 @@
       ],
       "references": [
         "https://nvd.nist.gov/vuln/detail/CVE-2013-1904"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2010-1165",
+      "name": "JIRA - CVE-2010-1165",
+      "path": "2010/CVE-2010-1165.yaml",
+      "year": "2010",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "Atlassian JIRA 3.12 through 4.1 allows remote authenticated administrators to execute arbitrary code by modifying the (1) attachment (aka...\n",
+      "cvss_score": 9.0,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "atlassian",
+      "product": "jira",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.title:\"JIRA\" http.html:\"Atlassian\"",
+        "http.html:\"Atlassian\" http.html:\"JIRA\""
+      ],
+      "tags": [
+        "cve",
+        "cve2010",
+        "kev",
+        "atlassian",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2010-1165",
+        "https://kevintel.com/CVE-2010-1165"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2010-1164",
+      "name": "JIRA - CVE-2010-1164",
+      "path": "2010/CVE-2010-1164.yaml",
+      "year": "2010",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "Multiple cross-site scripting (XSS) vulnerabilities in Atlassian JIRA 3.12 through 4.1 allow remote attackers to inject arbitrary web script or...\n",
+      "cvss_score": 4.3,
+      "cisa_kev": false,
+      "verified": false,
+      "vendor": "atlassian",
+      "product": "jira",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.title:\"JIRA\" http.html:\"Atlassian\"",
+        "http.html:\"Atlassian\" http.html:\"JIRA\""
+      ],
+      "tags": [
+        "cve",
+        "cve2010",
+        "kev",
+        "atlassian",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2010-1164",
+        "https://kevintel.com/CVE-2010-1164"
       ],
       "wip": false
     }
