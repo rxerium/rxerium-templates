@@ -1,8 +1,8 @@
 {
   "name": "rxerium-templates",
   "schema_version": "1.0",
-  "total": 122,
-  "completed": 121,
+  "total": 124,
+  "completed": 123,
   "wip": 1,
   "templates": [
     {
@@ -67,6 +67,41 @@
       "wip": false
     },
     {
+      "id": "CVE-2026-52813",
+      "name": "Gogs - Path Traversal in Organization Name Leading to RCE (CVE-2026-52813)",
+      "path": "2026/CVE-2026-52813.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Gogs versions prior to 0.14.3 contain a path traversal vulnerability in organization\nname handling. The function internal/database/org.go calls os.MkdirAll(repox.UserPath(org.Name))\nwithout sanitizing the org.Name parameter. An authenticated attacker can supply an\norganization name containing ../ sequences to write bare Git repositories to arbitrary\nfilesystem paths, then overwrite Git hook configurations to achieve Remote Code Execution.\n",
+      "cvss_score": 10.0,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "Gogs",
+      "product": "Gogs Git Service",
+      "cwe_id": "CWE-23",
+      "shodan_query": "http.title:\"Sign In - Gogs\"",
+      "tags": [
+        "cve",
+        "cve2026",
+        "gogs",
+        "git",
+        "path-traversal",
+        "rce",
+        "kev",
+        "critical",
+        "version-check"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-52813",
+        "https://advisories.gitlab.com/golang/gogs.io/gogs/CVE-2026-52813/",
+        "https://thehackernews.com/2026/05/critical-gogs-rce-vulnerability-lets-any-authenticated-user-execute-arbitrary-code.html",
+        "https://securityaffairs.com/186837/hacking/u-s-cisa-adds-a-flaw-in-gogs-to-its-known-exploited-vulnerabilities-catalog.html",
+        "https://ccb.belgium.be/advisories/warning-multiple-vulnerabilities-gogs-allow-remote-code-execution-patch-immediately"
+      ],
+      "wip": false
+    },
+    {
       "id": "CVE-2026-48907",
       "name": "Widget Factory Joomla Content Editor - Improper Access Control (CVE-2026-48907)",
       "path": "2026/CVE-2026-48907.yaml",
@@ -126,6 +161,41 @@
         "https://nvd.nist.gov/vuln/detail/CVE-2026-48558",
         "https://simple-help.com/security/simplehelp-security-update-2026-05",
         "https://horizon3.ai/attack-research/disclosures/cve-2026-48558-simplehelp-authentication-bypass-iocs/"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2026-45659",
+      "name": "Microsoft SharePoint Server - Remote Code Execution (CVE-2026-45659)",
+      "path": "2026/CVE-2026-45659.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "CVE-2026-45659 is a deserialization of untrusted data vulnerability in on-premises\nMicrosoft SharePoint Server that allows a low-privileged remote attacker to execute\narbitrary code. This template passively fingerprints the SharePoint build from the\nMicrosoftSharePointTeamServices response header and flags builds below the patched\nrevision for each supported product line. Note: the header exposes only the 4-part\nbuild (16.0.0.XXXX) and not the security revision, so builds sitting exactly on the\npatch build may require authenticated verification; builds below the patch build are\ndefinitively unpatched.\n",
+      "cvss_score": 8.8,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "Microsoft",
+      "product": "SharePoint Server",
+      "cwe_id": "CWE-502",
+      "shodan_query": "MicrosoftSharePointTeamServices",
+      "tags": [
+        "cve",
+        "cve2026",
+        "sharepoint",
+        "microsoft",
+        "rce",
+        "deserialization",
+        "kev",
+        "high",
+        "version-check"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-45659",
+        "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-45659",
+        "https://thehackernews.com/2026/07/sharepoint-rce-cve-2026-45659-added-to.html",
+        "https://www.cyber.gc.ca/en/alerts-advisories/al26-015-critical-vulnerability-impacting-microsoft-sharepoint-server-cve-2026-45659",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
       ],
       "wip": false
     },
