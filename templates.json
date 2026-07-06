@@ -1,8 +1,8 @@
 {
   "name": "rxerium-templates",
   "schema_version": "1.0",
-  "total": 119,
-  "completed": 118,
+  "total": 124,
+  "completed": 123,
   "wip": 1,
   "templates": [
     {
@@ -2767,6 +2767,71 @@
       "wip": false
     },
     {
+      "id": "CVE-2024-3721",
+      "name": "CVE-2024-3721 - TBK DVR OS Command Injection",
+      "path": "2024/CVE-2024-3721.yaml",
+      "year": "2024",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "TBK DVR-4104 and DVR-4216 devices with firmware up to 20240412 are affected by OS command injection. Internet-facing Samsung-branded web viewers do not expose firmware versions passively; this template detects the vulnerable TBK web viewer surface validated across 50+ hosts.\n",
+      "cvss_score": 6.3,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "TBK",
+      "product": "DVR-4104",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.title:\"web viewer for samsung dvr\""
+      ],
+      "tags": [
+        "cve",
+        "cve2024",
+        "kev",
+        "tbk",
+        "dvr",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-3721",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2024-3721",
+        "https://kevintel.com/CVE-2024-3721"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2024-36111",
+      "name": "CVE-2024-36111 - KubePi JWT Validation Defect",
+      "path": "2024/CVE-2024-36111.yaml",
+      "year": "2024",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "KubePi JWT token validation has a defect in versions 1.6.3 through 1.7.x (patched in 1.8.0). This template fingerprints the KubePi release embedded in the SPA bundle after confirming the /kubepi/ asset layout. Product fingerprinting was validated across 49+ internet-facing hosts; version v1.7.5 was confirmed in the affected range. Versions below 1.6.3 (e.g. v1.1.2) are not affected.\n",
+      "cvss_score": 6.3,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "1Panel-dev",
+      "product": "KubePi",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.html:\"kubepi\""
+      ],
+      "tags": [
+        "cve",
+        "cve2024",
+        "kev",
+        "kubepi",
+        "kubernetes",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-36111",
+        "https://github.com/1Panel-dev/KubePi/security/advisories/GHSA-8q5r-cvcw-4wx7",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2024-36111",
+        "https://kevintel.com/CVE-2024-36111"
+      ],
+      "wip": false
+    },
+    {
       "id": "CVE-2024-32444",
       "name": "CVE-2024-32444 - RealHomes WordPress Theme Privilege Escalation",
       "path": "2024/CVE-2024-32444.yaml",
@@ -2855,6 +2920,42 @@
         "https://nvd.nist.gov/vuln/detail/CVE-2024-28986",
         "https://www.solarwinds.com/trust-center/security-advisories/CVE-2024-28986",
         "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2024-28986"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2024-21410",
+      "name": "CVE-2024-21410 - Microsoft Exchange Server Privilege Escalation",
+      "path": "2024/CVE-2024-21410.yaml",
+      "year": "2024",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Microsoft Exchange Server 2016 CU23 (15.1.2507), Exchange Server 2019 CU13 (15.2.1258), Exchange Server 2019 CU14 (15.2.1544), and Exchange Server 2019 CU15-era OWA builds (15.2.2562) are associated with the exposed vulnerable OWA surface. OWA auth theme paths expose CU build numbers validated across 40+ internet-facing hosts with 5+ host consensus per build. Passive OWA fingerprinting cannot distinguish security-patched builds within the same cumulative update.\n",
+      "cvss_score": 9.8,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "microsoft",
+      "product": "exchange_server",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.favicon.hash:1768726119 -port:25 -port:587 -port:993 -port:110 -port:143 -port:465",
+        "http.title:\"Outlook\" -port:25 -port:587 -port:993",
+        "cpe:\"cpe:2.3:a:microsoft:exchange_server\" -port:25 -port:587 -port:993"
+      ],
+      "tags": [
+        "cve",
+        "cve2024",
+        "kev",
+        "exchange",
+        "microsoft",
+        "owa",
+        "passive"
+      ],
+      "references": [
+        "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-21410",
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-21410",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2024-21410",
+        "https://kevintel.com/CVE-2024-21410"
       ],
       "wip": false
     },
@@ -3575,6 +3676,74 @@
         "https://csirt.csi.cip.gov.ua/en/posts/apt28-group",
         "https://github.com/DrunkenShells/Disclosures/tree/master/CVE-2020-12641-Command%20Injection-Roundcube",
         "https://roundcube.net/news/2020/04/29/security-updates-1.4.4-1.3.11-and-1.2.10"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2020-0688",
+      "name": "CVE-2020-0688 - Microsoft Exchange Server Remote Code Execution",
+      "path": "2020/CVE-2020-0688.yaml",
+      "year": "2020",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "A remote code execution vulnerability exists in Microsoft Exchange Server when the software fails to properly handle objects in memory. Affected cumulative updates are Exchange 2013 CU23 (15.0.x), Exchange 2016 CU14/CU15 (15.1.1847, 15.1.1979), and Exchange 2019 CU3/CU4 (15.2.464, 15.2.529). OWA auth theme paths expose build numbers validated across 40+ internet-facing hosts. Exchange 2010 (14.x) is not covered by this OWA fingerprint; passive detection cannot distinguish security-patched builds within the same cumulative update.\n",
+      "cvss_score": 8.8,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "microsoft",
+      "product": "exchange_server",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.favicon.hash:1768726119 -port:25 -port:587 -port:993 -port:110 -port:143 -port:465",
+        "http.title:\"Outlook\" -port:25 -port:587 -port:993",
+        "cpe:\"cpe:2.3:a:microsoft:exchange_server\" -port:25 -port:587 -port:993"
+      ],
+      "tags": [
+        "cve",
+        "cve2020",
+        "kev",
+        "exchange",
+        "microsoft",
+        "owa",
+        "passive"
+      ],
+      "references": [
+        "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2020-0688",
+        "https://nvd.nist.gov/vuln/detail/CVE-2020-0688",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2020-0688",
+        "https://kevintel.com/CVE-2020-0688"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2017-8226",
+      "name": "CVE-2017-8226 - Amcrest IPM-721S Default Credentials",
+      "path": "2017/CVE-2017-8226.yaml",
+      "year": "2017",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Amcrest IPM-721S firmware up to V2.420.AC00.16.R.20160909 has default credentials hardcoded. This template passively fingerprints the Amcrest web UI jsCore asset version (2.400 observed on 7+ hosts), which maps to the V2.420 firmware line.\n",
+      "cvss_score": 9.8,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "Amcrest",
+      "product": "IPM-721S",
+      "cwe_id": null,
+      "shodan_query": [
+        "http.html:\"amcrest\""
+      ],
+      "tags": [
+        "cve",
+        "cve2017",
+        "kev",
+        "amcrest",
+        "ipcamera",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2017-8226",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2017-8226",
+        "https://kevintel.com/CVE-2017-8226"
       ],
       "wip": false
     },
