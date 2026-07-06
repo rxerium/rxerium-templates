@@ -1,8 +1,8 @@
 {
   "name": "rxerium-templates",
   "schema_version": "1.0",
-  "total": 124,
-  "completed": 123,
+  "total": 125,
+  "completed": 124,
   "wip": 1,
   "templates": [
     {
@@ -580,6 +580,36 @@
         "https://fortiguard.fortinet.com/psirt/FG-IR-25-1142",
         "https://nvd.nist.gov/vuln/detail/CVE-2026-21643",
         "https://github.com/0xBlackash/CVE-2026-21643"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2026-20896",
+      "name": "Gitea Docker - Reverse Proxy Authentication Bypass (X-WEBAUTH-USER)",
+      "path": "2026/CVE-2026-20896.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Gitea's official Docker images shipped an app.ini template that hard-coded\nREVERSE_PROXY_TRUSTED_PROXIES = *. On instances where an administrator enabled\nreverse proxy authentication (ENABLE_REVERSE_PROXY_AUTHENTICATION = true), this\ndefault causes Gitea to trust the X-WEBAUTH-USER header from any source IP,\nallowing an unauthenticated attacker to impersonate any user (including admins)\nwith a single HTTP header. Fixed in 1.26.3 / 1.26.4, where reverse proxy\nauthentication is opt-in and no longer activated by the trusted-proxy list alone.\nThis template passively detects Gitea instances running a version prior to 1.26.3.\n",
+      "cvss_score": 9.8,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": null,
+      "product": null,
+      "cwe_id": "CWE-290",
+      "shodan_query": "http.html:\"Powered by Gitea\"",
+      "tags": [
+        "cve",
+        "cve2026",
+        "gitea",
+        "auth-bypass",
+        "misconfig",
+        "version"
+      ],
+      "references": [
+        "https://github.com/go-gitea/gitea/security/advisories/GHSA-f75j-4cw6-rmx4",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-20896",
+        "https://blog.gitea.com/release-of-1.26.3-and-1.26.4/"
       ],
       "wip": false
     },
