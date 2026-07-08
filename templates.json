@@ -1,8 +1,8 @@
 {
   "name": "rxerium-templates",
   "schema_version": "1.0",
-  "total": 125,
-  "completed": 124,
+  "total": 127,
+  "completed": 126,
   "wip": 1,
   "templates": [
     {
@@ -31,6 +31,42 @@
       "references": [
         "https://nvd.nist.gov/vuln/detail/CVE-2026-6973",
         "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2026-56290",
+      "name": "Joomlack Page Builder CK < 3.6.0 - Arbitrary File Upload",
+      "path": "2026/CVE-2026-56290.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Joomlack Page Builder CK for Joomla contains an unauthenticated arbitrary file upload vulnerability that can lead to remote code execution.\n",
+      "cvss_score": 9.8,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "joomlack",
+      "product": "page_builder_ck",
+      "cwe_id": "CWE-434",
+      "shodan_query": "http.html:\"com_pagebuilderck\"",
+      "tags": [
+        "cve",
+        "cve2026",
+        "kev",
+        "joomla",
+        "joomlack",
+        "pagebuilderck",
+        "rce",
+        "file-upload",
+        "passive",
+        "vuln"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-56290",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-56290",
+        "https://www.joomlack.fr/en/joomla-extensions/page-builder-ck",
+        "https://forum.joomlack.fr/index.php/page-builder-ck/21627-nouvelle-version-de-pbck-et-joomla-3",
+        "https://mysites.guru/blog/pagebuilderck-unauthenticated-file-upload-rce/"
       ],
       "wip": false
     },
@@ -98,6 +134,42 @@
         "https://thehackernews.com/2026/05/critical-gogs-rce-vulnerability-lets-any-authenticated-user-execute-arbitrary-code.html",
         "https://securityaffairs.com/186837/hacking/u-s-cisa-adds-a-flaw-in-gogs-to-its-known-exploited-vulnerabilities-catalog.html",
         "https://ccb.belgium.be/advisories/warning-multiple-vulnerabilities-gogs-allow-remote-code-execution-patch-immediately"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2026-48908",
+      "name": "JoomShaper SP Page Builder < 6.6.2 - Unrestricted File Upload",
+      "path": "2026/CVE-2026-48908.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "JoomShaper SP Page Builder for Joomla before 6.6.2 allows unauthenticated users to upload arbitrary files, ultimately resulting in PHP code execution.\n",
+      "cvss_score": 9.8,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "joomshaper",
+      "product": "sp_page_builder",
+      "cwe_id": "CWE-434",
+      "shodan_query": "http.html:\"com_sppagebuilder\"",
+      "tags": [
+        "cve",
+        "cve2026",
+        "kev",
+        "joomla",
+        "joomshaper",
+        "sppagebuilder",
+        "rce",
+        "file-upload",
+        "passive",
+        "vuln"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-48908",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-48908",
+        "https://www.joomshaper.com/forum/question/45152",
+        "https://mysites.guru/blog/sp-page-builder-zero-day-uploadcustomicon-rce/",
+        "https://www.joomshaper.com/page-builder"
       ],
       "wip": false
     },
