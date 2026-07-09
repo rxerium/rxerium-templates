@@ -1,8 +1,8 @@
 {
   "name": "rxerium-templates",
   "schema_version": "1.0",
-  "total": 127,
-  "completed": 126,
+  "total": 128,
+  "completed": 127,
   "wip": 1,
   "templates": [
     {
@@ -67,6 +67,36 @@
         "https://www.joomlack.fr/en/joomla-extensions/page-builder-ck",
         "https://forum.joomlack.fr/index.php/page-builder-ck/21627-nouvelle-version-de-pbck-et-joomla-3",
         "https://mysites.guru/blog/pagebuilderck-unauthenticated-file-upload-rce/"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2026-55255",
+      "name": "Langflow < 1.9.1 - IDOR Flow Execution",
+      "path": "2026/CVE-2026-55255.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "Langflow prior to 1.9.1 is affected by an IDOR in the /api/v1/responses endpoint,\nwhereby an authenticated attacker can execute another user's flow by supplying that\nflow's ID, leading to cross-tenant flow hijacking and secret/credential exposure.\nAs exploitation requires authentication, this template performs passive version\nfingerprinting via the unauthenticated /api/v1/version endpoint and flags instances\nrunning a vulnerable version (< 1.9.1). It does not attempt exploitation.\n",
+      "cvss_score": null,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "langflow",
+      "product": "langflow",
+      "cwe_id": null,
+      "shodan_query": "product:\"Langflow\"",
+      "tags": [
+        "cve",
+        "cve2026",
+        "langflow",
+        "idor",
+        "kev",
+        "version"
+      ],
+      "references": [
+        "https://github.com/advisories/GHSA-qrpv-q767-xqq2",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-55255",
+        "https://www.sysdig.com/blog/understanding-langflow-cve-2026-55255-and-why-higher-cvss-vulnerabilities-arent-always-the-most-exploited"
       ],
       "wip": false
     },
