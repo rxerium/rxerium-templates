@@ -1,8 +1,8 @@
 {
   "name": "rxerium-templates",
   "schema_version": "1.0",
-  "total": 137,
-  "completed": 136,
+  "total": 138,
+  "completed": 137,
   "wip": 1,
   "templates": [
     {
@@ -4035,6 +4035,38 @@
         "https://nvd.nist.gov/vuln/detail/CVE-2019-7193",
         "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2019-7193",
         "https://kevintel.com/CVE-2019-7193"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2018-19949",
+      "name": "CVE-2018-19949 - QNAP QTS Command Injection",
+      "path": "2018/CVE-2018-19949.yaml",
+      "year": "2018",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "QNAP QTS contains a command injection vulnerability in File Station. Exposed QNAP NAS interfaces disclose the QTS firmware version and build through an unauthenticated sysinfo endpoint.\n",
+      "cvss_score": 9.8,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "qnap",
+      "product": "qts",
+      "cwe_id": null,
+      "shodan_query": "QNAP \"4.3.6\" \"201908\" OR QNAP \"4.4.1\" \"20190918\"",
+      "tags": [
+        "cve",
+        "cve2018",
+        "kev",
+        "qnap",
+        "qts",
+        "nas",
+        "passive"
+      ],
+      "references": [
+        "https://www.qnap.com/zh-tw/security-advisory/qsa-20-01",
+        "https://nvd.nist.gov/vuln/detail/CVE-2018-19949",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2018-19949",
+        "https://kevintel.com/CVE-2018-19949"
       ],
       "wip": false
     },
