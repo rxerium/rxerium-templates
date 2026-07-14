@@ -1,8 +1,8 @@
 {
   "name": "rxerium-templates",
   "schema_version": "1.0",
-  "total": 127,
-  "completed": 126,
+  "total": 131,
+  "completed": 130,
   "wip": 1,
   "templates": [
     {
@@ -67,6 +67,36 @@
         "https://www.joomlack.fr/en/joomla-extensions/page-builder-ck",
         "https://forum.joomlack.fr/index.php/page-builder-ck/21627-nouvelle-version-de-pbck-et-joomla-3",
         "https://mysites.guru/blog/pagebuilderck-unauthenticated-file-upload-rce/"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2026-55255",
+      "name": "Langflow < 1.9.1 - IDOR Flow Execution",
+      "path": "2026/CVE-2026-55255.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "Langflow prior to 1.9.1 is affected by an IDOR in the /api/v1/responses endpoint,\nwhereby an authenticated attacker can execute another user's flow by supplying that\nflow's ID, leading to cross-tenant flow hijacking and secret/credential exposure.\nAs exploitation requires authentication, this template performs passive version\nfingerprinting via the unauthenticated /api/v1/version endpoint and flags instances\nrunning a vulnerable version (< 1.9.1). It does not attempt exploitation.\n",
+      "cvss_score": null,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "langflow",
+      "product": "langflow",
+      "cwe_id": null,
+      "shodan_query": "product:\"Langflow\"",
+      "tags": [
+        "cve",
+        "cve2026",
+        "langflow",
+        "idor",
+        "kev",
+        "version"
+      ],
+      "references": [
+        "https://github.com/advisories/GHSA-qrpv-q767-xqq2",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-55255",
+        "https://www.sysdig.com/blog/understanding-langflow-cve-2026-55255-and-why-higher-cvss-vulnerabilities-arent-always-the-most-exploited"
       ],
       "wip": false
     },
@@ -1819,6 +1849,36 @@
       "wip": false
     },
     {
+      "id": "CVE-2025-48700",
+      "name": "CVE-2025-48700 - Zimbra Collaboration Stored Cross-Site Scripting",
+      "path": "2025/CVE-2025-48700.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "Zimbra Collaboration contains a cross-site scripting vulnerability in affected 8.8.15, 9.0, 10.0.x and 10.1.x releases. This template passively extracts the exposed Zimbra client version from ZmSettings.js and conservatively matches the affected 10.0.x and 10.1.x ranges listed by NVD.\n",
+      "cvss_score": 6.1,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "Synacor",
+      "product": "Zimbra Collaboration Suite",
+      "cwe_id": null,
+      "shodan_query": "http.title:\"Zimbra Web Client Sign In\"",
+      "tags": [
+        "cve",
+        "cve2025",
+        "kev",
+        "zimbra",
+        "xss"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-48700",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+        "https://wiki.zimbra.com/wiki/Zimbra_Security_Advisories",
+        "https://wiki.zimbra.com/wiki/Security_Center"
+      ],
+      "wip": false
+    },
+    {
       "id": "CVE-2025-47813",
       "name": "CVE-2025-47813 - Wing FTP Server Information Disclosure",
       "path": "2025/CVE-2025-47813.yaml",
@@ -2186,6 +2246,37 @@
         "https://www.solarwinds.com/trust-center/security-advisories/CVE-2025-40536",
         "https://documentation.solarwinds.com/en/success_center/whd/content/release_notes/whd_2026-1_release_notes.htm",
         "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2025-40536"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-3935",
+      "name": "CVE-2025-3935 - ConnectWise ScreenConnect ViewState Code Injection",
+      "path": "2025/CVE-2025-3935.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "ConnectWise ScreenConnect versions 25.2.3 and earlier contain an ASP.NET ViewState code injection vulnerability. This template passively extracts the exposed ScreenConnect version from the HTTP Server header and matches affected releases.\n",
+      "cvss_score": 8.1,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "ConnectWise",
+      "product": "ScreenConnect",
+      "cwe_id": "CWE-94",
+      "shodan_query": "http.title:\"ConnectWise Control Remote Support Software\"",
+      "tags": [
+        "cve",
+        "cve2025",
+        "kev",
+        "connectwise",
+        "screenconnect",
+        "viewstate",
+        "rce"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-3935",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+        "https://www.connectwise.com/company/trust/security-bulletins/screenconnect-security-patch-2025.4"
       ],
       "wip": false
     },
@@ -3058,6 +3149,37 @@
         "https://nvd.nist.gov/vuln/detail/CVE-2024-21410",
         "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2024-21410",
         "https://kevintel.com/CVE-2024-21410"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2024-1708",
+      "name": "CVE-2024-1708 - ConnectWise ScreenConnect Path Traversal",
+      "path": "2024/CVE-2024-1708.yaml",
+      "year": "2024",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "ConnectWise ScreenConnect versions prior to 23.9.8 contain a path traversal vulnerability. This template passively extracts the exposed ScreenConnect version from the HTTP Server header and matches affected releases.\n",
+      "cvss_score": 8.4,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "ConnectWise",
+      "product": "ScreenConnect",
+      "cwe_id": "CWE-22",
+      "shodan_query": "http.title:\"ConnectWise Control Remote Support Software\"",
+      "tags": [
+        "cve",
+        "cve2024",
+        "kev",
+        "connectwise",
+        "screenconnect",
+        "path-traversal"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-1708",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+        "https://www.connectwise.com/company/trust/security-bulletins/connectwise-screenconnect-23.9.8",
+        "https://www.huntress.com/blog/a-catastrophe-for-control-understanding-the-screenconnect-authentication-bypass"
       ],
       "wip": false
     },
