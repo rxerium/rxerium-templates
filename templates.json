@@ -1,8 +1,8 @@
 {
   "name": "rxerium-templates",
   "schema_version": "1.0",
-  "total": 130,
-  "completed": 129,
+  "total": 144,
+  "completed": 143,
   "wip": 1,
   "templates": [
     {
@@ -753,7 +753,7 @@
       "year": "2026",
       "author": "rxerium",
       "severity": "high",
-      "description": "SonicWall SMA6210, SMA7210, and SMA8200v appliances in the SMA1000 series contain\nan improper control of generated code vulnerability in the Appliance Management\nConsole. In specific conditions, a remote authenticated administrator can execute\narbitrary operating system commands. This template reports exact affected\nplatform-hotfix builds with high confidence. If the Server header exposes only\nthe 12.4 or 12.5 release branch, it reports a low-confidence potential match.\n",
+      "description": "SonicWall SMA6210, SMA7210, and SMA8200v appliances in the SMA1000 series contain\nan improper control of generated code vulnerability in the Appliance Management\nConsole. In specific conditions, a remote authenticated administrator can execute\narbitrary operating system commands. This template reports exact affected\nplatform-hotfix builds with high confidence.\n",
       "cvss_score": 7.2,
       "cisa_kev": true,
       "verified": true,
@@ -787,7 +787,7 @@
       "year": "2026",
       "author": "rxerium",
       "severity": "critical",
-      "description": "SonicWall SMA6210, SMA7210, and SMA8200v appliances in the SMA1000 series contain\na server-side request forgery vulnerability in the WorkPlace interface. This\ntemplate reports exact affected platform-hotfix builds with high confidence. If\nthe Server header exposes only the 12.4 or 12.5 release branch, it reports a\nlow-confidence potential match because the vulnerable build cannot be determined.\n",
+      "description": "SonicWall SMA6210, SMA7210, and SMA8200v appliances in the SMA1000 series contain\na server-side request forgery vulnerability in the WorkPlace interface. This\ntemplate reports exact affected platform-hotfix builds with high confidence.\n",
       "cvss_score": 10.0,
       "cisa_kev": true,
       "verified": true,
@@ -1917,6 +1917,36 @@
       "wip": false
     },
     {
+      "id": "CVE-2025-48700",
+      "name": "CVE-2025-48700 - Zimbra Collaboration Stored Cross-Site Scripting",
+      "path": "2025/CVE-2025-48700.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "Zimbra Collaboration contains a cross-site scripting vulnerability in affected 8.8.15, 9.0, 10.0.x and 10.1.x releases. This template passively extracts the exposed Zimbra client version from ZmSettings.js and conservatively matches the affected 10.0.x and 10.1.x ranges listed by NVD.\n",
+      "cvss_score": 6.1,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "Synacor",
+      "product": "Zimbra Collaboration Suite",
+      "cwe_id": null,
+      "shodan_query": "http.title:\"Zimbra Web Client Sign In\"",
+      "tags": [
+        "cve",
+        "cve2025",
+        "kev",
+        "zimbra",
+        "xss"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-48700",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+        "https://wiki.zimbra.com/wiki/Zimbra_Security_Advisories",
+        "https://wiki.zimbra.com/wiki/Security_Center"
+      ],
+      "wip": false
+    },
+    {
       "id": "CVE-2025-47813",
       "name": "CVE-2025-47813 - Wing FTP Server Information Disclosure",
       "path": "2025/CVE-2025-47813.yaml",
@@ -2284,6 +2314,37 @@
         "https://www.solarwinds.com/trust-center/security-advisories/CVE-2025-40536",
         "https://documentation.solarwinds.com/en/success_center/whd/content/release_notes/whd_2026-1_release_notes.htm",
         "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2025-40536"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2025-3935",
+      "name": "CVE-2025-3935 - ConnectWise ScreenConnect ViewState Code Injection",
+      "path": "2025/CVE-2025-3935.yaml",
+      "year": "2025",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "ConnectWise ScreenConnect versions 25.2.3 and earlier contain an ASP.NET ViewState code injection vulnerability. This template passively extracts the exposed ScreenConnect version from the HTTP Server header and matches affected releases.\n",
+      "cvss_score": 8.1,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "ConnectWise",
+      "product": "ScreenConnect",
+      "cwe_id": "CWE-502",
+      "shodan_query": "http.title:\"ConnectWise Control Remote Support Software\"",
+      "tags": [
+        "cve",
+        "cve2025",
+        "kev",
+        "connectwise",
+        "screenconnect",
+        "viewstate",
+        "rce"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-3935",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+        "https://www.connectwise.com/company/trust/security-bulletins/screenconnect-security-patch-2025.4"
       ],
       "wip": false
     },
@@ -3160,6 +3221,37 @@
       "wip": false
     },
     {
+      "id": "CVE-2024-1708",
+      "name": "CVE-2024-1708 - ConnectWise ScreenConnect Path Traversal",
+      "path": "2024/CVE-2024-1708.yaml",
+      "year": "2024",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "ConnectWise ScreenConnect versions prior to 23.9.8 contain a path traversal vulnerability. This template passively extracts the exposed ScreenConnect version from the HTTP Server header and matches affected releases.\n",
+      "cvss_score": 8.4,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "ConnectWise",
+      "product": "ScreenConnect",
+      "cwe_id": "CWE-22",
+      "shodan_query": "http.title:\"ConnectWise Control Remote Support Software\"",
+      "tags": [
+        "cve",
+        "cve2024",
+        "kev",
+        "connectwise",
+        "screenconnect",
+        "path-traversal"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-1708",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+        "https://www.connectwise.com/company/trust/security-bulletins/connectwise-screenconnect-23.9.8",
+        "https://www.huntress.com/blog/a-catastrophe-for-control-understanding-the-screenconnect-authentication-bypass"
+      ],
+      "wip": false
+    },
+    {
       "id": "CVE-2024-12084",
       "name": "CVE-2024-12084 - rsync Daemon Heap Buffer Overflow",
       "path": "2024/CVE-2024-12084.yaml",
@@ -3276,6 +3368,37 @@
         "https://news.cpanel.com/roundcube-stored-xss-cve-2023-5631-cve-2023-43770/",
         "https://www.prio-n.com/blog/roundcubes-cve-2023-5631-vulnerability-a-target-for-threat-actor-winter-vivern",
         "https://support.plesk.com/hc/en-us/articles/18573638599831-CVE-2023-5631-vulnerability-in-Roundcube"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2023-50358",
+      "name": "CVE-2023-50358 - QNAP QTS OS Command Injection",
+      "path": "2023/CVE-2023-50358.yaml",
+      "year": "2023",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "QNAP QTS contains an OS command injection vulnerability. Exposed QNAP NAS interfaces disclose the QTS firmware version and build through an unauthenticated sysinfo endpoint.\n",
+      "cvss_score": 5.8,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "qnap",
+      "product": "qts",
+      "cwe_id": null,
+      "shodan_query": "QNAP \"4.3.6\" OR QNAP \"4.4.1\"",
+      "tags": [
+        "cve",
+        "cve2023",
+        "qnap",
+        "qts",
+        "nas",
+        "passive"
+      ],
+      "references": [
+        "https://www.qnap.com/en/security-advisory/qsa-23-57",
+        "https://nvd.nist.gov/vuln/detail/CVE-2023-50358",
+        "https://unit42.paloaltonetworks.com/qnap-qts-firmware-cve-2023-50358/",
+        "https://kevintel.com/CVE-2023-50358"
       ],
       "wip": false
     },
@@ -3789,6 +3912,39 @@
       "wip": false
     },
     {
+      "id": "CVE-2020-9377",
+      "name": "CVE-2020-9377 - D-Link DIR-610 Remote Command Execution",
+      "path": "2020/CVE-2020-9377.yaml",
+      "year": "2020",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "D-Link DIR-610 devices are affected by a remote command execution vulnerability in command.php. Exposed DIR-610 web interfaces disclose the device model and firmware version in the HTTP Server header.\n",
+      "cvss_score": 8.8,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "dlink",
+      "product": "dir-610",
+      "cwe_id": null,
+      "shodan_query": "DIR-610",
+      "tags": [
+        "cve",
+        "cve2020",
+        "kev",
+        "dlink",
+        "dir610",
+        "router",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2020-9377",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2020-9377",
+        "https://supportannouncement.us.dlink.com/announcement/publication.aspx?name=SAP10182",
+        "https://www.dlink.com.br/produto/dir-610/",
+        "https://kevintel.com/CVE-2020-9377"
+      ],
+      "wip": false
+    },
+    {
       "id": "CVE-2020-35730",
       "name": "CVE-2020-35730 - Roundcube Webmail Cross-Site Scripting",
       "path": "2020/CVE-2020-35730.yaml",
@@ -3815,6 +3971,71 @@
         "https://csirt.csi.cip.gov.ua/en/posts/apt28-group",
         "https://dev.to/freedom_coder/cve-2020-35730-roundcube-webmail-cross-site-scripting-xss-vulnerability-2c10",
         "https://ubuntu.com/security/notices/USN-5182-1"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2020-2509",
+      "name": "CVE-2020-2509 - QNAP QTS Command Injection",
+      "path": "2020/CVE-2020-2509.yaml",
+      "year": "2020",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "QNAP QTS contains a command injection vulnerability that can allow remote code execution. Exposed QNAP NAS interfaces disclose the QTS firmware version and build through an unauthenticated sysinfo endpoint.\n",
+      "cvss_score": 9.8,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "qnap",
+      "product": "qts",
+      "cwe_id": null,
+      "shodan_query": "QNAP \"4.3.6\" \"201908\" OR QNAP \"4.4.1\" \"20190918\"",
+      "tags": [
+        "cve",
+        "cve2020",
+        "kev",
+        "qnap",
+        "qts",
+        "nas",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2020-2509",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2020-2509",
+        "https://kevintel.com/CVE-2020-2509"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2020-17144",
+      "name": "CVE-2020-17144 - Microsoft Exchange Server Remote Code Execution",
+      "path": "2020/CVE-2020-17144.yaml",
+      "year": "2020",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "Microsoft Exchange Server 2010 SP3 Update Rollup 31 is affected by a remote code execution vulnerability. Exchange 2010 OWA exposes the build in the X-OWA-Version response header and OWA static asset paths; build 14.3.513.0 maps to Exchange Server 2010 SP3 Update Rollup 31.\n",
+      "cvss_score": 8.8,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "microsoft",
+      "product": "exchange_server",
+      "cwe_id": null,
+      "shodan_query": "\"X-OWA-Version: 14.3.513.0\"",
+      "tags": [
+        "cve",
+        "cve2020",
+        "kev",
+        "exchange",
+        "microsoft",
+        "owa",
+        "passive"
+      ],
+      "references": [
+        "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2020-17144",
+        "https://nvd.nist.gov/vuln/detail/CVE-2020-17144",
+        "https://learn.microsoft.com/en-us/exchange/new-features/build-numbers-and-release-dates",
+        "https://support.microsoft.com/help/4593467",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2020-17144",
+        "https://kevintel.com/CVE-2020-17144"
       ],
       "wip": false
     },
@@ -3916,6 +4137,166 @@
       "wip": false
     },
     {
+      "id": "CVE-2019-7193",
+      "name": "CVE-2019-7193 - QNAP QTS Improper Input Validation",
+      "path": "2019/CVE-2019-7193.yaml",
+      "year": "2019",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "QNAP QTS contains an improper input validation vulnerability. Exposed QNAP NAS interfaces disclose the QTS firmware version and build through an unauthenticated sysinfo endpoint.\n",
+      "cvss_score": 9.8,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "qnap",
+      "product": "qts",
+      "cwe_id": null,
+      "shodan_query": "QNAP \"4.3.6\" \"201908\"",
+      "tags": [
+        "cve",
+        "cve2019",
+        "kev",
+        "qnap",
+        "qts",
+        "nas",
+        "passive"
+      ],
+      "references": [
+        "https://www.qnap.com/zh-tw/security-advisory/nas-201911-25",
+        "https://nvd.nist.gov/vuln/detail/CVE-2019-7193",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2019-7193",
+        "https://kevintel.com/CVE-2019-7193"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2018-19953",
+      "name": "CVE-2018-19953 - QNAP QTS Cross-Site Scripting",
+      "path": "2018/CVE-2018-19953.yaml",
+      "year": "2018",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "QNAP QTS contains a File Station cross-site scripting vulnerability. Exposed QNAP NAS interfaces disclose the QTS firmware version and build through an unauthenticated sysinfo endpoint.\n",
+      "cvss_score": 6.1,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "qnap",
+      "product": "qts",
+      "cwe_id": null,
+      "shodan_query": "QNAP \"4.3.6\" \"201908\" OR QNAP \"4.4.1\" \"20190918\"",
+      "tags": [
+        "cve",
+        "cve2018",
+        "kev",
+        "qnap",
+        "qts",
+        "nas",
+        "passive"
+      ],
+      "references": [
+        "https://www.qnap.com/zh-tw/security-advisory/qsa-20-01",
+        "https://nvd.nist.gov/vuln/detail/CVE-2018-19953",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2018-19953",
+        "https://kevintel.com/CVE-2018-19953"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2018-19949",
+      "name": "CVE-2018-19949 - QNAP QTS Command Injection",
+      "path": "2018/CVE-2018-19949.yaml",
+      "year": "2018",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "QNAP QTS contains a command injection vulnerability in File Station. Exposed QNAP NAS interfaces disclose the QTS firmware version and build through an unauthenticated sysinfo endpoint.\n",
+      "cvss_score": 9.8,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "qnap",
+      "product": "qts",
+      "cwe_id": null,
+      "shodan_query": "QNAP \"4.3.6\" \"201908\" OR QNAP \"4.4.1\" \"20190918\"",
+      "tags": [
+        "cve",
+        "cve2018",
+        "kev",
+        "qnap",
+        "qts",
+        "nas",
+        "passive"
+      ],
+      "references": [
+        "https://www.qnap.com/zh-tw/security-advisory/qsa-20-01",
+        "https://nvd.nist.gov/vuln/detail/CVE-2018-19949",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2018-19949",
+        "https://kevintel.com/CVE-2018-19949"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2018-19943",
+      "name": "CVE-2018-19943 - QNAP QTS File Station Cross-Site Scripting",
+      "path": "2018/CVE-2018-19943.yaml",
+      "year": "2018",
+      "author": "rxerium",
+      "severity": "medium",
+      "description": "QNAP QTS contains a File Station cross-site scripting vulnerability. Exposed QNAP NAS interfaces disclose the QTS firmware version and build through an unauthenticated sysinfo endpoint.\n",
+      "cvss_score": 5.4,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "qnap",
+      "product": "qts",
+      "cwe_id": null,
+      "shodan_query": "QNAP \"4.3.6\" \"201908\" OR QNAP \"4.4.1\" \"20190918\"",
+      "tags": [
+        "cve",
+        "cve2018",
+        "kev",
+        "qnap",
+        "qts",
+        "nas",
+        "passive"
+      ],
+      "references": [
+        "https://www.qnap.com/zh-tw/security-advisory/qsa-20-01",
+        "https://nvd.nist.gov/vuln/detail/CVE-2018-19943",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2018-19943",
+        "https://kevintel.com/CVE-2018-19943"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2018-14847",
+      "name": "CVE-2018-14847 - MikroTik RouterOS WinBox Directory Traversal",
+      "path": "2018/CVE-2018-14847.yaml",
+      "year": "2018",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "MikroTik RouterOS contains a WinBox directory traversal vulnerability. Exposed RouterOS web interfaces disclose the RouterOS version in the unauthenticated configuration page.\n",
+      "cvss_score": 9.1,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "mikrotik",
+      "product": "routeros",
+      "cwe_id": null,
+      "shodan_query": "MikroTik RouterOS 6.41",
+      "tags": [
+        "cve",
+        "cve2018",
+        "kev",
+        "mikrotik",
+        "routeros",
+        "router",
+        "passive"
+      ],
+      "references": [
+        "https://mikrotik.com/supportsec/winbox-vulnerability",
+        "https://nvd.nist.gov/vuln/detail/CVE-2018-14847",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2018-14847",
+        "https://kevintel.com/CVE-2018-14847"
+      ],
+      "wip": false
+    },
+    {
       "id": "CVE-2017-8226",
       "name": "CVE-2017-8226 - Amcrest IPM-721S Default Credentials",
       "path": "2017/CVE-2017-8226.yaml",
@@ -3976,6 +4357,38 @@
       "wip": false
     },
     {
+      "id": "CVE-2016-11021",
+      "name": "CVE-2016-11021 - D-Link DCS-930L OS Command Injection",
+      "path": "2016/CVE-2016-11021.yaml",
+      "year": "2016",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "D-Link DCS-930L camera firmware before 2.12 is affected by an OS command injection vulnerability in setSystemCommand. The unauthenticated /common/info.cgi endpoint exposes the model and firmware version.\n",
+      "cvss_score": 7.2,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "dlink",
+      "product": "dcs-930l",
+      "cwe_id": null,
+      "shodan_query": "DCS-930L",
+      "tags": [
+        "cve",
+        "cve2016",
+        "kev",
+        "dlink",
+        "dcs930l",
+        "camera",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2016-11021",
+        "https://www.exploit-db.com/exploits/39437",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2016-11021",
+        "https://kevintel.com/CVE-2016-11021"
+      ],
+      "wip": false
+    },
+    {
       "id": "CVE-2013-1904",
       "name": "CVE-2013-1904 - Roundcube Webmail Path Traversal",
       "path": "2013/CVE-2013-1904.yaml",
@@ -3998,6 +4411,36 @@
       ],
       "references": [
         "https://nvd.nist.gov/vuln/detail/CVE-2013-1904"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2013-1599",
+      "name": "CVE-2013-1599 - D-Link Camera Command Injection",
+      "path": "2013/CVE-2013-1599.yaml",
+      "year": "2013",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "Multiple D-Link network cameras, including DCS-2102 and DCS-2121 firmware 1.05, are affected by a command injection vulnerability in rtpd.cgi. The unauthenticated /common/info.cgi endpoint exposes the camera model and firmware version.\n",
+      "cvss_score": 10.0,
+      "cisa_kev": false,
+      "verified": true,
+      "vendor": "dlink",
+      "product": "dcs-2102,dcs-2121",
+      "cwe_id": null,
+      "shodan_query": "DCS-2102 \"version=1.05\" OR DCS-2121 \"version=1.05\"",
+      "tags": [
+        "cve",
+        "cve2013",
+        "dlink",
+        "dcs2102",
+        "dcs2121",
+        "camera",
+        "passive"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2013-1599",
+        "https://kevintel.com/CVE-2013-1599"
       ],
       "wip": false
     }
