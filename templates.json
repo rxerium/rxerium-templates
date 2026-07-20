@@ -1,8 +1,8 @@
 {
   "name": "rxerium-templates",
   "schema_version": "1.0",
-  "total": 142,
-  "completed": 141,
+  "total": 144,
+  "completed": 143,
   "wip": 1,
   "templates": [
     {
@@ -743,6 +743,74 @@
         "https://nvd.nist.gov/vuln/detail/CVE-2026-20253",
         "https://github.com/advisories/GHSA-xgm5-jh99-wc4v",
         "https://www.splunk.com/en_us/software/splunk-enterprise.html"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2026-15410",
+      "name": "SonicWall SMA1000 AMC - Code Injection (CVE-2026-15410)",
+      "path": "2026/CVE-2026-15410.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "high",
+      "description": "SonicWall SMA6210, SMA7210, and SMA8200v appliances in the SMA1000 series contain\nan improper control of generated code vulnerability in the Appliance Management\nConsole. In specific conditions, a remote authenticated administrator can execute\narbitrary operating system commands. This template reports exact affected\nplatform-hotfix builds with high confidence.\n",
+      "cvss_score": 7.2,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "sonicwall",
+      "product": "secure-mobile-access-sma-1000",
+      "cwe_id": "CWE-94",
+      "shodan_query": "http.title:\"Appliance Management Console Login\" \"SMA/\"",
+      "tags": [
+        "cve",
+        "cve2026",
+        "sonicwall",
+        "sma1000",
+        "kev",
+        "code-injection",
+        "amc",
+        "version-check"
+      ],
+      "references": [
+        "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0008",
+        "https://www.sonicwall.com/support/notices/product-notice-sma-1000-series-affected-by-multiple-vulnerabilities/kA1VN000001nv6D0AQ",
+        "https://www.sonicwall.com/support/knowledge-base/kA1VN000001o3Wn0AI",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+        "https://www.helpnetsecurity.com/2026/07/14/sonicwall-sma-attacks-via-cve-2026-15409-cve-2026-15410/"
+      ],
+      "wip": false
+    },
+    {
+      "id": "CVE-2026-15409",
+      "name": "SonicWall SMA1000 WorkPlace - Server-Side Request Forgery (CVE-2026-15409)",
+      "path": "2026/CVE-2026-15409.yaml",
+      "year": "2026",
+      "author": "rxerium",
+      "severity": "critical",
+      "description": "SonicWall SMA6210, SMA7210, and SMA8200v appliances in the SMA1000 series contain\na server-side request forgery vulnerability in the WorkPlace interface. This\ntemplate reports exact affected platform-hotfix builds with high confidence.\n",
+      "cvss_score": 10.0,
+      "cisa_kev": true,
+      "verified": true,
+      "vendor": "sonicwall",
+      "product": "secure-mobile-access-sma-1000",
+      "cwe_id": "CWE-918",
+      "shodan_query": "http.title:\"WorkPlace\" \"SMA/\"",
+      "tags": [
+        "cve",
+        "cve2026",
+        "sonicwall",
+        "sma1000",
+        "kev",
+        "ssrf",
+        "workplace",
+        "version-check"
+      ],
+      "references": [
+        "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0008",
+        "https://www.sonicwall.com/support/notices/product-notice-sma-1000-series-affected-by-multiple-vulnerabilities/kA1VN000001nv6D0AQ",
+        "https://www.sonicwall.com/support/knowledge-base/kA1VN000001o3Wn0AI",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+        "https://www.helpnetsecurity.com/2026/07/14/sonicwall-sma-attacks-via-cve-2026-15409-cve-2026-15410/"
       ],
       "wip": false
     },
@@ -2262,7 +2330,7 @@
       "verified": true,
       "vendor": "ConnectWise",
       "product": "ScreenConnect",
-      "cwe_id": "CWE-94",
+      "cwe_id": "CWE-502",
       "shodan_query": "http.title:\"ConnectWise Control Remote Support Software\"",
       "tags": [
         "cve",
